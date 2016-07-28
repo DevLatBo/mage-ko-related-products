@@ -24,8 +24,8 @@ class crearUsuarioRequest extends Request
     public function rules()
     {
         return [
-            'nombre'=>'required',
-            'correo'=>'required',
+            'nombre'=>'required|min:2|max:70',
+            'correo'=>'required|unique:Usuario|min:9|max:50',
             'departamento'=>'required|in: Sistemas, Informatica, Electronoca',
             'cargo'=>'required|in: Administracion, Desarrollo, Investigacion',
         ];
