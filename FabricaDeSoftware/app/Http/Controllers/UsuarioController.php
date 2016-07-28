@@ -3,7 +3,8 @@
 namespace Fabrica\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Fabrica\Http\Requests\crearUsuarioRequest;
+use Fabrica\Http\Requests\editarUsuarioRequest;
 use Fabrica\Http\Requests;
 
 use \Fabrica\Usuario;
@@ -41,7 +42,7 @@ class UsuarioController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(crearUsuarioRequest $request)
     {
         Usuario::create([
                 'nombre'=>$request['nombre'],
@@ -85,7 +86,7 @@ class UsuarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(editarUsuarioRequest $request, $id)
     {
         $usuario=Usuario::find($id);
         $usuario->fill($request->all());
