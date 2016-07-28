@@ -4,7 +4,7 @@ namespace Fabrica\Http\Requests;
 
 use Fabrica\Http\Requests\Request;
 
-class crearUsuarioRequest extends Request
+class crearInvestigacionRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,10 +24,9 @@ class crearUsuarioRequest extends Request
     public function rules()
     {
         return [
-            'nombre'=>'required|min:2|max:70',
-            'correo'=>'required|unique:Usuario|min:9|max:50',
-            'departamento'=>'required|in:Sistemas,Informatica,Electronoca',
-            'cargo'=>'required|in:Administracion,Desarrollo,Investigacion',
+            'nombre'=>'required|max:25|unique:Investigacion',
+            'descripcion'=>'required|max:200',
+            'url'=>'required',
         ];
     }
 }

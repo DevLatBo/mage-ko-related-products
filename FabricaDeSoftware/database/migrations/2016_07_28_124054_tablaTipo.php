@@ -12,10 +12,11 @@ class TablaTipo extends Migration
      */
     public function up()
     {
+        //
         Schema::create('Tipo',function(Blueprint $table){
             $table->increments('id');
             $table->string('nombreTipo');
-            $table->integer('id')->unsigned();
+            $table->integer('idUsuario')->unsigned();
             $table->foreign('idUsuario')->references('id')->on('Usuario');
         });
     }

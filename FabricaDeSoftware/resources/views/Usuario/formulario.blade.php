@@ -23,7 +23,7 @@
 		{!! Form::label("Cargo: ") !!}
 		<div class="controls">
 			{!! Form::select('cargo',['Seleccionar'=>'Seleccionar',
-										'Administradacion'=>'Administrador',
+										'Administracion'=>'Administrador',
 										'Desarrollo'=>'Desarrollador',
 										'Investigacion'=>'Investigador'],
 										null,["class"=>"form-control"]) !!}
