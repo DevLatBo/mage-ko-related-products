@@ -29,4 +29,13 @@
 										null,["class"=>"form-control"]) !!}
 		</div>
 	</div>
+	<div class="control-group">
+		{!! Form::label("Personal: ") !!}
+		<div class="controls">
+			{!! Form::checkbox('tipo', 'Honorario') !!}
+			{!! Form::checkbox('tipo', 'Cientifico') !!}
+			{!! Form::checkbox('tipo', 'Soporte') !!}
+			{!! Form::checkbox('tipo', 'Administrativo') !!}
+		</div>
+	</div>
 	<br>

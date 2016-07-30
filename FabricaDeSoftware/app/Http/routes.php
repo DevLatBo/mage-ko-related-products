@@ -25,3 +25,4 @@ Route::get("lista","FrontControl@mostrarUsuarios");
 Route::resource("usuario","UsuarioController");
 Route::get('eliminar/{id}', ['as'=>'eliminar', 'uses'=>'UsuarioController@eliminar']);
 Route::resource("investigacion","investigacionController");
+Route::resource('admin','AdmiController');

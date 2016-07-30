@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>Fabrica de Software | Universidad Mayor de San Simon</title>
     <!--Original!-->
-    {!! Html::style('bootstrap/css/estilo.css') !!}
-    {!! Html::style('bootstrap/css/bootstrap.min.css') !!}
+    {!! Html::style('assets/css/estilo.css') !!}
+    {!! Html::style('assets/css/bootstrap.min.css') !!}
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   </head>
   <body>
@@ -46,15 +46,14 @@
        </footer>
     </div>
 
-    <!--{!! Html::script('bootstrap/js/jquery-2.0.0.js') !!}
-    {!! Html::script('bootstrap/js/bootstrap.js') !!}-->
-    <!--script src="bootstrap/js/jquery-2.0.0.js"></script>
-    <script src="bootstrap/js/bootstrap.js"></script-->
+    <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-2.0.0.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('assets/js/bootstrap.js') }}"></script>
     <script>
         $('.carousel').carousel({
             interval: 5000,
             pause:"hover"
         });
+        
     </script>
   </body>
 </html>
