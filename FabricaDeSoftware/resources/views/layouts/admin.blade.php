@@ -4,8 +4,8 @@
           <title>Bootstrap Example</title>
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
-            {!! Html::style('bootstrap/css/estilo.css') !!}
-            {!! Html::style('bootstrap/css/bootstrap.min.css') !!}
+            {!! Html::style('assets/css/estilo.css') !!}
+            {!! Html::style('assets/css/bootstrap.min.css') !!}
 	    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     </head>
     <body>
@@ -33,7 +33,7 @@
     <!--fin cabecera!-->
     <!--menu admin!-->
         <div class="row">
-            <div class="col-lg-4" >
+            <div class="col-lg-3" >
                 <div class="panel-group" id="accordion">
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -109,14 +109,14 @@
                     </div><!--fin panel-default!-->
                 </div><!--fin panel-gruop!-->
             </div><!--fin col-lg-4!-->
-            <div class="col-lg-8">
+            <div class="col-lg-9">
                 <!--aqui debe entrar el contenido!-->
                 @yield('content')
             </div><!--fin col-lg-8 primario!-->
        </div><!--fin row!-->
     <!--fin menu admin!-->
     </div><!--fin conteiner!-->
-    {!! Html::script('bootstrap/js/jquery-2.0.0.js')!!}
-    {!! Html::script('bootstrap/js/bootstrap.js')!!}
+    {!! Html::script('assets/js/jquery-2.0.0.js')!!}
+    {!! Html::script('assets/js/bootstrap.js')!!}
 </body>
 </html>

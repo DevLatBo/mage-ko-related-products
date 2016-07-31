@@ -35,7 +35,4 @@ class FrontControl extends Controller
 	public function formularioInvestigacion(){
 		return view("Investigacion.nuevainvestigacion");
 	}
-	public function mostrarUsuarios(){
-		return view('Usuario.listaUsuarios');
-	}
 }

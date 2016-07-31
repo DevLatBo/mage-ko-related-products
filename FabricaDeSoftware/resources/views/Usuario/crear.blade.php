@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-        <meta charset="UTF-8">
-        <title>Fabrica de Software</title>
-        <!--Original!-->
-        <link rel="stylesheet" href="bootstrap/css/estilo.css">
-        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-</head>
-<body>
-    <div class="container well" >
+@extends('layouts.admin')
+
+@section('content')
+    <div class="container well col-lg-12" >
 		<div class="row">
 			@include('Alerta.alertaFormulario')
 			<div class="col-lg-8 col-lg-offset-2 form-horizontal">
@@ -25,7 +17,4 @@
 			</div>	
 		</div>
 	</div>
-	<script src="bootstrap/js/jquery-2.0.0.js"></script>
-    <script src="bootstrap/js/bootstrap.js"></script>
-</body>
-</html>
+@stop

@@ -3,7 +3,7 @@
 namespace Fabrica\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Fabrica\Investigacion;
 use Fabrica\Http\Requests\crearInvestigacionRequest;
 use Fabrica\Http\Requests;
 
@@ -16,7 +16,8 @@ class investigacionController extends Controller
      */
     public function index()
     {
-        //
+        $vista=view('Investigacion.nuevainvestigacion');
+        return $vista;
     }
 
     /**
@@ -37,10 +38,9 @@ class investigacionController extends Controller
      */
     public function store(crearInvestigacionRequest $request)
     {
-        \Fabrica\Investigacion::create([
+        Investigacion::create([
             'nombre'=>$request["nombre"],
             'descripcion'=>$request["descripcion"],
-            'url'=>$request["url"]
             ]);
         $vista=view("Investigacion.nuevainvestigacion");
         return $vista;

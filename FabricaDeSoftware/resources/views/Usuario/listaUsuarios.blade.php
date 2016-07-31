@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-        <meta charset="UTF-8">
-        <title>Fabrica de Software</title>
-        <!--Original!-->
-        <link rel="stylesheet" href="bootstrap/css/estilo.css">
-        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-</head>
-<body>
-        <div class="container well">
+@extends('layouts.admin')
+
+@section('content')
+        <div class="container well col-lg-12">
             @if(Session::has('mensaje'))
                 <div class="alert alert-warning alert-dismissible" role="alert">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -40,12 +32,10 @@
                     </tr>
                 @endforeach
                     <tr>
-                       <td colspan=7><a class="btn btn-primary" href="#">Insertar Personal</a></td>
+                        <td colspan=6>{{Html::linkAction('FrontControl@formulario','Registrar Personal',array(),array('class'=>'btn btn-primary'))}}</td>
+                        <!--td colspan=6><a class="btn btn-primary" href="#">Insertar Personal</a></td-->
                     </tr>
                 </tbody>
             </table>
-     </div><!--fin container!-->
-    <script src="bootstrap/js/jquery-2.0.0.js"></script>
-    <script src="bootstrap/js/bootstrap.js"></script>
-</body>
-</html>
+        </div>
+@stop

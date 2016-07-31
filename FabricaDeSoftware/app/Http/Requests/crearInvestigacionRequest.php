@@ -26,7 +26,6 @@ class crearInvestigacionRequest extends Request
         return [
             'nombre'=>'required|max:25|unique:Investigacion',
             'descripcion'=>'required|max:200',
-            'url'=>'required',
         ];
     }
 }

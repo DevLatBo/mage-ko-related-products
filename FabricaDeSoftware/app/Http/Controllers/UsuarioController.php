@@ -52,7 +52,7 @@ class UsuarioController extends Controller
             ]);
         //$vista=view('Usuario.listaUsuarios');
         //return $vista;
-        $vista=redirect('/usuario')->with('mensaje','store');
+        $vista=redirect('/usuario')->with('mensaje','Usuario Registrado');
         return $vista;
     }
 
