@@ -113,4 +113,8 @@ class UsuarioController extends Controller
         $vista=redirect('/usuario');
         return $vista;
     }
+    public function verFormulario(){
+        $vista=view('Usuario.crear');
+        return $vista;
+    }
 }

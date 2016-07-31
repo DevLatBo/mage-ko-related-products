@@ -29,10 +29,4 @@ class FrontControl extends Controller
 	public function contactos(){
 		return view("seccion.contacto");
 	}
-	public function formulario(){
-		return view("Usuario.crear");
-	}
-	public function formularioInvestigacion(){
-		return view("Investigacion.nuevainvestigacion");
-	}
 }

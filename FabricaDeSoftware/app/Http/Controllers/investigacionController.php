@@ -16,8 +16,8 @@ class investigacionController extends Controller
      */
     public function index()
     {
-        $vista=view('Investigacion.nuevainvestigacion');
-        return $vista;
+        /*$vista=view('Investigacion.nuevainvestigacion');
+        return $vista;*/
     }
 
     /**
@@ -89,5 +89,9 @@ class investigacionController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function verFormulario(){
+        $vista=view('Investigacion.nuevainvestigacion');
+        return $vista;
     }
 }

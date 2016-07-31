@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-          <title>Bootstrap Example</title>
+          <title>Administrador | Fabrica de Software</title>
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
             {!! Html::style('assets/css/estilo.css') !!}
@@ -48,12 +48,14 @@
                             <table class="table">
                                 <tr>
                                     <td>
-                                        <a href="">Personal</a>
+                                        {{ HTML::linkRoute('usuario.index', 'Personal') }}
+                                        <!--a href="">Personal</a-->
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <a href="">Agregar personal</a>
+                                        {{ HTML::linkAction('UsuarioController@verFormulario','Agregar Personal')}}
+                                        <!--a href="">Agregar personal</a-->
                                     </td>
                                 </tr>
                             </table>
@@ -71,7 +73,7 @@
                         <div id="collapseTwo" class="panel-collapse collapse">
                             <table class="table">
                                 <tr><td><a href="">Investigacion</a></td></tr> 
-                                <tr><td><a href="">Agregar Investigacion</a></td></tr>
+                                <tr><td>{{ HTML::linkAction('investigacionController@verFormulario','Agregar Investigacion')}}</td></tr>
                             </table>
                         </div>
                     </div><!--fin panel-default2!-->

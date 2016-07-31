@@ -19,12 +19,10 @@ Route::get("blog","FrontControl@blog");
 Route::get("instalacion","FrontControl@instalacion");
 Route::get("contacto","FrontControl@contactos");
 
-Route::get("formulario","FrontControl@formulario");
-Route::get("nuevaInvestigacion","FrontControl@formularioInvestigacion");
-
+Route::resource('admin','AdmiController');
 
 Route::resource("usuario","UsuarioController");
+Route::get("formulario","UsuarioController@verFormulario");
 Route::get('eliminar/{id}', ['as'=>'eliminar', 'uses'=>'UsuarioController@eliminar']);
 Route::resource("investigacion","investigacionController");
-
-Route::resource('admin','AdmiController');
+Route::get("formularioInvestigacion","investigacionController@verFormulario");

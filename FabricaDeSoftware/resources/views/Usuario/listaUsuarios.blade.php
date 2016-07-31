@@ -32,7 +32,7 @@
                     </tr>
                 @endforeach
                     <tr>
-                        <td colspan=6>{{Html::linkAction('FrontControl@formulario','Registrar Personal',array(),array('class'=>'btn btn-primary'))}}</td>
+                        <td colspan=6>{{Html::linkAction('UsuarioController@verFormulario','Registrar Personal',array(),array('class'=>'btn btn-primary'))}}</td>
                         <!--td colspan=6><a class="btn btn-primary" href="#">Insertar Personal</a></td-->
                     </tr>
                 </tbody>
