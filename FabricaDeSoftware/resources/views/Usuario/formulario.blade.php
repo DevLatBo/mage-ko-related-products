@@ -33,7 +33,11 @@
 		{!! Form::label("Personal: ") !!}
 		<div class="controls">
 			@foreach($tipos as $tipo)
-				{!! Form::radio('tipo',$tipo->id,false) !!}{{$tipo->nombre_tipo }}<br>
+				@if ($modo=="registrar")
+					{{ Form::radio('tipo',$tipo->id,false) }}{{$tipo->nombre_tipo }}<br>
+				@else
+					{{ Form::radio('tipo',$tipo->id,($tipo->id == $idTipo)?1:0) }}{{$tipo->nombre_tipo}}<br>
+				@endif
 			@endforeach
 		</div>
 	</div>

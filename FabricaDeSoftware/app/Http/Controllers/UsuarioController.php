@@ -79,7 +79,15 @@ class UsuarioController extends Controller
     public function edit($id)
     {
         $usuario=Usuario::find($id);
-        return view('Usuario.edicion',['usuario'=>$usuario]);
+        $tipos=tipo::All();
+        //$idTipo=tipo::where('id',$id)->get();
+        $idTipo=$usuario->tipo_id;
+        $modo='edicion';
+        $vista=view('Usuario.edicion',['usuario'=>$usuario,
+                                        'tipos'=>$tipos,
+                                        'modo'=>$modo,
+                                        'idTipo'=>$idTipo]);
+        return $vista;
     }
 
     /**
@@ -118,7 +126,9 @@ class UsuarioController extends Controller
     }
     public function verFormulario(){
         $tipos=tipo::All();
-        $vista=view('Usuario.crear',['tipos'=>$tipos]);
+        $modo="registrar";
+        $vista=view('Usuario.crear',['tipos'=>$tipos,
+                                        'modo'=>$modo]);
         return $vista;
     }
 }
