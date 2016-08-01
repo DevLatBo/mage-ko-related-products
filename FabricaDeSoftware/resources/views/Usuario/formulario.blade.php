@@ -32,10 +32,9 @@
 	<div class="control-group">
 		{!! Form::label("Personal: ") !!}
 		<div class="controls">
-			{!! Form::checkbox('tipo', 'Honorario') !!}
-			{!! Form::checkbox('tipo', 'Cientifico') !!}
-			{!! Form::checkbox('tipo', 'Soporte') !!}
-			{!! Form::checkbox('tipo', 'Administrativo') !!}
+			@foreach($tipos as $tipo)
+				{!! Form::radio('tipo',$tipo->id,false) !!}{{$tipo->nombre_tipo }}<br>
+			@endforeach
 		</div>
 	</div>
 	<br>

@@ -25,7 +25,7 @@ class crearUsuarioRequest extends Request
     {
         return [
             'nombre'=>'required|min:2|max:70',
-            'correo'=>'required|unique:Usuario|min:9|max:50',
+            'correo'=>'required|unique:usuario|min:9|max:50',
             'departamento'=>'required|in:Sistemas,Informatica,Electronica',
             'cargo'=>'required|in:Administracion,Desarrollo,Investigacion',
         ];

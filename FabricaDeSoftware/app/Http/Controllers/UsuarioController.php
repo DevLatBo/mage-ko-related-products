@@ -7,10 +7,12 @@ use Fabrica\Http\Requests\crearUsuarioRequest;
 use Fabrica\Http\Requests\editarUsuarioRequest;
 use Fabrica\Http\Requests;
 
+use \Fabrica\tipo;
 use \Fabrica\Usuario;
 
 use Redirect;
 use Session;
+use Input;
 
 class UsuarioController extends Controller
 {
@@ -33,7 +35,6 @@ class UsuarioController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -48,7 +49,8 @@ class UsuarioController extends Controller
                 'nombre'=>$request['nombre'],
                 'correo'=>$request['correo'],
                 'departamento'=>$request['departamento'],
-                'cargo'=>$request['cargo']
+                'cargo'=>$request['cargo'],
+                'tipo_id'=>$request['tipo'],
             ]);
         //$vista=view('Usuario.listaUsuarios');
         //return $vista;
@@ -114,7 +116,8 @@ class UsuarioController extends Controller
         return $vista;
     }
     public function verFormulario(){
-        $vista=view('Usuario.crear');
+        $tipos=tipo::All();
+        $vista=view('Usuario.crear',['tipos'=>$tipos]);
         return $vista;
     }
 }
