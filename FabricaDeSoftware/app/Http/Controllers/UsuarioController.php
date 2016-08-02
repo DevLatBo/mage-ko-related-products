@@ -53,8 +53,6 @@ class UsuarioController extends Controller
                 'cargo'=>$request['cargo'],
                 'tipo_id'=>$request['tipo'],
             ]);
-        //$vista=view('Usuario.listaUsuarios');
-        //return $vista;
         $vista=redirect('/usuario')->with('mensaje','Usuario Registrado');
         return $vista;
     }

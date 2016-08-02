@@ -72,7 +72,7 @@
                         </div>
                         <div id="collapseTwo" class="panel-collapse collapse">
                             <table class="table">
-                                <tr><td><a href="">Investigacion</a></td></tr> 
+                                <tr><td>{{HTML::linkRoute('investigacion.index','Investigaciones')}}</td></tr> 
                                 <tr><td>{{ HTML::linkAction('investigacionController@verFormulario','Agregar Investigacion')}}</td></tr>
                             </table>
                         </div>

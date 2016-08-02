@@ -41,4 +41,10 @@
 			@endforeach
 		</div>
 	</div>
+	<div class="control-group">
+		{!! Form::label('Foto: ') !!}
+		<div class="controls">
+			{{ Form::file('path') }}
+		</div>
+	</div>
 	<br>

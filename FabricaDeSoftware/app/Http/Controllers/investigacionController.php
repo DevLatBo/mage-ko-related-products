@@ -16,8 +16,9 @@ class investigacionController extends Controller
      */
     public function index()
     {
-        /*$vista=view('Investigacion.nuevainvestigacion');
-        return $vista;*/
+        $investigaciones=Investigacion::All();
+        $vista=view('Investigacion.lista',['investigaciones'=>$investigaciones]);
+        return $vista;
     }
 
     /**
@@ -42,7 +43,7 @@ class investigacionController extends Controller
             'nombre'=>$request["nombre"],
             'descripcion'=>$request["descripcion"],
             ]);
-        $vista=view("Investigacion.nuevainvestigacion");
+        $vista=redirect("/investigacion")->with('mensaje','Investigacion Registrada');
         return $vista;
     }
 
