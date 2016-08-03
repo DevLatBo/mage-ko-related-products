@@ -51,7 +51,6 @@ class UsuarioController extends Controller
                 'correo'=>$request['correo'],
                 'departamento'=>$request['departamento'],
                 'cargo'=>$request['cargo'],
-                'tipo_id'=>$request['tipo'],
             ]);
         $vista=redirect('/usuario')->with('mensaje','Usuario Registrado');
         return $vista;
@@ -83,8 +82,7 @@ class UsuarioController extends Controller
         $modo='edicion';
         $vista=view('Usuario.edicion',['usuario'=>$usuario,
                                         'tipos'=>$tipos,
-                                        'modo'=>$modo,
-                                        'idTipo'=>$idTipo]);
+                                        'modo'=>$modo,]);
         return $vista;
     }
 

@@ -9,5 +9,5 @@ class Usuario extends Model
     protected $table="usuario";
 
     public $timestamps=false;
-    protected $fillable=["nombre","correo","departamento","cargo","tipo_id"];
+    protected $fillable=["nombre","correo","departamento","cargo"];
 }

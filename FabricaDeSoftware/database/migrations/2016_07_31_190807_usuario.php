@@ -12,7 +12,7 @@ class Usuario extends Migration
      */
     public function up()
     {
-        
+        //Schema::drop('usuario');   
     }
 
     /**
@@ -28,8 +28,8 @@ class Usuario extends Migration
             $table->string('correo');
             $table->string('departamento');
             $table->string('cargo');
-            $table->integer('tipo_id')->unsigned();
-            $table->foreign('tipo_id')->references('id')->on('tipo_usuario');
+            //$table->integer('tipo_id')->unsigned();
+            //$table->foreign('tipo_id')->references('id')->on('tipo_usuario');
         });*/
     }
 }

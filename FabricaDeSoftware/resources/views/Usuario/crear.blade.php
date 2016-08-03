@@ -5,7 +5,6 @@
 		<div class="row">
 			@include('Alerta.alertaFormulario')
 			<div class="col-lg-8 col-lg-offset-2 form-horizontal">
-				<h3>Registro de Usuario</h3>
 				{!! Form::open(['route'=>'usuario.store','method'=>'POST']) !!}
 				@include('Usuario.formulario')
 				<div class="control-group">

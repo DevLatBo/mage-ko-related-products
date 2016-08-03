@@ -1,3 +1,4 @@
+<h3>{{($modo=="registrar")?"Registro":"Edicion"}} de Personal</h3>
 <div class="control-group">
 	{!! Form::label("Nombre: ") !!}
 		<div class="controls">
@@ -36,7 +37,7 @@
 				@if ($modo=="registrar")
 					{{ Form::radio('tipo',$tipo->id,false) }}{{$tipo->nombre_tipo }}<br>
 				@else
-					{{ Form::radio('tipo',$tipo->id,($tipo->id == $idTipo)?1:0) }}{{$tipo->nombre_tipo}}<br>
+					{{-- Form::radio('tipo',$tipo->id,($tipo->id == $idTipo)?1:0) --}}{{--$tipo->nombre_tipo--}}<br>
 				@endif
 			@endforeach
 		</div>
