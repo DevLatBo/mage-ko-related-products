@@ -10,4 +10,5 @@ class Usuario extends Model
 
     public $timestamps=false;
     protected $fillable=["nombre","correo","departamento","cargo"];
+
 }

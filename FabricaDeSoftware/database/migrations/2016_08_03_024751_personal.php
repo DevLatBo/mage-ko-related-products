@@ -13,7 +13,6 @@ class Personal extends Migration
     public function up()
     {
         /*Schema::create('personal',function(Blueprint $table){
-            $table->increments('id');
             $table->integer('id_usuario')->unsigned();
             $table->integer('id_tipo')->unsigned();
         });
@@ -36,6 +35,6 @@ class Personal extends Migration
      */
     public function down()
     {
-        //
+        //Schema::drop('personal');
     }
 }
