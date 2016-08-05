@@ -12,7 +12,7 @@ class Usuario extends Migration
      */
     public function up()
     {
-        //Schema::drop('usuario');   
+           
     }
 
     /**
@@ -22,14 +22,19 @@ class Usuario extends Migration
      */
     public function down()
     {
+        //Schema::drop('usuario');
         /*Schema::create('usuario',function(Blueprint $table){
             $table->increments('id');
             $table->string('nombre');
             $table->string('correo');
             $table->string('departamento');
             $table->string('cargo');
-            //$table->integer('tipo_id')->unsigned();
-            //$table->foreign('tipo_id')->references('id')->on('tipo_usuario');
+            $table->string('foto');
+            $table->integer('tipo_id')->unsigned();
+        });
+        Schema::table('usuario',function($table){
+            $table->foreign('tipo_id')->references('id')->on('tipo_usuario')
+                ->onDelete('cascade');
         });*/
     }
 }

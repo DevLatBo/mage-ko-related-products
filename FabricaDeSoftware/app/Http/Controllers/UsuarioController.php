@@ -46,11 +46,16 @@ class UsuarioController extends Controller
      */
     public function store(crearUsuarioRequest $request)
     {
+        $foto=$request['path'];
+        $nombre=$foto->getClientOriginalName();
+        \Storage::disk('local')->put($nombre, \File::get($foto));
         Usuario::create([
                 'nombre'=>$request['nombre'],
                 'correo'=>$request['correo'],
                 'departamento'=>$request['departamento'],
                 'cargo'=>$request['cargo'],
+                'foto'=>$nombre,
+                'tipo_id'=>$request['tipo'],
             ]);
         $vista=redirect('/usuario')->with('mensaje','Usuario Registrado');
         return $vista;
@@ -82,7 +87,8 @@ class UsuarioController extends Controller
         $modo='edicion';
         $vista=view('Usuario.edicion',['usuario'=>$usuario,
                                         'tipos'=>$tipos,
-                                        'modo'=>$modo,]);
+                                        'modo'=>$modo,
+                                        'idTipo'=>$idTipo]);
         return $vista;
     }
 

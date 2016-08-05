@@ -14,8 +14,9 @@
                     <tr>
                         <th class="col-lg-3">Nombre</th>
                         <th class="col-lg-3">Correo</th>
-                        <th class="col-lg-2">Departamento</th>
-                        <th class="col-lg-2">Cargo</th>
+                        <th class="col-lg-1">Departamento</th>
+                        <th class="col-lg-1">Cargo</th>
+                        <th class="col-lg-2">Foto</th>
                         <th class="col-lg-1">Editar</th>
                         <th class="col-lg-1">Eliminar</th>
                     </tr>
@@ -27,6 +28,7 @@
                         <td>{{$usuario->correo}}</td>
                         <td>{{$usuario->departamento}}</td>
                         <td>{{$usuario->cargo}}</td>
+                        <td><img src="fotoUsuario/{{$usuario->foto}}" width=50%></td>
                         <td align="center">{!! link_to_route('usuario.edit', $title='', $parameters = $usuario->id, $attributes = ['class'=>'glyphicon glyphicon-pencil']) !!}</td>
                         <td align="center">{!! link_to_route('eliminar', $title='', $parameters = $usuario->id, $attributes = ['class'=>'glyphicon glyphicon-remove']) !!}</td>
                     </tr>
