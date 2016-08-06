@@ -8,38 +8,16 @@
                     <h3 class="panel-title">Personal</h3>
                 </div>
                 <div class="panel-group">
+                    @foreach($tipos as $tipo)
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
                                 <span class="glyphicon glyphicon-menu-right" >
-                                </span><a href="#"> Administrativo</a>
+                                </span><a href="#"> {{$tipo->nombre_tipo}}</a>
                             </h4>
                         </div>
-                    </div><!--fin panel-default!-->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <span class="glyphicon glyphicon-menu-right" >
-                                </span><a href="#"> Científico</a>
-                            </h4>
-                        </div>
-                    </div><!--fin panel-default!-->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <span class="glyphicon glyphicon-menu-right" >
-                                </span><a href="#"> Honorario</a>
-                            </h4>
-                        </div>
-                    </div><!--fin panel-default!-->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <span class="glyphicon glyphicon-menu-right" >
-                                </span><a href="#"> Soporte</a>
-                            </h4>
-                        </div>
-                    </div><!--fin panel-default!-->
+                    </div>
+                    @endforeach
                 </div><!--fin de panel-grupo!-->
             </div>
         </div>

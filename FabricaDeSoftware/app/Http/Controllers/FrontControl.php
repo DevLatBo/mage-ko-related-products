@@ -3,7 +3,7 @@
 namespace Fabrica\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Fabrica\tipo;
 use Fabrica\Http\Requests;
 
 class FrontControl extends Controller
@@ -15,7 +15,9 @@ class FrontControl extends Controller
 		return view("seccion.investigaciones");
 	}
 	public function personal(){
-		return view("seccion.personal");
+		$tipos=tipo::All();
+        $vista=view('seccion.personal',['tipos'=>$tipos]);
+        return $vista;
 	}
 	public function multimedia(){
 		return view("seccion.multimedia");
