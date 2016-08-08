@@ -12,23 +12,23 @@ class FrontControl extends Controller
     	return view("seccion.index");
     }
 	public function investigacion(){
-		return view("seccion.investigaciones");
+		return view("seccion.Investigacion.investigaciones");
 	}
 	public function personal(){
 		$tipos=tipo::All();
-        $vista=view('seccion.personal',['tipos'=>$tipos]);
+        $vista=view('seccion.Personal.lista',['tipos'=>$tipos]);
         return $vista;
 	}
 	public function multimedia(){
-		return view("seccion.multimedia");
+		return view("seccion.Multimedia.multimedia");
 	}
 	public function blog(){
-		return view("seccion.blog");
+		return view("seccion.Blog.blog");
 	}
 	public function instalacion(){
-		return view("seccion.instalacion");
+		return view("seccion.Instalacion.instalacion");
 	}
 	public function contactos(){
-		return view("seccion.contacto");
+		return view("seccion.Contactos.contacto");
 	}
 }
