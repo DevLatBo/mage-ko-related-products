@@ -12,7 +12,14 @@ class Usuario extends Migration
      */
     public function up()
     {
-           
+        /*Schema::create('usuario',function(Blueprint $table){
+        $table->increments('id');
+        $table->string('nombre');
+        $table->string('correo');
+        $table->string('departamento');
+        $table->string('cargo');
+        $table->string('foto');
+        });*/     
     }
 
     /**

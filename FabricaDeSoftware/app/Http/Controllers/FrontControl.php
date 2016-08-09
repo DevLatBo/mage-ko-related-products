@@ -16,7 +16,7 @@ class FrontControl extends Controller
 	}
 	public function personal(){
 		$tipos=tipo::All();
-        $vista=view('seccion.Personal.lista',['tipos'=>$tipos]);
+        $vista=view('seccion.Personal.principal',['tipos'=>$tipos]);
         return $vista;
 	}
 	public function multimedia(){

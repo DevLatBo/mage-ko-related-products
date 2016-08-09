@@ -49,14 +49,19 @@ class UsuarioController extends Controller
         $foto=$request['path'];
         $nombre=$foto->getClientOriginalName();
         \Storage::disk('local')->put($nombre, \File::get($foto));
-        Usuario::create([
+        $usuario=Usuario::create([
                 'nombre'=>$request['nombre'],
                 'correo'=>$request['correo'],
                 'departamento'=>$request['departamento'],
                 'cargo'=>$request['cargo'],
                 'foto'=>$nombre,
-                'tipo_id'=>$request['tipo'],
             ]);
+        $id_usuario=Usuario::find($usuario->id);
+        $tipos=$request["tipo"];
+        foreach($tipos as $t){
+            $tipoSelec=tipo::find($t);
+            $id_usuario->tipos()->attach($tipoSelec);
+        }
         $vista=redirect('/usuario')->with('mensaje','Usuario Registrado');
         return $vista;
     }
