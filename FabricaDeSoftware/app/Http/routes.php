@@ -19,6 +19,11 @@ Route::get("blog","FrontControl@blog");
 Route::get("instalacion","FrontControl@instalacion");
 Route::get("contacto","FrontControl@contactos");
 
+Route::get("personalCientifico","FrontControl@verCientificos");
+Route::get("personalAdministrativo","FrontControl@verAdministrativos");
+Route::get("personalHonorario","FrontControl@verHonorarios");
+Route::get("personalSoporte","FrontControl@verSoportes");
+
 Route::resource('admin','AdmiController');
 
 Route::resource("usuario","UsuarioController");
