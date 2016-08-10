@@ -9,7 +9,7 @@ use Fabrica\Http\Requests;
 
 use \Fabrica\tipo;
 use \Fabrica\Usuario;
-
+use DB;
 use Redirect;
 use Session;
 use Input;
@@ -24,8 +24,14 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        $user=Usuario::All();
-        $vista=view('Usuario.listaUsuarios',['usuarios'=>$user]);
+        //$user=Usuario::All();
+        $datos=Usuario::join('personal','usuario.id','=','personal.usuario_id')
+            ->join('tipo_usuario','personal.tipo_id','=','tipo_usuario.id')
+            ->select('usuario.id','usuario.nombre','usuario.correo','usuario.departamento','usuario.cargo','usuario.foto',
+                'tipo_usuario.nombre_tipo')
+            ->get();
+
+        $vista=view('Usuario.listaUsuarios',['datos'=>$datos]);
         return $vista;
     }
 
