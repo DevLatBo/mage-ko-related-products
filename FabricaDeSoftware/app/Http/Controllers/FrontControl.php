@@ -34,54 +34,40 @@ class FrontControl extends Controller
 	}
 	public function verCientificos(){
 		$tipos=tipo::All();
-		$cientificos=Usuario::join('personal','usuario.id','=','personal.usuario_id')
-			->join('tipo','personal.tipo_id','=','tipo.id')
-			->select('usuario.nombre','usuario.correo',
-					'usuario.departamento','usuario.foto')
-			->where('tipo.nombre_tipo','=','Cientifico')
-			->groupBy('usuario.id')
-			->get();
+		$cientificos=$this->obtenerDatos("Cientifico");
 		$vista=view('seccion.Personal.cientifico',["cientificos"=>$cientificos,
 													"tipos"=>$tipos]);
 		return $vista;
 	}
 	public function verAdministrativos(){
 		$tipos=tipo::All();
-		$administrativos=Usuario::join('personal','usuario.id','=','personal.usuario_id')
-			->join('tipo','personal.tipo_id','=','tipo.id')
-			->select('usuario.nombre','usuario.correo',
-					'usuario.departamento','usuario.foto')
-			->where('tipo.nombre_tipo','=','Administrativo')
-			->groupBy('usuario.id')
-			->get();
+		$administrativos=$this->obtenerDatos("Administrativo");
 		$vista=view('seccion.Personal.administrativo',["administrativos"=>$administrativos,
 													"tipos"=>$tipos]);
 		return $vista;
 	}
 	public function verSoportes(){
 		$tipos=tipo::All();
-		$soportes=Usuario::join('personal','usuario.id','=','personal.usuario_id')
-			->join('tipo','personal.tipo_id','=','tipo.id')
-			->select('usuario.nombre','usuario.correo',
-					'usuario.departamento','usuario.foto')
-			->where('tipo.nombre_tipo','=','Soporte')
-			->groupBy('usuario.id')
-			->get();
+		$soportes=$this->obtenerDatos("Soporte");
 		$vista=view('seccion.Personal.soporte',["soportes"=>$soportes,
 													"tipos"=>$tipos]);
 		return $vista;
 	}
 	public function verHonorarios(){
 		$tipos=tipo::All();
-		$honorarios=Usuario::join('personal','usuario.id','=','personal.usuario_id')
-			->join('tipo','personal.tipo_id','=','tipo.id')
-			->select('usuario.nombre','usuario.correo',
-					'usuario.departamento','usuario.foto')
-			->where('tipo.nombre_tipo','=','Honorario')
-			->groupBy('usuario.id')
-			->get();
+		$honorarios=$this->obtenerDatos("Honorario");
 		$vista=view('seccion.Personal.honorario',["honorarios"=>$honorarios,
 													"tipos"=>$tipos]);
 		return $vista;
+	}
+	public function obtenerDatos($tipo){
+		$datos=Usuario::join('personal','usuario.id','=','personal.usuario_id')
+			->join('tipo','personal.tipo_id','=','tipo.id')
+			->select('usuario.nombre','usuario.correo',
+					'usuario.departamento','usuario.foto')
+			->where('tipo.nombre_tipo','=',$tipo)
+			->groupBy('usuario.id')
+			->get();
+		return $datos;
 	}
 }
