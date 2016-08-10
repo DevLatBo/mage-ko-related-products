@@ -26,9 +26,9 @@ class UsuarioController extends Controller
     {
         //$user=Usuario::All();
         $datos=Usuario::join('personal','usuario.id','=','personal.usuario_id')
-            ->join('tipo_usuario','personal.tipo_id','=','tipo_usuario.id')
+            ->join('tipo','personal.tipo_id','=','tipo.id')
             ->select('usuario.id','usuario.nombre','usuario.correo','usuario.departamento','usuario.cargo','usuario.foto',
-                'tipo_usuario.nombre_tipo')
+                'tipo.nombre_tipo')
             ->get();
 
         $vista=view('Usuario.listaUsuarios',['datos'=>$datos]);
@@ -93,7 +93,6 @@ class UsuarioController extends Controller
     {
         $usuario=Usuario::find($id);
         $tipos=tipo::All();
-        //$idTipo=tipo::where('id',$id)->get();
         $idTipo=$usuario->tipo_id;
         $modo='edicion';
         $vista=view('Usuario.edicion',['usuario'=>$usuario,

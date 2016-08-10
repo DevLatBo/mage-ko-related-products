@@ -30,7 +30,7 @@
                         <td>{{$dato->departamento}}</td>
                         <td>{{$dato->cargo}}</td>
                         <td>{{$dato->nombre_tipo}}</td>
-                        <td><img src="fotoUsuario/{{$dato->foto}}" width=50%></td>
+                        <td><img src="fotoUsuario/{{$dato->foto}}" width=100%></td>
                         <td align="center">{!! link_to_route('usuario.edit', $title='', $parameters = $dato->id, $attributes = ['class'=>'glyphicon glyphicon-pencil']) !!}</td>
                         <td align="center">{!! link_to_route('eliminar', $title='', $parameters = $dato->id, $attributes = ['class'=>'glyphicon glyphicon-remove']) !!}</td>
                     </tr>

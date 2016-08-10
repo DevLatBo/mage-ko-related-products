@@ -29,6 +29,6 @@ class Tipo extends Migration
      */
     public function down()
     {
-        //
+        //Schema::rename('tipo_usuario','tipo');
     }
 }
