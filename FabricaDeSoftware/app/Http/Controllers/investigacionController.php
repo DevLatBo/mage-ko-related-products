@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Fabrica\Investigacion;
 use Fabrica\Http\Requests\crearInvestigacionRequest;
 use Fabrica\Http\Requests;
-
+use Fabrica\Area;
 class investigacionController extends Controller
 {
     /**
@@ -92,7 +92,8 @@ class investigacionController extends Controller
         //
     }
     public function verFormulario(){
-        $vista=view('Investigacion.nuevainvestigacion');
+        $areas=Area::select('id','nombre')->get();
+        $vista=view('Investigacion.nuevainvestigacion',["areas"=>$areas]);
         return $vista;
     }
 }

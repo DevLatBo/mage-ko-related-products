@@ -36,5 +36,6 @@ class Multimedia extends Migration
                 ->references('id')->on('galeria')
                 ->onDelete('cascade');
         });*/
+        //Schema::drop('multimedia');
     }
 }

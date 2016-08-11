@@ -14,9 +14,17 @@
                     </div>
                 </div>
                 <div class="control-group">
-                    {{ Form::label("Descripcion") }}
+                    {{ Form::label("Descripcion: ") }}
                     <div class="controls">
                     	{!! Form::textarea('descripcion',null,["class"=>"form-control","placeholder"=>"Descripcion...","rows"=>5]) !!}
+                    </div>
+                </div>
+                <div class="control-group">
+                    {{Form::label("Areas: ")}}
+                    <div class="controls">
+                        @foreach($areas as $area)
+                            {{ Form::radio('inv',$area->id,false) }}{{$area->nombre }}<br>
+                        @endforeach
                     </div>
                 </div>
                 <br>
