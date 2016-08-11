@@ -4,18 +4,19 @@
 	<div class="container well col-lg-12">
 		<table class="table table-striped" id="cssTable">
 			<thead>
-				<th class="col-lg-3">Nombre</th>
-				<th class="col-lg-3">Correo</th>
-				<th class="col-lg-3">Departamento</th>
-				<th class="col-lg-3">Foto</th>
+				<th colspan=4>CIENTIFICO</th>
 			</thead>
 			<tbody>
 				@foreach($cientificos as $cientifico)
 					<tr>
-						<td>{{$cientifico->nombre}}</td>
-						<td>{{$cientifico->correo}}</td>
-						<td>{{$cientifico->departamento}}</td>
-						<td><img src="fotoUsuario/{{$cientifico->foto}}" width=50%></td>				
+						<td class="col-lg-3" align="center"><img src="fotoUsuario/{{$cientifico->foto}}" width=60%></td>
+						<td class="col-lg-6">
+							<strong>Nombre: </strong>{{$cientifico->nombre}}<br>
+							<strong>Contacto: </strong>{{$cientifico->correo}}<br>
+							{{$cientifico->departamento}}<br>
+							<strong>Departamento: </strong>{{$cientifico->departamento}}
+						</td>
+						<td class="col-lg-3"><strong>CARGO:</strong><br>{{$cientifico->cargo}}</td>
 					</tr>
 				@endforeach
 			</tbody>

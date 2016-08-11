@@ -64,7 +64,7 @@ class FrontControl extends Controller
 		$datos=Usuario::join('personal','usuario.id','=','personal.usuario_id')
 			->join('tipo','personal.tipo_id','=','tipo.id')
 			->select('usuario.nombre','usuario.correo',
-					'usuario.departamento','usuario.foto')
+					'usuario.departamento','usuario.cargo','usuario.foto')
 			->where('tipo.nombre_tipo','=',$tipo)
 			->groupBy('usuario.id')
 			->get();
