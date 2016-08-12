@@ -9,14 +9,11 @@
 			<tbody>
 				@foreach($soportes as $sop)
 					<tr>
-						<td class="col-lg-3" align="center"><img src="fotoUsuario/{{$sop->foto}}" width=60%></td>
-						<td class="col-lg-6">
-							<strong>Nombre: </strong>{{$sop->nombre}}<br>
-							<strong>Contacto: </strong>{{$sop->correo}}<br>
-							{{$sop->departamento}}<br>
-							<strong>Departamento: </strong>{{$sop->departamento}}
+						<td class="col-lg-8">
+							<strong>Nombre: </strong>{{$sop->NOMBRE}}<br>
+							<strong>Contacto: </strong>{{$sop->CORREO}}<br>
 						</td>
-						<td class="col-lg-3"><strong>CARGO:</strong><br>{{$sop->cargo}}</td>
+						<td class="col-lg-4"><strong>AREA DE INVESTIGACION:</strong><br>{{$sop->AREA_DE_INVESTIGACION}}</td>
 					</tr>
 				@endforeach
 			</tbody>

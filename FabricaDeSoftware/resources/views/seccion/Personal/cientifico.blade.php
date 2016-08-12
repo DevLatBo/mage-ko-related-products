@@ -11,12 +11,11 @@
 					<tr>
 						<td class="col-lg-3" align="center"><img src="fotoUsuario/{{$cientifico->foto}}" width=60%></td>
 						<td class="col-lg-6">
-							<strong>Nombre: </strong>{{$cientifico->nombre}}<br>
-							<strong>Contacto: </strong>{{$cientifico->correo}}<br>
-							{{$cientifico->departamento}}<br>
-							<strong>Departamento: </strong>{{$cientifico->departamento}}
+							<strong>Nombre: </strong>{{$cientifico->NOMBRE}}<br>
+							<strong>Contacto: </strong>{{$cientifico->CORREO}}<br>
+							<strong>Departamento: </strong>{{$cientifico->DEPARTAMENTO}}
 						</td>
-						<td class="col-lg-3"><strong>CARGO:</strong><br>{{$cientifico->cargo}}</td>
+						<td class="col-lg-3"><strong>AREA DE INVESTIGACION:</strong><br>{{$cientifico->AREA_DE_INVESTIGACION}}</td>
 					</tr>
 				@endforeach
 			</tbody>

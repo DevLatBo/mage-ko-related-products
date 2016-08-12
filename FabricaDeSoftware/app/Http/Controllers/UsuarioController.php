@@ -68,6 +68,11 @@ class UsuarioController extends Controller
             $tipoSelec=tipo::find($t);
             $id_usuario->tipos()->attach($tipoSelec);
         }
+        $area=$request["area"];
+        foreach($area as $a){
+            $areaSelec=Area::find($a);
+            $id_usuario->areas()->attach($areaSelec);
+        }
         $vista=redirect('/usuario')->with('mensaje','Usuario Registrado');
         return $vista;
     }

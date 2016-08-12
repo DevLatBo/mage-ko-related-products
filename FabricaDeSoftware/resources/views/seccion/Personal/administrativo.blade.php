@@ -11,12 +11,11 @@
 					<tr>
 						<td class="col-lg-3" align="center"><img src="fotoUsuario/{{$adm->foto}}" width=60%></td>
 						<td class="col-lg-6">
-							<strong>Nombre: </strong>{{$adm->nombre}}<br>
-							<strong>Contacto: </strong>{{$adm->correo}}<br>
-							{{$adm->departamento}}<br>
-							<strong>Departamento: </strong>{{$adm->departamento}}
+							<strong>Nombre: </strong>{{$adm->NOMBRE}}<br>
+							<strong>Contacto: </strong>{{$adm->CORREO}}<br>
+							<strong>Departamento: </strong>{{$adm->DEPARTAMENTO}}
 						</td>
-						<td class="col-lg-3"><strong>CARGO:</strong><br>{{$adm->cargo}}</td>
+						<td class="col-lg-3"><strong>AREA DE INVESTIGACION:</strong><br>{{$adm->AREA_DE_INVESTIGACION}}</td>
 					</tr>
 				@endforeach
 			</tbody>
