@@ -16,13 +16,6 @@ class Investigacion extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->string('descripcion');
-            $table->integer('area_id')->unsigned();
-        });
-        Schema::table('investigacion',function(Blueprint $table){
-            $table->foreign('area_id')
-                ->references('id')
-                ->on('area')
-                ->onDelete('cascade');
         });*/
     }
 

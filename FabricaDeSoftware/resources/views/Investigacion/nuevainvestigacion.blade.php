@@ -23,7 +23,7 @@
                     {{Form::label("Areas: ")}}
                     <div class="controls">
                         @foreach($areas as $area)
-                            {{ Form::radio('inv',$area->id,false) }}{{$area->nombre }}<br>
+                            {{ Form::checkbox('area[]',$area->id,false) }}{{$area->nombre }}<br>
                         @endforeach
                     </div>
                 </div>

@@ -24,7 +24,7 @@ class crearInvestigacionRequest extends Request
     public function rules()
     {
         return [
-            'nombre'=>'required|max:25|unique:Investigacion',
+            'nombre'=>'required|max:25|unique:investigacion',
             'descripcion'=>'required|max:200',
         ];
     }

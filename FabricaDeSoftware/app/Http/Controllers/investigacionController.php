@@ -39,10 +39,16 @@ class investigacionController extends Controller
      */
     public function store(crearInvestigacionRequest $request)
     {
-        Investigacion::create([
+        $inv=Investigacion::create([
             'nombre'=>$request["nombre"],
             'descripcion'=>$request["descripcion"],
             ]);
+        $id_inv=Investigacion::find($inv->id);
+        $area=$request["area"];
+        foreach ($area as $a) {
+            $areaSelec=Area::find($a);
+            $id_inv->areas()->attach($areaSelec);
+        }
         $vista=redirect("/investigacion")->with('mensaje','Investigacion Registrada');
         return $vista;
     }

@@ -6,10 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Investigacion extends Model
 {
-    protected $table="Investigacion";
-
+    protected $table="investigacion";
     public $timestamps=false;
+    protected $fillable=["nombre","descripcion"];
 
-    protected $fillable=["nombre","descripcion","url"];
+    public function areas(){
+    	return $this->belongsToMany("Fabrica\Area","desarrollo","investigacion_id","area_id");
+    }
 
 }
