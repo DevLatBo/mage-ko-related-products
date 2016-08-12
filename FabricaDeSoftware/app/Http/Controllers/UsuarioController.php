@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Fabrica\Http\Requests\crearUsuarioRequest;
 use Fabrica\Http\Requests\editarUsuarioRequest;
 use Fabrica\Http\Requests;
-
+use Fabrica\Area;
 use \Fabrica\tipo;
 use \Fabrica\Usuario;
 use DB;
@@ -138,8 +138,10 @@ class UsuarioController extends Controller
     }
     public function verFormulario(){
         $tipos=tipo::All();
+        $areas=Area::all();
         $modo="registrar";
         $vista=view('Usuario.crear',['tipos'=>$tipos,
+                                        'areas'=>$areas,
                                         'modo'=>$modo]);
         return $vista;
     }

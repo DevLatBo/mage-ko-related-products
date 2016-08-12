@@ -43,6 +43,14 @@
 		</div>
 	</div>
 	<div class="control-group">
+		{{ Form::label("Areas: ") }}
+		<div class="controls">
+			@foreach($areas as $area)
+				{{ Form::checkbox('area[]',$area->id,false) }}{{$area->nombre}}<br>
+			@endforeach
+		</div>
+	</div>
+	<div class="control-group">
 		{!! Form::label('Foto: ') !!}
 		<div class="controls">
 			{{ Form::file('path') }}

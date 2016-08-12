@@ -14,4 +14,7 @@ class Usuario extends Model
     public function tipos(){
     	return $this->belongsToMany('Fabrica\tipo','personal','usuario_id','tipo_id');
     }
+    public function areas(){
+    	return $this->belongsToMany('Fabrica\Area','trabajo','usuario_id','area_id');
+    }
 }

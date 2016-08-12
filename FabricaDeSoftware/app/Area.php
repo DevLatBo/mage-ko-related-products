@@ -13,4 +13,7 @@ class Area extends Model
     public function investigaciones(){
     	return $this->belongsToMany("Fabrica\Investigacion","desarrollo","investigacion_id","area_id");
     }
+    public function usuarios(){
+    	return $this->belongsToMany('Fabrica\Usuario','trabajo','usuario_id','area_id');
+    }
 }
