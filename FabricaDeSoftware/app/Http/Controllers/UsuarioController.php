@@ -9,6 +9,7 @@ use Fabrica\Http\Requests;
 use Fabrica\Area;
 use \Fabrica\tipo;
 use \Fabrica\Usuario;
+use \Fabrica\Trabajo;
 use DB;
 use Redirect;
 use Session;
@@ -97,13 +98,21 @@ class UsuarioController extends Controller
     public function edit($id)
     {
         $usuario=Usuario::find($id);
-        $tipos=tipo::All();
-        $idTipo=$usuario->tipo_id;
+        $tipos=tipo::get();
+        $areas=Area::get();
+        $areas_seleccionadas=DB::table('trabajo')
+            ->where('trabajo.usuario_id','=',$id)
+            ->lists('area_id');
+        $tipos_seleccionados=DB::table('personal')
+            ->where('personal.usuario_id','=',$id)
+            ->lists('tipo_id');
         $modo='edicion';
         $vista=view('Usuario.edicion',['usuario'=>$usuario,
                                         'tipos'=>$tipos,
-                                        'modo'=>$modo,
-                                        'idTipo'=>$idTipo]);
+                                        'areas'=>$areas,
+                                        'areas_seleccionadas'=>$areas_seleccionadas,
+                                        'tipos_seleccionados'=>$tipos_seleccionados,
+                                        'modo'=>$modo]);
         return $vista;
     }
 

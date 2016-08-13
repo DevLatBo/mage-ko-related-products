@@ -33,21 +33,37 @@
 	<div class="control-group">
 		{!! Form::label("Personal: ") !!}
 		<div class="controls">
-			@foreach($tipos as $tipo)
-				@if ($modo=="registrar")
+			@if ($modo=="registrar")
+				@foreach($tipos as $tipo)
 					{{ Form::checkbox('tipo[]',$tipo->id,false) }}{{$tipo->nombre_tipo }}<br>
-				@else
-					{{ Form::checkbox('tipo[]',$tipo->id,($tipo->id == $idTipo)?1:0) }}{{$tipo->nombre_tipo}}<br>
-				@endif
-			@endforeach
+				@endforeach
+			@else
+				@foreach($tipos as $key => $value)
+					<?php
+						$checked=false;
+						if(in_array($value->id, $tipos_seleccionados)) $checked=true;
+					?>
+					{{ Form::checkbox('tipo[]',$value->id,$checked) }} {{$value->nombre_tipo}}<br>
+				@endforeach
+			@endif
 		</div>
 	</div>
 	<div class="control-group">
 		{{ Form::label("Areas: ") }}
 		<div class="controls">
-			@foreach($areas as $area)
-				{{ Form::checkbox('area[]',$area->id,false) }}{{$area->nombre}}<br>
-			@endforeach
+			@if ($modo=="registrar")
+				@foreach($areas as $area)
+					{{ Form::checkbox('area[]',$area->id,false) }}{{$area->nombre}}<br>
+				@endforeach
+			@else
+				@foreach($areas as $key => $value)
+					<?php
+						$checked=false;
+						 if(in_array($value->id, $areas_seleccionadas)) $checked = true;
+					?>
+					{{ Form::checkbox('area[]',$value->id,$checked) }} {{$value->nombre}}<br>
+				@endforeach
+			@endif
 		</div>
 	</div>
 	<div class="control-group">
