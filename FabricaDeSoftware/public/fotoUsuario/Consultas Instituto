@@ -1,0 +1,28 @@
+INSERT INTO instituto (nombre,direccion,correo) VALUES ('America Cristo Rey','Av. Heroinas #456','amer@gmail.com');
+
+insert into sede (codsede,codinstituto,nombre) values (1,1,'Sede Cochabamba');
+insert into sede (codsede,codinstituto,nombre) values (2,1,'Sede La Paz');
+insert into sede (codsede,codinstituto,nombre) values (3,1,'Sede Santa Cruz');
+
+insert into semestre (nombre,descripcion,anio)  values ('Primer Semestre','Inicio de carrera','2010');
+insert into semestre (nombre,descripcion,anio)  values ('Segundo Semestre','Refuerzo inicial','2010');
+insert into semestre (nombre,descripcion,anio)  values ('Tercer Semestre','Aplicacion de lo aprendido','2010');
+insert into semestre (nombre,descripcion,anio) values ('Cuarto Semestre', 'Introductorio a Bases de datos','2010');
+insert into semestre (nombre,descripcion,anio) values ('Quinto semestre','Bases de datos avanzadas','2010');
+
+insert into curso (codsemestre,codsede,nombre,descripcion,limite) values (1,1,'1A','Primer nivel',60);
+insert into curso (codsemestre,codsede,nombre,descripcion,limite) values (2,1,'1B','Primer nivel',60);
+insert into curso (codsemestre,codsede,nombre,descripcion,limite) values (3,1,'1C','Primer nivel',60);
+insert into curso (codsemestre,codsede,nombre,descripcion,limite) values (1,1,'2A','Segundo nivel',60);
+insert into curso (codsemestre,codsede,nombre,descripcion,limite) values (2,1,'2B','Segundo nivel',60);
+insert into curso (codsemestre,codsede,nombre,descripcion,limite) values (3,1,'2C','Segundo nivel',60);
+insert into curso (codsemestre,codsede,nombre,descripcion,limite) values (1,1,'3A','Tercer nivel',60);
+insert into curso (codsemestre,codsede,nombre,descripcion,limite) values (2,1,'3B','Tercer nivel',60);
+insert into curso (codsemestre,codsede,nombre,descripcion,limite) values (3,1,'3C','Tercer nivel',60);
+insert into curso (codsemestre,codsede,nombre,descripcion,limite) values (4,1,'4A','Cuarto nivel',60);
+insert into curso (codsemestre,codsede,nombre,descripcion,limite) values (4,1,'4B','Cuarto nivel',60);
+
+insert into director (codinstituto,nombre,apellido,ci) VALUES (1,'Maria','Remedios Sanchez',7284828);
+insert into loggin (coddirector,nick,contrasenia,identificador) VALUES (1,'marirem','123',1);
+
+

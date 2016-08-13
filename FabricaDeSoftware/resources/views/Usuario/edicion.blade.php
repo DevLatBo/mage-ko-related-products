@@ -5,7 +5,7 @@
 		<div class="row">
 			@include('Alerta.alertaFormulario')
 			<div class="col-lg-8 col-lg-offset-2 form-horizontal">
-				{!! Form::model($usuario,['route'=>['usuario.update',$usuario->id],'method'=>'PUT']) !!}
+				{{ Form::model($usuario,['route'=>['usuario.update',$usuario->id],'files'=> true,'method'=>'PUT']) }}
 				@include('Usuario.formulario')
 				<div class="control-group">
 					<div class="controls">

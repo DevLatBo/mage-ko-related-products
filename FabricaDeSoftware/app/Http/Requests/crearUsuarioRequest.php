@@ -29,7 +29,9 @@ class crearUsuarioRequest extends Request
             'correo'=>'required|unique:usuario|email|max:50',
             'departamento'=>'required|in:Sistemas,Informatica,Electronica',
             'cargo'=>'required|in:Administracion,Desarrollo,Investigacion',
-            'path'=>'required',
+            'tipo'=>'required',
+            'area'=>'required',
+            'path'=>'required|mimes:jpeg,jpg,png',
         ];
     }
 }

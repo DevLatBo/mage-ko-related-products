@@ -69,7 +69,7 @@
 	<div class="control-group">
 		{!! Form::label('Foto: ') !!}
 		<div class="controls">
-			{{ Form::file('path') }}
+			{{ Form::file('path',null,array('class'=>'form-control')) }}
 		</div>
 	</div>
 	<br>

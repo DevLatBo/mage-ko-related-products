@@ -28,6 +28,9 @@ class editarUsuarioRequest extends Request
             'correo'=>'required|unique:usuario|min:9|max:50',
             'departamento'=>'required|in:Sistemas,Informatica,Electronica',
             'cargo'=>'required|in:Administracion,Desarrollo,Investigacion',
+            'tipo'=>'required',
+            'area'=>'required',
+            'path'=>'required|mimes:jpg,jpeg,png',
         ];
     }
 }
