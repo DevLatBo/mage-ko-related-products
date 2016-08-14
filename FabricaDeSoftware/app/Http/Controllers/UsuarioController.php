@@ -106,7 +106,6 @@ class UsuarioController extends Controller
         $tipos_seleccionados=DB::table('personal')
             ->where('personal.usuario_id','=',$id)
             ->lists('tipo_id');
-        echo $usuario;
         $modo='edicion';
         $vista=view('Usuario.edicion',['usuario'=>$usuario,
                                         'tipos'=>$tipos,

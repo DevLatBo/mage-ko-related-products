@@ -7,6 +7,8 @@ use Fabrica\tipo;
 use Fabrica\Http\Requests;
 use Fabrica\Usuario;
 use Fabrica\Area;
+use Fabrica\Desarrollo;
+use Fabrica\Investigacion;
 
 class FrontControl extends Controller
 {
@@ -14,7 +16,10 @@ class FrontControl extends Controller
     	return view("seccion.index");
     }
 	public function investigacion(){
-		return view("seccion.Investigacion.investigaciones");
+		$investigaciones=Investigacion::select('nombre')
+			->get();
+		$vista=view("seccion.Investigacion.investigaciones",['investigaciones'=>$investigaciones]);
+		return $vista;
 	}
 	public function personal(){
 		$tipos=tipo::All();

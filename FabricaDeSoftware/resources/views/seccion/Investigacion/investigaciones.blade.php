@@ -13,7 +13,7 @@
                   <h4 class="panel-title">
                     <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
                       <span class="glyphicon">
-                      </span>Alerta temprana
+                      </span>Alerta Temprana
                     </a>
                   </h4>
             </div>
