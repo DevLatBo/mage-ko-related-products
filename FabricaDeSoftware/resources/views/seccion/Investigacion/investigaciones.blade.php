@@ -9,15 +9,17 @@
         </div>
         <div class="panel-group" id="accordion">
           <div class="panel panel-default">
+          <?php $i=1;?>
+          @foreach($investigaciones as $investigacion)
             <div class="panel-heading">
                   <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                    <a data-toggle="collapse" data-target="#collapsible-<?php echo $i?>" href="#collapseOne">
                       <span class="glyphicon">
-                      </span>Alerta Temprana
+                      </span>{{$investigacion->nombre}}
                     </a>
                   </h4>
             </div>
-            <div id="collapseOne" class="panel-collapse collapse in">
+            <div id="collapsible-<?php echo $i ?>" class="collapse">
               <table class="table">
                 <tr>
                     <td><span class="glyphicon glyphicon-menu-right" >
@@ -46,6 +48,8 @@
                 </tr>
               </table>
             </div><!--fin collapseOne!-->
+            <?php $i++ ?>
+            @endforeach
           </div><!--panel defaul antes grupo!-->
         </div><!--fin panel-gruop!-->
       </div><!--fin panel primary-->

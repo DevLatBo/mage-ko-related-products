@@ -14,7 +14,7 @@
                     <tr>
                         <th class="col-lg-4">Nombre</th>
                         <th class="col-lg-1">Correo</th>
-                        <th class="col-lg-1">Departamento</th>
+                        <th class="col-lg-1">Carrera</th>
                         <th class="col-lg-1">Cargo</th>
                         <th class="col-lg-1">Personal</th>
                         <th class="col-lg-2">Foto</th>
@@ -27,7 +27,7 @@
                     <tr>
                         <td>{{$dato->nombre}}</td>
                         <td>{{$dato->correo}}</td>
-                        <td>{{$dato->departamento}}</td>
+                        <td>{{$dato->carrera}}</td>
                         <td>{{$dato->cargo}}</td>
                         <td>{{$dato->nombre_tipo}}</td>
                         <td><img src="fotoUsuario/{{$dato->foto}}" width=100%></td>

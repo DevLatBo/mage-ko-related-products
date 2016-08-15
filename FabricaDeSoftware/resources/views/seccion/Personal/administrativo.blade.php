@@ -13,7 +13,7 @@
 						<td class="col-lg-6">
 							<strong>Nombre: </strong>{{$adm->NOMBRE}}<br>
 							<strong>Contacto: </strong>{{$adm->CORREO}}<br>
-							<strong>Departamento: </strong>{{$adm->DEPARTAMENTO}}
+							<strong>Carrera: </strong>{{$adm->CARRERA}}
 						</td>
 						<td class="col-lg-3"><strong>AREA DE INVESTIGACION:</strong><br>{{$adm->AREA_DE_INVESTIGACION}}</td>
 					</tr>

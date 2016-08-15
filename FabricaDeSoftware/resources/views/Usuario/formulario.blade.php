@@ -12,12 +12,17 @@
 	</div>
 </div>
 <div class="control-group">
-		{!! Form::label("Departamento: ") !!}
+		{!! Form::label("Carrera: ") !!}
 	<div class="controls">
-		{!! Form::select('departamento', ['Seleccionar'=>'Seleccionar',
+		{!! Form::select('carrera', ['Seleccionar'=>'Seleccionar',
 											'Sistemas'=>'Ingenieria de Sistemas',
 											'Informatica'=>'Ingenieria de Informatica',
-											'Electronica'=>'Ingenieria Electronica'], null, ["class"=>"form-control"]) !!}
+											'Electronica'=>'Ingenieria Electronica',
+											'Electrica'=>'Ingenieria Electrica',
+											'Electromecanica'=>'Ingenieria Electromecanica',
+											'Matematicas'=>'Licenciatura en Matematicas',
+											'Fisica'=>'Licenciatura en Fisica',
+											], null, ["class"=>"form-control"]) !!}
 	</div>
 </div>
 	<div class="control-group">

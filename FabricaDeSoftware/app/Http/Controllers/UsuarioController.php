@@ -28,7 +28,7 @@ class UsuarioController extends Controller
         //$user=Usuario::All();
         $datos=Usuario::join('personal','usuario.id','=','personal.usuario_id')
             ->join('tipo','personal.tipo_id','=','tipo.id')
-            ->select('usuario.id','usuario.nombre','usuario.correo','usuario.departamento','usuario.cargo','usuario.foto',
+            ->select('usuario.id','usuario.nombre','usuario.correo','usuario.carrera','usuario.cargo','usuario.foto',
                 'tipo.nombre_tipo')
             ->get();
 
@@ -59,7 +59,7 @@ class UsuarioController extends Controller
         $usuario=Usuario::create([
                 'nombre'=>$request['nombre'],
                 'correo'=>$request['correo'],
-                'departamento'=>$request['departamento'],
+                'carrera'=>$request['carrera'],
                 'cargo'=>$request['cargo'],
                 'foto'=>$nombre,
             ]);

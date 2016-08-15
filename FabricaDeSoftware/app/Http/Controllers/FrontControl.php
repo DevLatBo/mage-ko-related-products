@@ -45,7 +45,7 @@ class FrontControl extends Controller
 			->join('personal','usuario.id','=','personal.usuario_id')
 			->join('tipo','personal.tipo_id','=','tipo.id')
 			->select('usuario.nombre as NOMBRE','usuario.correo as CORREO',
-				'usuario.departamento as DEPARTAMENTO','usuario.foto',
+				'usuario.carrera as CARRERA','usuario.foto',
 				'area.nombre as AREA_DE_INVESTIGACION')
 			->where('tipo.nombre_tipo','=','Cientifico')
 			->get();
@@ -60,7 +60,7 @@ class FrontControl extends Controller
 			->join('personal','usuario.id','=','personal.usuario_id')
 			->join('tipo','personal.tipo_id','=','tipo.id')
 			->select('usuario.nombre as NOMBRE','usuario.correo as CORREO',
-				'usuario.departamento as DEPARTAMENTO','usuario.foto',
+				'usuario.carrera as CARRERA','usuario.foto',
 				'area.nombre as AREA_DE_INVESTIGACION')
 			->where('tipo.nombre_tipo','=','Administrativo')
 			->get();
