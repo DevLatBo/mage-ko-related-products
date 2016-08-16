@@ -4,17 +4,17 @@
 	<div class="container well col-lg-12">
 		<table class="table table-striped" id="cssTable">
 			<thead>
-				<th colspan=4>HONORARIO</th>
+				<th colspan=2>HONORARIO</th>
+				<th>AREAS DE INVESTIGACION</th>
 			</thead>
 			<tbody>
 				@foreach($honorarios as $hon)
 					<tr>
-						<td class="col-lg-8">
-							<strong>Nombre: </strong>{{$hon->NOMBRE}}<br>
-							<strong>Contacto: </strong>{{$hon->CORREO}}<br>
-							
+						<td class="col-lg-6" colspan=2>
+							{{$hon->NOMBRE}}<br>
+							{{$hon->CORREO}}<br>
 						</td>
-						<td class="col-lg-4"><strong>AREA DE INVESTIGACION:</strong><br>{{$hon->AREA_DE_INVESTIGACION}}</td>
+						<td class="col-lg-6">{{$hon->AREAS}}</td>
 					</tr>
 				@endforeach
 			</tbody>

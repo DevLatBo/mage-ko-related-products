@@ -25,13 +25,11 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        //$user=Usuario::All();
         $datos=Usuario::join('personal','usuario.id','=','personal.usuario_id')
             ->join('tipo','personal.tipo_id','=','tipo.id')
             ->select('usuario.id','usuario.nombre','usuario.correo','usuario.carrera','usuario.cargo','usuario.foto',
                 'tipo.nombre_tipo')
             ->get();
-
         $vista=view('Usuario.listaUsuarios',['datos'=>$datos]);
         return $vista;
     }

@@ -9,6 +9,7 @@ use Fabrica\Usuario;
 use Fabrica\Area;
 use Fabrica\Desarrollo;
 use Fabrica\Investigacion;
+use DB;
 
 class FrontControl extends Controller
 {
@@ -19,7 +20,7 @@ class FrontControl extends Controller
 		$investigaciones=Investigacion::select('nombre')
 			->get();
 		$vista=view("seccion.Investigacion.investigaciones",['investigaciones'=>$investigaciones]);
-		return $vista;
+		return $vista;	
 	}
 	public function personal(){
 		$tipos=tipo::All();
@@ -40,29 +41,29 @@ class FrontControl extends Controller
 	}
 	public function verCientificos(){
 		$tipos=tipo::All();
-		$cientificos=Area::join('trabajo','area.id','=','trabajo.area_id')
-			->join('usuario','usuario.id','=','trabajo.usuario_id')
-			->join('personal','usuario.id','=','personal.usuario_id')
-			->join('tipo','personal.tipo_id','=','tipo.id')
-			->select('usuario.nombre as NOMBRE','usuario.correo as CORREO',
-				'usuario.carrera as CARRERA','usuario.foto',
-				'area.nombre as AREA_DE_INVESTIGACION')
-			->where('tipo.nombre_tipo','=','Cientifico')
-			->get();
+		$cientificos=Usuario::join('trabajo','usuario.id','=','trabajo.usuario_id')
+		->join('area','area.id','=','trabajo.area_id')
+		->join('personal','usuario.id','=','personal.usuario_id')
+		->join('tipo','tipo.id','=','personal.tipo_id')
+		->select('usuario.nombre as NOMBRE','usuario.carrera as CARRERA', 			'usuario.correo as CORREO', 'usuario.foto as FOTO',
+				DB::raw('GROUP_CONCAT(area.nombre SEPARATOR ", ") AS "AREAS" ') )
+		->where('tipo.nombre_tipo','=','Cientifico')
+		->groupBy('usuario.id')
+		->get();
 		$vista=view('seccion.Personal.cientifico',["cientificos"=>$cientificos,
 													"tipos"=>$tipos]);
 		return $vista;
 	}
 	public function verAdministrativos(){
 		$tipos=tipo::All();
-		$administrativos=Area::join('trabajo','area.id','=','trabajo.area_id')
-			->join('usuario','usuario.id','=','trabajo.usuario_id')
+		$administrativos=Usuario::join('trabajo','usuario.id','=','trabajo.usuario_id')
+			->join('area','area.id','=','trabajo.area_id')
 			->join('personal','usuario.id','=','personal.usuario_id')
-			->join('tipo','personal.tipo_id','=','tipo.id')
-			->select('usuario.nombre as NOMBRE','usuario.correo as CORREO',
-				'usuario.carrera as CARRERA','usuario.foto',
-				'area.nombre as AREA_DE_INVESTIGACION')
+			->join('tipo','tipo.id','=','personal.tipo_id')
+			->select('usuario.nombre as NOMBRE','usuario.carrera as CARRERA', 			'usuario.correo as CORREO', 'usuario.foto as FOTO',
+					DB::raw('GROUP_CONCAT(area.nombre SEPARATOR ", ") AS "AREAS" ') )
 			->where('tipo.nombre_tipo','=','Administrativo')
+			->groupBy('usuario.id')
 			->get();
 		$vista=view('seccion.Personal.administrativo',["administrativos"=>$administrativos,
 													"tipos"=>$tipos]);
@@ -70,12 +71,14 @@ class FrontControl extends Controller
 	}
 	public function verSoportes(){
 		$tipos=tipo::All();
-		$soportes=Area::join('trabajo','area.id','=','trabajo.area_id')
-			->join('usuario','usuario.id','=','trabajo.usuario_id')
+		$soportes=Usuario::join('trabajo','usuario.id','=','trabajo.usuario_id')
+			->join('area','area.id','=','trabajo.area_id')
 			->join('personal','usuario.id','=','personal.usuario_id')
-			->join('tipo','personal.tipo_id','=','tipo.id')
-			->select('usuario.nombre as NOMBRE','usuario.correo as CORREO','area.nombre as AREA_DE_INVESTIGACION')
+			->join('tipo','tipo.id','=','personal.tipo_id')
+			->select('usuario.nombre as NOMBRE','usuario.carrera as CARRERA', 			'usuario.correo as CORREO', 'usuario.foto as FOTO',
+					DB::raw('GROUP_CONCAT(area.nombre SEPARATOR ", ") AS "AREAS" ') )
 			->where('tipo.nombre_tipo','=','Soporte')
+			->groupBy('usuario.id')
 			->get();
 		$vista=view('seccion.Personal.soporte',["soportes"=>$soportes,
 													"tipos"=>$tipos]);
@@ -83,12 +86,14 @@ class FrontControl extends Controller
 	}
 	public function verHonorarios(){
 		$tipos=tipo::All();
-		$honorarios=Area::join('trabajo','area.id','=','trabajo.area_id')
-			->join('usuario','usuario.id','=','trabajo.usuario_id')
+		$honorarios=Usuario::join('trabajo','usuario.id','=','trabajo.usuario_id')
+			->join('area','area.id','=','trabajo.area_id')
 			->join('personal','usuario.id','=','personal.usuario_id')
-			->join('tipo','personal.tipo_id','=','tipo.id')
-			->select('usuario.nombre as NOMBRE','usuario.correo as CORREO','area.nombre as AREA_DE_INVESTIGACION')
+			->join('tipo','tipo.id','=','personal.tipo_id')
+			->select('usuario.nombre as NOMBRE','usuario.carrera as CARRERA', 			'usuario.correo as CORREO', 'usuario.foto as FOTO',
+					DB::raw('GROUP_CONCAT(area.nombre SEPARATOR ", ") AS "AREAS" ') )
 			->where('tipo.nombre_tipo','=','Honorario')
+			->groupBy('usuario.id')
 			->get();
 
 		$vista=view('seccion.Personal.honorario',["honorarios"=>$honorarios,
