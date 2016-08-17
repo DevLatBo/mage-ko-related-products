@@ -23,22 +23,23 @@
         </div>
       </div>
       <footer class="row panel">
-         <div class="row" align="center">
-             <br>
-             <div class="col-lg-2 col-lg-offset-1"><a href="#"><img src="img/fcyt_logo_lite.png" width="100" height="100"></a></div>
-             <div class="col-lg-2"><a href="#"><img src="img/informatica_lite.png " width="100" height="100" ></i></a></div>
-             <div class="col-lg-2"><a href="#"><img src="img/logoUMSS_lite.png" width="100" height="100"></a></div>
-             <div class="col-lg-2"><a href="#"><img src="img/memi_lite.png" width="100" height="100"></a></div>
-             <div class="col-lg-2 "><a href="#"><img src="img/scesi_logo_lite.png" width="100" height="80"></a><br></div>
-         </div>
-         <br>
-         <br>
-         <div class="row">
-            <div class="col-lg-12" align="center">
-                 <p class="footer-block ">Copyright © 2016 - Fábrica de Software - Todos los derechos reservados. Ultima Modificación: 22/07/2016</p>
-             </div>
-             </div>
-       </footer>
+        <table class="table table-responsive">
+          <tr>
+            <td class="col-lg-2"><a href="#"><img src="img/fcyt_logo_lite.png" class="img-responsive" width="70%"></a></td>
+            <td class="col-lg-2"><a href="#"><img src="img/informatica_lite.png " class="img-responsive" width="70%"></i></a></td>
+            <td class="col-lg-2"><a href="#"><img src="img/logoUMSS_lite.png" class="img-responsive" width="50%"></a></td>
+            <td class="col-lg-2"><a href="#"><img src="img/memi_lite.png" class="img-responsive" width="90%"></a></td>
+            <td class="col-lg-2"><a href="#"><img src="img/scesi_logo_lite.png" class="img-responsive" width="90%"></a></td>
+          </tr>
+        </table>
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-lg-12" align="center">
+            <p class="footer-block ">Copyright © 2016 - Fábrica de Software - Todos los derechos reservados. Ultima Modificación: 22/07/2016</p>
+          </div>
+        </div>
+      </footer>
     </div>
 
     <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-2.0.0.js') }}"></script>
