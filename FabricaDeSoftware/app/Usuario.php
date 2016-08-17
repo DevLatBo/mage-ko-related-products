@@ -9,7 +9,7 @@ class Usuario extends Model
     protected $table="usuario";
 
     public $timestamps=false;
-    protected $fillable=["nombre","correo","departamento","cargo","foto"];
+    protected $fillable=["nombre","correo","carrera","cargo","foto"];
 
     public function tipos(){
     	return $this->belongsToMany('Fabrica\tipo','personal','usuario_id','tipo_id');

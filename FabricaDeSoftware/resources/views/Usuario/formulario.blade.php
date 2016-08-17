@@ -14,7 +14,7 @@
 <div class="control-group">
 		{!! Form::label("Carrera: ") !!}
 	<div class="controls">
-		{!! Form::select('carrera', ['Seleccionar'=>'Seleccionar',
+		{!! Form::select('carrera',['Seleccionar'=>'Seleccionar',
 											'Sistemas'=>'Ingenieria de Sistemas',
 											'Informatica'=>'Ingenieria de Informatica',
 											'Electronica'=>'Ingenieria Electronica',

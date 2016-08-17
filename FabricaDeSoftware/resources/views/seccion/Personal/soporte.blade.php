@@ -2,9 +2,9 @@
 
 @section('contenido')
 	<div class="container well col-lg-12">
-		<table class="table table-bordered" id="cssTable">
-			<thead>
-				<th colspan=2>SOPORTE</th>
+		<table class="table table-striped" id="cssTable">
+			<thead class="cabeceraPersonal">
+				<th colspan=2>PERSONAL DE SOPORTE</th>
 				<th>AREAS DE INVESTIGACION</th>
 			</thead>
 			<tbody>

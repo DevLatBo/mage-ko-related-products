@@ -3,8 +3,8 @@
 @section('contenido')
 	<div class="container well col-lg-12">
 		<table class="table table-striped" id="cssTable">
-			<thead>
-				<th colspan=2>ADMINISTRATIVO</th>
+			<thead class="cabeceraPersonal">
+				<th colspan=2>PERSONAL DE ADMINISTRATIVO</th>
 				<th>AREAS DE INVESTIGACION</th>
 			</thead>
 			<tbody>

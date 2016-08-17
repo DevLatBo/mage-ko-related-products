@@ -25,7 +25,7 @@ class editarUsuarioRequest extends Request
     {
         return [
             'nombre'=>'required|min:2|max:70',
-            'correo'=>'required|unique:usuario|min:9|max:50',
+            'correo'=>'required|min:9|max:50',
             'carrera'=>'required|in:Sistemas,Informatica,Electronica,
                                     Electrica,Electromecanica,Matematicas,Fisica',
             'cargo'=>'required|in:Administracion,Desarrollo,Investigacion',
