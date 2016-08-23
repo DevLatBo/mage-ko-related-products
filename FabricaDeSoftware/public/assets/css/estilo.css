@@ -62,3 +62,7 @@ body {
 .cabeceraPersonal th{
   text-align: center;
 }
+.secciones a{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

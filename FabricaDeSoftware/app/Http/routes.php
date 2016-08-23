@@ -25,6 +25,7 @@ Route::get("personalHonorario","FrontControl@verHonorarios");
 Route::get("personalSoporte","FrontControl@verSoportes");
 
 Route::resource('admin','AdmiController');
+ROute::get("personal/{personal}","AdmiController@listar");
 
 Route::resource("usuario","UsuarioController");
 Route::get("formulario","UsuarioController@verFormulario");

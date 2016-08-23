@@ -5,6 +5,7 @@ namespace Fabrica\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Fabrica\Http\Requests;
+use Fabrica\Usuario;
 
 class AdmiController extends Controller
 {
@@ -83,5 +84,11 @@ class AdmiController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function listar($personal){
+        //echo $personal;
+        
+        $vista=view("Usuario.listaUsuarios");
+        return $vista;
     }
 }
