@@ -12,12 +12,8 @@
 */
 
 Route::get("/","FrontControl@index");
-Route::get("investigaciones","FrontControl@investigacion");
-Route::get("personal","FrontControl@personal");
-Route::get("multimedia","FrontControl@multimedia");
-Route::get("blog","FrontControl@blog");
-Route::get("instalacion","FrontControl@instalacion");
-Route::get("contacto","FrontControl@contactos");
+Route::get("/{seccion}","FrontControl@abrirSeccion");
+
 
 Route::get("personalCientifico","FrontControl@verCientificos");
 Route::get("personalAdministrativo","FrontControl@verAdministrativos");

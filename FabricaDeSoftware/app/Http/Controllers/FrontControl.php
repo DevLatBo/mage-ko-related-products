@@ -13,31 +13,40 @@ use DB;
 
 class FrontControl extends Controller
 {
-    public function index(){
-    	return view("seccion.index");
-    }
-	public function investigacion(){
-		$investigaciones=Investigacion::select('nombre')
-			->get();
-		$vista=view("seccion.Investigacion.investigaciones",['investigaciones'=>$investigaciones]);
-		return $vista;	
-	}
 	public function personal(){
 		$tipos=tipo::All();
         $vista=view('seccion.Personal.principal',['tipos'=>$tipos]);
         return $vista;
 	}
-	public function multimedia(){
-		return view("seccion.Multimedia.multimedia");
-	}
-	public function blog(){
-		return view("seccion.Blog.blog");
-	}
-	public function instalacion(){
-		return view("seccion.Instalacion.instalacion");
-	}
-	public function contactos(){
-		return view("seccion.Contactos.contacto");
+	public function abrirSeccion($seccion){
+		switch($seccion){
+			case 'inicio':
+				$vista=view('seccion.index');
+				break;
+			case 'investigacion':
+				$investigaciones=Investigacion::select('nombre')
+				->get();
+				$vista=view("seccion.Investigacion.investigaciones",
+							['investigaciones'=>$investigaciones]);
+				break;
+			case 'participantes':
+				$tipos=tipo::All();
+        		$vista=view('seccion.Personal.principal',['tipos'=>$tipos]);
+        		break;
+        	case 'multimedia':
+        		$vista=view("seccion.Multimedia.multimedia");
+        		break;
+        	case 'blog':
+        		$vista=view("seccion.Blog.blog");
+        		break;
+        	case 'instalaciones':
+        		$vista=view("seccion.Instalacion.instalacion");
+        		break;
+        	case 'contacto':
+        		$vista=view("seccion.Contactos.contacto");
+        		break;
+		}
+		return $vista;
 	}
 	public function verCientificos(){
 		$tipos=tipo::All();

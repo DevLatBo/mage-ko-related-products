@@ -49,7 +49,6 @@ class UsuarioController extends Controller
         $foto=$request['path'];
         $nombre=$foto->getClientOriginalName();
         \Storage::disk('local')->put($nombre, \File::get($foto));
-        echo $request["carrera"];
         $usuario=Usuario::create([
                 'nombre'=>$request['nombre'],
                 'correo'=>$request['correo'],
