@@ -13,12 +13,11 @@
 
 Route::get("/","FrontControl@index");
 Route::get("/{seccion}","FrontControl@abrirSeccion");
-
-
-Route::get("personalCientifico","FrontControl@verCientificos");
+Route::get("/{seccion}/{personal}","FrontControl@verPersonal");
+/*Route::get("personalCientifico","FrontControl@verCientificos");
 Route::get("personalAdministrativo","FrontControl@verAdministrativos");
 Route::get("personalHonorario","FrontControl@verHonorarios");
-Route::get("personalSoporte","FrontControl@verSoportes");
+Route::get("personalSoporte","FrontControl@verSoportes");*/
 
 Route::resource('admin','AdmiController');
 ROute::get("personal/{personal}","AdmiController@listar");

@@ -13,7 +13,8 @@
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <span class="glyphicon glyphicon-menu-right" >
-                            </span>{{Html::linkAction('FrontControl@'.'ver'.$tipo->nombre_tipo.'s',$tipo->nombre_tipo)}}
+                            </span>
+                            {{ Html::linkAction('FrontControl@verPersonal',$tipo->nombre_tipo,array('seccion'=>'personal','personal'=>$tipo->nombre_tipo),array()) }}
                         </h4>
                     </div>
                 </div>
