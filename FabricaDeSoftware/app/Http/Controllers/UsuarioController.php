@@ -25,8 +25,7 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        $vista=view('Usuario.listaUsuarios');
-        return $vista;
+        
     }
 
     /**
@@ -141,15 +140,6 @@ class UsuarioController extends Controller
         $usuario=Usuario::find($id);
         $usuario->delete();
         $vista=redirect('/usuario');
-        return $vista;
-    }
-    public function verFormulario(){
-        $tipos=tipo::All();
-        $areas=Area::all();
-        $modo="registrar";
-        $vista=view('Usuario.crear',['tipos'=>$tipos,
-                                        'areas'=>$areas,
-                                        'modo'=>$modo]);
         return $vista;
     }
 }

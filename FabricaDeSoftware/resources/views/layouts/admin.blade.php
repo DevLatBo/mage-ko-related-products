@@ -48,13 +48,13 @@
                             <table class="table">
                                 <tr>
                                     <td>
-                                        {{ HTML::linkRoute('usuario.index', 'Personal') }}
+                                        {{ HTML::linkAction('AdmiController@mostrarTiposUsuario', 'Personal') }}
                                         <!--a href="">Personal</a-->
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        {{ HTML::linkAction('UsuarioController@verFormulario','Agregar Personal')}}
+                                        {{ HTML::linkAction('AdmiController@verFormulario','Agregar Personal')}}
                                         <!--a href="">Agregar personal</a-->
                                     </td>
                                 </tr>

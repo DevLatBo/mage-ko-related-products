@@ -16,7 +16,7 @@ class AdmiController extends Controller
      */
     public function index()
     {
-        $vista=view('Admi.principal');
+        $vista=view("Admi.principal");
         return $vista;
     }
 
@@ -84,6 +84,19 @@ class AdmiController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function mostrarTiposUsuario(){
+        $vista=view('Usuario.listaUsuarios');
+        return $vista;
+    }
+    public function verFormulario(){
+        $tipos=tipo::All();
+        $areas=Area::all();
+        $modo="registrar";
+        $vista=view('Usuario.crear',['tipos'=>$tipos,
+                                        'areas'=>$areas,
+                                        'modo'=>$modo]);
+        return $vista;
     }
     public function listar($personal){
         $usuarios=Usuario::join('personal','usuario.id','=','personal.usuario_id')
