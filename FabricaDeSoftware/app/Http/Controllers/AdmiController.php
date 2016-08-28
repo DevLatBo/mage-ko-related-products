@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use Fabrica\Http\Requests;
 use Fabrica\Usuario;
+use Fabrica\tipo;
+use Fabrica\Area;
 
 class AdmiController extends Controller
 {

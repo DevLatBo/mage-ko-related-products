@@ -34,7 +34,7 @@
                 </tr>
             @endforeach
                 <tr>
-                    <td colspan=6>{{Html::linkAction('UsuarioController@verFormulario','Registrar Personal',array(),array('class'=>'btn btn-primary'))}}</td>
+                    <td colspan=6>{{Html::linkAction('AdmiController@verFormulario','Registrar Personal',array(),array('class'=>'btn btn-primary'))}}</td>
                 </tr>
             </tbody>
         </table>
