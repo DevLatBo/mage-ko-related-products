@@ -72,8 +72,8 @@
                         </div>
                         <div id="collapseTwo" class="panel-collapse collapse">
                             <table class="table">
-                                <tr><td>{{HTML::linkRoute('investigacion.index','Investigaciones')}}</td></tr> 
-                                <tr><td>{{ HTML::linkAction('investigacionController@verFormulario','Agregar Investigacion')}}</td></tr>
+                                <tr><td>{{HTML::linkAction('AdmiController@listarInvestigaciones','Investigaciones')}}</td></tr> 
+                                <tr><td>{{HTML::linkAction('AdmiController@verFormularioInvestigacion','Agregar Investigacion')}}</td></tr>
                             </table>
                         </div>
                     </div><!--fin panel-default2!-->

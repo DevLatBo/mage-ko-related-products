@@ -8,6 +8,7 @@ use Fabrica\Http\Requests;
 use Fabrica\Usuario;
 use Fabrica\tipo;
 use Fabrica\Area;
+use Fabrica\Investigacion;
 
 class AdmiController extends Controller
 {
@@ -100,6 +101,11 @@ class AdmiController extends Controller
                                         'modo'=>$modo]);
         return $vista;
     }
+    public function verFormularioInvestigacion(){
+        $areas=Area::select('id','nombre')->get();
+        $vista=view('Investigacion.nuevainvestigacion',["areas"=>$areas]);
+        return $vista;
+    }
     public function listar($personal){
         $usuarios=Usuario::join('personal','usuario.id','=','personal.usuario_id')
             ->join('tipo','tipo.id','=','personal.tipo_id')
@@ -109,6 +115,11 @@ class AdmiController extends Controller
             ->where('nombre_tipo','=',$personal)
             ->get();
         $vista=view("Usuario.lista",['usuarios'=>$usuarios]);
+        return $vista;
+    }
+    public function listarInvestigaciones(){
+        $investigaciones=Investigacion::All();
+        $vista=view('Investigacion.lista',['investigaciones'=>$investigaciones]);
         return $vista;
     }
 }

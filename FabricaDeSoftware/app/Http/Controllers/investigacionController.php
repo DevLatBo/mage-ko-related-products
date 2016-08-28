@@ -16,9 +16,6 @@ class investigacionController extends Controller
      */
     public function index()
     {
-        $investigaciones=Investigacion::All();
-        $vista=view('Investigacion.lista',['investigaciones'=>$investigaciones]);
-        return $vista;
     }
 
     /**
@@ -96,10 +93,5 @@ class investigacionController extends Controller
     public function destroy($id)
     {
         //
-    }
-    public function verFormulario(){
-        $areas=Area::select('id','nombre')->get();
-        $vista=view('Investigacion.nuevainvestigacion',["areas"=>$areas]);
-        return $vista;
     }
 }

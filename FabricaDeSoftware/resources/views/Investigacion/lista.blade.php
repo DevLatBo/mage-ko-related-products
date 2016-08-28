@@ -24,7 +24,7 @@
 					</tr>
 				@endforeach
 					<tr>
-						<td colspan=2>{{Html::linkAction('investigacionController@verFormulario','Agregar Investigacion',array(),array('class'=>'btn btn-primary'))}}</td>
+						<td colspan=2>{{Html::linkAction('AdmiController@verFormulario','Agregar Investigacion',array(),array('class'=>'btn btn-primary'))}}</td>
 					</tr>
 			</tbody>
 		</table>
