@@ -15,37 +15,22 @@
                   <h4 class="panel-title">
                     <a data-toggle="collapse" data-target="#collapsible-<?php echo $i?>" href="#collapseOne">
                       <span class="glyphicon">
-                      </span>{{$investigacion->nombre}}
+                      </span>{{$investigacion->Investigacion}}
                     </a>
                   </h4>
             </div>
             <div id="collapsible-<?php echo $i ?>" class="collapse">
+              <?php $a=$investigacion->Areas;
+                $areas=explode(",",$a);
+              ?>
               <table class="table">
+                @foreach($areas as $area)
                 <tr>
                     <td><span class="glyphicon glyphicon-menu-right" >
-                    </span><a href="#"> Robótica</a>
+                    </span><a href="#"> {{$area}}</a>
                     </td>
                 </tr>
-                <tr>
-                    <td><span class="glyphicon glyphicon-menu-right" >
-                    </span><a href="#"> Aprendizaje Automático</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td><span class="glyphicon glyphicon-menu-right" >
-                    </span><a href="#"> Visión por Computador</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td><span class="glyphicon glyphicon-menu-right" >
-                    </span><a href="#"> Backend</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td><span class="glyphicon glyphicon-menu-right" >
-                    </span><a href="#"> Aplicación Móvil</a>
-                    </td>
-                </tr>
+                @endforeach
               </table>
             </div><!--fin collapseOne!-->
             <?php $i++ ?>

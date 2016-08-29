@@ -109,9 +109,11 @@ class AdmiController extends Controller
     public function listar($personal){
         $usuarios=Usuario::join('personal','usuario.id','=','personal.usuario_id')
             ->join('tipo','tipo.id','=','personal.tipo_id')
-            ->select('usuario.id', 'usuario.nombre as Nombre','usuario.correo as Correo',
-                    'usuario.carrera as Carrera','usuario.cargo as Cargo',
-                    'usuario.foto')
+            ->select('usuario.id', 'usuario.nombre as Nombre',
+                'usuario.correo as Correo',
+                'usuario.carrera as Carrera',
+                'usuario.cargo as Cargo',
+                'usuario.foto')
             ->where('nombre_tipo','=',$personal)
             ->get();
         $vista=view("Usuario.lista",['usuarios'=>$usuarios]);

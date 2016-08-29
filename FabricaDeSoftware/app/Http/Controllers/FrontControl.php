@@ -27,10 +27,14 @@ class FrontControl extends Controller
 			case 'inicio':
 				$seccion=view('seccion.index');
 				break;
-			case 'investigacion':
-				$investigaciones=Investigacion::select('nombre')
-				->get();
-				$seccion=view("seccion.Investigacion.investigaciones",
+			case 'investigaciones':
+				$investigaciones=Investigacion::join('desarrollo','investigacion.id','=','desarrollo.investigacion_id')
+					->join('area','area.id','=','desarrollo.area_id')
+					->select('investigacion.nombre as Investigacion',
+						DB::raw('GROUP_CONCAT(area.nombre SEPARATOR ",") as "Areas"'))
+					->groupby('investigacion.id')
+					->get();
+				$seccion=view('seccion.Investigacion.investigaciones',
 							['investigaciones'=>$investigaciones]);
 				break;
 			case 'participantes':
