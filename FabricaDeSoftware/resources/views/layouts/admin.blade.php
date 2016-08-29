@@ -78,15 +78,30 @@
                         </div>
                     </div><!--fin panel-default2!-->
                     <div class="panel panel-default">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                        Galeria
+                                        <span class="caret"></span>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse">
+                                <table class="table">
+                                    <tr><td><a href="">Agregar Galeria</a></td></tr>
+                                </table>
+                            </div>
+                        </div><!--fin panel-default3!-->
                         <div class="panel-heading">
                             <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
                                     Videos
                                     <span class="caret"></span>
                                 </a>
                             </h4>
                         </div>
-                        <div id="collapseThree" class="panel-collapse collapse">
+                        <div id="collapseFour" class="panel-collapse collapse">
                             <table class="table">
                                 <tr><td><a href="">Lista de Video</a></td></tr>
                                 <tr><td><a href="">Agregar Videos</a></td></tr>
@@ -96,13 +111,13 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
                                     Fotos
                                     <span class="caret"></span>
                                 </a>
                             </h4>
                         </div>
-                        <div id="collapseFour" class="panel-collapse collapse">
+                        <div id="collapseFive" class="panel-collapse collapse">
                             <table class="table">
                                 <tr><td><a href="">Fotos</a></td></tr>
                                 <tr><td><a href="">Agregar Fotos</a></td></tr>
