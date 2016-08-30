@@ -8,6 +8,7 @@ use Fabrica\Http\Requests;
 use Fabrica\Usuario;
 use Fabrica\tipo;
 use Fabrica\Area;
+use Fabrica\Galeria;
 use Fabrica\Investigacion;
 
 class AdmiController extends Controller
@@ -125,7 +126,8 @@ class AdmiController extends Controller
         return $vista;
     }
     public function verGalerias(){
-        $vista=view('Multimedia.galeria');
+        $galerias=Galeria::select('nombre_galeria')->get();
+        $vista=view('Multimedia.galeria',['galerias'=>$galerias]);
         return $vista;
     }
     public function verFormularioGaleria(){

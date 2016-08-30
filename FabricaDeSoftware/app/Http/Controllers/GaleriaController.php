@@ -38,8 +38,8 @@ class GaleriaController extends Controller
      */
     public function store(crearGaleriaRequest $request)
     {
-        $galeria=Galeria::create(['nombre_galeria'=>$request['nombre_galeria']]);
-        $vista=redirect('/galeria');
+        Galeria::create(['nombre_galeria'=>$request['nombre_galeria']]);
+        $vista=redirect('/galerias')->with("mensaje","Galeria creada");
         return $vista;
     }
 
