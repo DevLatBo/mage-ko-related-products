@@ -20,6 +20,7 @@ Route::get("tiposPersonal/{personal}","AdmiController@listar");
 Route::get("galerias","AdmiController@verGalerias");
 Route::get('galerias/{form}',"AdmiController@verFormularioGaleria");
 
+Route::resource("galeria","GaleriaController");
 Route::resource("usuario","UsuarioController");
 Route::resource("investigacion","investigacionController");
 
