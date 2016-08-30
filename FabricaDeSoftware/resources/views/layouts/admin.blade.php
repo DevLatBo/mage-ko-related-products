@@ -78,21 +78,21 @@
                         </div>
                     </div><!--fin panel-default2!-->
                     <div class="panel panel-default">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                                        Galeria
-                                        <span class="caret"></span>
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseThree" class="panel-collapse collapse">
-                                <table class="table">
-                                    <tr><td><a href="">Agregar Galeria</a></td></tr>
-                                </table>
-                            </div>
-                        </div><!--fin panel-default3!-->
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                    Galeria
+                                    <span class="caret"></span>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse">
+                            <table class="table">
+                                <tr><td>{{HTML::linkAction('AdmiController@verGalerias','Galerias')}}</td></tr>
+                            </table>
+                        </div>
+                    </div><!--fin panel-default3!-->
+                    <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">

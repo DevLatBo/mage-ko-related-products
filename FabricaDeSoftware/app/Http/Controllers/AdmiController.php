@@ -89,7 +89,7 @@ class AdmiController extends Controller
         //
     }
     public function mostrarTiposUsuario(){
-        $vista=view('Usuario.listaUsuarios');
+        $vista=view('Usuario.tiposUsuarios');
         return $vista;
     }
     public function verFormulario(){
@@ -122,6 +122,14 @@ class AdmiController extends Controller
     public function listarInvestigaciones(){
         $investigaciones=Investigacion::All();
         $vista=view('Investigacion.lista',['investigaciones'=>$investigaciones]);
+        return $vista;
+    }
+    public function verGalerias(){
+        $vista=view('Multimedia.galeria');
+        return $vista;
+    }
+    public function verFormularioGaleria($form){
+        $vista=view('Multimedia.formulario');
         return $vista;
     }
 }
