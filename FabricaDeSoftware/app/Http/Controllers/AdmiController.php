@@ -134,4 +134,9 @@ class AdmiController extends Controller
         $vista=view('Multimedia.formulario');
         return $vista;
     }
+    public function verFormularioVideo(){
+        $galerias=Galeria::All();
+        $vista=view('Multimedia.formularioVideo',['galerias'=>$galerias]);
+        return $vista;
+    }
 }

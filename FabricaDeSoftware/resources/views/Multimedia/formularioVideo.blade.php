@@ -17,13 +17,15 @@
 					{{Form::text('url',null,['class'=>"form-control","placeholder"=>'URL...',"id"=>'url'])}}
 				</div>
 				<br>
-				{{From::label('galeria',)}}
+				{{Form::label('galeria',"Galeria: ")}}
 				<div class="controls">
-					
+					@foreach($galerias as $galeria)
+						{{Form::radio('galeria[]',$galeria->id,false) }}{{$galeria->nombre_galeria}}<br>
+					@endforeach
 				</div>
 				<div class="control-group">
 					<div class="controls">
-						{{Form::submit('CREAR GALERIA',['class'=>'btn btn-primary col-lg-4 col-lg-offset-4'])}}
+						{{Form::submit('CREAR VIDEO',['class'=>'btn btn-primary col-lg-4 col-lg-offset-4'])}}
 					</div>
 				</div>
 			</div>

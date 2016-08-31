@@ -104,7 +104,7 @@
                         <div id="collapseFour" class="panel-collapse collapse">
                             <table class="table">
                                 <tr><td><a href="">Lista de Video</a></td></tr>
-                                <tr><td><a href="">Agregar Videos</a></td></tr>
+                                <tr><td>{{HTML::linkAction("AdmiController@verFormularioVideo","Agregar Video")}}</td></tr>
                             </table>
                         </div>
                     </div><!--fin panel-default3!-->

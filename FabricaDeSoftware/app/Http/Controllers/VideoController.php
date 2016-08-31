@@ -3,9 +3,9 @@
 namespace Fabrica\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Fabrica\Video;
 use Fabrica\Http\Requests;
-
+use Fabrica\Http\Requests\crearVideoRequest;
 class VideoController extends Controller
 {
     /**
@@ -34,9 +34,11 @@ class VideoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(crearVideoRequest $request)
     {
-        //
+        //Video::create(['nombre_video'=>$request["nombre_video"],
+                        //'url'=>$request["url"]]);
+
     }
 
     /**
