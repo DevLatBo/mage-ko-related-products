@@ -36,9 +36,12 @@ class VideoController extends Controller
      */
     public function store(crearVideoRequest $request)
     {
-        //Video::create(['nombre_video'=>$request["nombre_video"],
-                        //'url'=>$request["url"]]);
+        Video::create(['nombre_video'=>$request["nombre_video"],
+                        'url'=>$request["url"],
+                        'galeria_id'=>$request["galeria"][0]]);
 
+        $vista=redirect('/galerias')->with("mensaje","Video creado");
+        return $vista;
     }
 
     /**

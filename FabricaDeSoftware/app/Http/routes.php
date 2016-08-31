@@ -20,9 +20,11 @@ Route::get("tiposPersonal/{personal}","AdmiController@listar");
 Route::get("galerias","AdmiController@verGalerias");
 Route::get('galerias/{form}',"AdmiController@verFormularioGaleria");
 Route::get('video/formulario',"AdmiController@verFormularioVideo");
+Route::get("foto/formulario","AdmiController@verFormularioFoto");
 
 Route::resource("galeria","GaleriaController");
 Route::resource("video","VideoController");
+Route::resource("foto","FotoController");
 Route::resource("usuario","UsuarioController");
 Route::resource("investigacion","investigacionController");
 

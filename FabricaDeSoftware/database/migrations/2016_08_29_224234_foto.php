@@ -14,6 +14,7 @@ class Foto extends Migration
     {
         /*Schema::create("foto",function(Blueprint $table){
             $table->increments("id");
+            $table->string("nombre_foto");
             $table->string("foto");
             $table->integer('galeria_id')->unsigned();
         });

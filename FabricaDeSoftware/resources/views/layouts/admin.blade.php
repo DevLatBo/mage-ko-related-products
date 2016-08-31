@@ -120,7 +120,7 @@
                         <div id="collapseFive" class="panel-collapse collapse">
                             <table class="table">
                                 <tr><td><a href="">Fotos</a></td></tr>
-                                <tr><td><a href="">Agregar Fotos</a></td></tr>
+                                <tr><td>{{HTML::linkAction("AdmiController@verFormularioFoto","Agregar Foto")}}</td></tr>
                             </table>
                         </div>
                     </div><!--fin panel-default!-->
