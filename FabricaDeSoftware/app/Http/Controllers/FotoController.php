@@ -3,7 +3,7 @@
 namespace Fabrica\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Fabrica\Foto;
 use Fabrica\Http\Requests;
 
 class FotoController extends Controller
@@ -36,7 +36,14 @@ class FotoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $foto=$request['foto'];
+        $nombre=$foto->getClientOriginalName();
+        \Storage::disk('local')->put($nombre, \File::get($foto));
+        Foto::create(['nombre_foto'=>$request["nombre_foto"],
+                'foto'=>$foto,
+                'galeria_id'=>$request['galeria'][0]]);
+        $vista=redirect('/galerias')->with("mensaje","Foto subido");
+        return $vista;
     }
 
     /**

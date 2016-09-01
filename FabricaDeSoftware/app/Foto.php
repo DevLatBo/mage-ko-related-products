@@ -8,5 +8,5 @@ class Foto extends Model
 {
     protected $table="foto";
     public $timestamps=false;
-    protected $fillable=["nombre_foto","foto"];
+    protected $fillable=["nombre_foto","foto","galeria_id"];
 }
