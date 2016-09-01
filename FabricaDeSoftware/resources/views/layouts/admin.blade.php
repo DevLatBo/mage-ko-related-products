@@ -81,7 +81,7 @@
                         <div class="panel-heading">
                             <h4 class="panel-title">
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                                    Galeria
+                                    Multimedia
                                     <span class="caret"></span>
                                 </a>
                             </h4>
@@ -89,41 +89,11 @@
                         <div id="collapseThree" class="panel-collapse collapse">
                             <table class="table">
                                 <tr><td>{{HTML::linkAction('AdmiController@verGalerias','Galerias')}}</td></tr>
-                            </table>
-                        </div>
-                    </div><!--fin panel-default3!-->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
-                                    Videos
-                                    <span class="caret"></span>
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseFour" class="panel-collapse collapse">
-                            <table class="table">
-                                <tr><td><a href="">Lista de Video</a></td></tr>
                                 <tr><td>{{HTML::linkAction("AdmiController@verFormularioVideo","Agregar Video")}}</td></tr>
-                            </table>
-                        </div>
-                    </div><!--fin panel-default3!-->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
-                                    Fotos
-                                    <span class="caret"></span>
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseFive" class="panel-collapse collapse">
-                            <table class="table">
-                                <tr><td><a href="">Fotos</a></td></tr>
                                 <tr><td>{{HTML::linkAction("AdmiController@verFormularioFoto","Agregar Foto")}}</td></tr>
                             </table>
                         </div>
-                    </div><!--fin panel-default!-->
+                    </div><!--fin panel-default3!-->
                 </div><!--fin panel-gruop!-->
             </div><!--fin col-lg-4!-->
             <div class="col-lg-9">
