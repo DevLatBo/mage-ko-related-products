@@ -7,6 +7,9 @@ use Fabrica\Investigacion;
 use Fabrica\Http\Requests\crearInvestigacionRequest;
 use Fabrica\Http\Requests;
 use Fabrica\Area;
+use DB;
+use Session;
+use Redirect;
 class investigacionController extends Controller
 {
     /**
@@ -74,8 +77,11 @@ class investigacionController extends Controller
         $areas_seleccionadas=DB::table('desarrollo')
                                 ->where('desarrollo.investigacion_id','=',$id)
                                 ->lists('area_id');
-        $vista=view('Investigacion.edicion',['areas'=>$areas,
-                                    'seleccionadas'=>$areas_seleccionadas]);
+        $bandera=True;
+        $vista=view('Investigacion.editar',['investigacion'=>$investigacion,
+                                    'areas'=>$areas,
+                                    'seleccionadas'=>$areas_seleccionadas,
+                                    'bandera'=>$bandera]);
         return $vista;
     }
 
@@ -88,7 +94,12 @@ class investigacionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $investigacion=Investigacion::find($id);
+        $investigacion->fill($request->all());
+        $investigacion->save();
+        Session::flash("Mensaje","Datos de Investigacion actualizados...");
+        $vista=Redirect::to('/investigacion');
+        return $vista;
     }
 
     /**

@@ -104,7 +104,9 @@ class AdmiController extends Controller
     }
     public function verFormularioInvestigacion(){
         $areas=Area::select('id','nombre')->get();
-        $vista=view('Investigacion.crear',["areas"=>$areas]);
+        $bandera=False;
+        $vista=view('Investigacion.crear',["areas"=>$areas,
+                                        "bandera"=>$bandera]);
         return $vista;
     }
     public function listar($personal){
