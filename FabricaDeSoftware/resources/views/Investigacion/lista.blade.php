@@ -12,8 +12,9 @@
 		<table class="table table-striped" id="cssTable">
 			<thead>
 				<tr>
-					<th class="col-3">Investigacion</th>
-					<th class="col-9">Descripcion</th>
+					<th class="col-lg-3">Investigacion</th>
+					<th class="col-lg-7">Descripcion</th>
+					<th class="col-lg-2">Editar</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -21,6 +22,7 @@
 					<tr>
 						<td>{{$inv->nombre}}</td>
 						<td>{{$inv->descripcion}}</td>
+						<td>{!! link_to_route('investigacion.edit', $title='', $parameters = $inv->id, $attributes = ['class'=>'glyphicon glyphicon-pencil']) !!}</td>
 					</tr>
 				@endforeach
 					<tr>

@@ -4,7 +4,7 @@ namespace Fabrica\Http\Requests;
 
 use Fabrica\Http\Requests\Request;
 
-class crearVideoRequest extends Request
+class crearFotoRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,8 @@ class crearVideoRequest extends Request
     public function rules()
     {
         return [
-            'nombre_video'=>'required',
-            'url'=>'required|url',
+            'nombre_foto'=>'required',
+            'foto'=>'required|mimes:jpeg,jpg,png',
             'galeria'=>'required',
         ];
     }

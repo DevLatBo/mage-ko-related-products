@@ -69,7 +69,14 @@ class investigacionController extends Controller
      */
     public function edit($id)
     {
-        //
+        $investigacion=Investigacion::find($id);
+        $areas=Area::get();
+        $areas_seleccionadas=DB::table('desarrollo')
+                                ->where('desarrollo.investigacion_id','=',$id)
+                                ->lists('area_id');
+        $vista=view('Investigacion.edicion',['areas'=>$areas,
+                                    'seleccionadas'=>$areas_seleccionadas]);
+        return $vista;
     }
 
     /**

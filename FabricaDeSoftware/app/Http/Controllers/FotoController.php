@@ -5,6 +5,7 @@ namespace Fabrica\Http\Controllers;
 use Illuminate\Http\Request;
 use Fabrica\Foto;
 use Fabrica\Http\Requests;
+use Fabrica\Http\Requests\crearFotoRequest;
 
 class FotoController extends Controller
 {
@@ -34,7 +35,7 @@ class FotoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(crearFotoRequest $request)
     {
         $foto=$request['foto'];
         $nombre=$foto->getClientOriginalName();

@@ -104,7 +104,7 @@ class AdmiController extends Controller
     }
     public function verFormularioInvestigacion(){
         $areas=Area::select('id','nombre')->get();
-        $vista=view('Investigacion.nuevainvestigacion',["areas"=>$areas]);
+        $vista=view('Investigacion.crear',["areas"=>$areas]);
         return $vista;
     }
     public function listar($personal){
@@ -136,12 +136,12 @@ class AdmiController extends Controller
     }
     public function verFormularioVideo(){
         $galerias=Galeria::All();
-        $vista=view('Multimedia.Video.formularioVideo',['galerias'=>$galerias]);
+        $vista=view('Multimedia.Video.formulario',['galerias'=>$galerias]);
         return $vista;
     }
     public function verFormularioFoto(){
         $galerias=Galeria::All();
-        $vista=view('Multimedia.Foto.formularioFoto',['galerias'=>$galerias]);
+        $vista=view('Multimedia.Foto.formulario',['galerias'=>$galerias]);
         return $vista;
     }
 }
