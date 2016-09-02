@@ -146,4 +146,12 @@ class AdmiController extends Controller
         $vista=view('Multimedia.Foto.formulario',['galerias'=>$galerias]);
         return $vista;
     }
+    public function mostrarAreas($id){
+        $areas=Area::join('desarrollo','area.id','=','desarrollo.area_id')
+            ->select('area.nombre')
+            ->where('desarrollo.investigacion_id','=',$id)
+            ->get();
+        $vista=view("Investigacion.listaAreasPorInv",['areas'=>$areas]);
+        return $vista;
+    }
 }

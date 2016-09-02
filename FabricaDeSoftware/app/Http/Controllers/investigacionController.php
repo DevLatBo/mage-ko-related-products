@@ -19,6 +19,9 @@ class investigacionController extends Controller
      */
     public function index()
     {
+        $investigaciones=Investigacion::All();
+        $vista=view('Investigacion.lista',["investigaciones"=>$investigaciones]);
+        return $vista;
     }
 
     /**

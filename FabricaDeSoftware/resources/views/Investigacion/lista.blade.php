@@ -20,7 +20,7 @@
 			<tbody>
 				@foreach($investigaciones as $inv)
 					<tr>
-						<td>{{$inv->nombre}}</td>
+						<td>{!!Html::linkAction('AdmiController@mostrarAreas',$inv->nombre,array('id'=>$inv->id),array())!!}</a></td>
 						<td>{{$inv->descripcion}}</td>
 						<td>{!! link_to_route('investigacion.edit', $title='', $parameters = $inv->id, $attributes = ['class'=>'glyphicon glyphicon-pencil']) !!}</td>
 					</tr>
