@@ -154,4 +154,7 @@ class AdmiController extends Controller
         $vista=view("Investigacion.listaAreasPorInv",['areas'=>$areas]);
         return $vista;
     }
+    public function mostrarArticulos($area){
+        echo $area."1212";
+    }
 }
