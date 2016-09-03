@@ -105,5 +105,10 @@
     </div><!--fin conteiner!-->
     {!! Html::script('assets/js/jquery-2.0.0.js')!!}
     {!! Html::script('assets/js/bootstrap.js')!!}
+    {{ Html::script("assets/js/textarea.js") }}
+    <script type="text/javascript">
+        bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+        nicEditors.findEditor('area2').saveContent();
+    </script>
 </body>
 </html>

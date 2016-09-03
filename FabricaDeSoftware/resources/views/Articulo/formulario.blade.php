@@ -12,12 +12,13 @@
 		<div class="control-group">
 		    {{ Form::label("Descripcion: ") }}
 		    <div class="controls">
-		    	{!! Form::textarea('descripcion',null,["class"=>"form-control","placeholder"=>"Descripcion...","rows"=>5]) !!}
+		    	{!! Form::textarea('descripcion',null,["class"=>"form-control","placeholder"=>"Descripcion...","rows"=>4]) !!}
 		    </div>
 		</div>
+		<br>
 		<div class="control-group">
           	<div class="controls">
-             		{!! Form::submit("Registrar",['class'=>'form-control btn btn-primary']) !!}
+             		{!! Form::submit("Registrar Articulo",['class'=>'btn btn-primary']) !!}
           	</div>
         </div>
 	</div>

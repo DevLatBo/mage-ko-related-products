@@ -10,7 +10,6 @@ use Fabrica\tipo;
 use Fabrica\Area;
 use Fabrica\Galeria;
 use Fabrica\Investigacion;
-
 class AdmiController extends Controller
 {
     /**
@@ -155,6 +154,11 @@ class AdmiController extends Controller
         return $vista;
     }
     public function mostrarArticulos($area){
-        echo $area."1212";
+        $vista=view("Articulo.lista");
+        return $vista;
+    }
+    public function verFormularioArticulo(){
+        $vista=view("Articulo.formulario");
+        return $vista;
     }
 }

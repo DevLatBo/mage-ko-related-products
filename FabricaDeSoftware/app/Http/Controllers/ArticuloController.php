@@ -5,6 +5,7 @@ namespace Fabrica\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Fabrica\Http\Requests;
+use Fabrica\Articulo;
 
 class ArticuloController extends Controller
 {
@@ -36,7 +37,10 @@ class ArticuloController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Articulo::create(["titulo"=>$request["titulo"],
+                            "descripcion"=>$request["descripcion"],
+                            "area_id"=>1]);
+        echo "ecjho!!!";        
     }
 
     /**
