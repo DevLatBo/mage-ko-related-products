@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use Fabrica\Http\Requests;
 use Fabrica\Articulo;
+use Fabrica\Area;
+use DB;
 
 class ArticuloController extends Controller
 {
@@ -37,10 +39,14 @@ class ArticuloController extends Controller
      */
     public function store(Request $request)
     {
+        $area=$request["area"];
+        $id=DB::table("area")->select("id")
+            ->where("nombre","=",$area)
+            ->lists("id");
         Articulo::create(["titulo"=>$request["titulo"],
                             "descripcion"=>$request["descripcion"],
-                            "area_id"=>1]);
-        echo "ecjho!!!";        
+                            "area_id"=>$id[0]]);
+        
     }
 
     /**

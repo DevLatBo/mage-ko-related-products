@@ -18,7 +18,7 @@ Route::get("formularioInvestigacion","AdmiController@verFormularioInvestigacion"
 Route::get("listaInvestigacion","AdmiController@listarInvestigaciones");
 Route::get("listaInvestigacion/{investigacion}","AdmiController@mostrarAreas");
 Route::get("listaInvestigacion/investigacion/{area}","AdmiController@mostrarArticulos");
-Route::get("listaInvestigacion/investigacion/articulo/formulario","AdmiController@verFormularioArticulo");
+Route::get("listaInvestigacion/investigacion/articulo/formulario{area}","AdmiController@verFormularioArticulo");
 Route::get("tiposPersonal/{personal}","AdmiController@listar");
 Route::get("galerias","AdmiController@verGalerias");
 Route::get('galerias/{form}',"AdmiController@verFormularioGaleria");

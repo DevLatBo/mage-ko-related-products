@@ -154,11 +154,11 @@ class AdmiController extends Controller
         return $vista;
     }
     public function mostrarArticulos($area){
-        $vista=view("Articulo.lista");
+        $vista=view("Articulo.lista",["area"=>$area]);
         return $vista;
     }
-    public function verFormularioArticulo(){
-        $vista=view("Articulo.formulario");
+    public function verFormularioArticulo($area){
+        $vista=view("Articulo.formulario",["area"=>$area]);
         return $vista;
     }
 }

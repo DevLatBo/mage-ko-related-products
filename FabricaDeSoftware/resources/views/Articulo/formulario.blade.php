@@ -15,6 +15,9 @@
 		    	{!! Form::textarea('descripcion',null,["class"=>"form-control","placeholder"=>"Descripcion...","rows"=>4]) !!}
 		    </div>
 		</div>
+		<div class="control-group">
+			{!! Form::hidden("area",$area,array()) !!}
+		</div>
 		<br>
 		<div class="control-group">
           	<div class="controls">
