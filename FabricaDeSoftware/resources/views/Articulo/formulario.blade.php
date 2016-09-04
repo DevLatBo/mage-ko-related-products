@@ -1,7 +1,8 @@
 @extends('layouts.admin')
 
 @section('content')
-	<div class="container col-lg-12">
+	<div class="container well col-lg-12">
+		@include('Alerta.alertaFormulario')
 		{!! Form::open(['route'=>'articulo.store','method'=>'POST']) !!}
 		<div class="control-group">
 		    {{ Form::label("Nombre: ") }}

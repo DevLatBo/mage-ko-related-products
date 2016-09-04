@@ -5,6 +5,7 @@ namespace Fabrica\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Fabrica\Http\Requests;
+use Fabrica\Http\Requests\crearArticuloRequest;
 use Fabrica\Articulo;
 use Fabrica\Area;
 use DB;
@@ -37,7 +38,7 @@ class ArticuloController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(crearArticuloRequest $request)
     {
         $area=$request["area"];
         $id=DB::table("area")->select("id")
