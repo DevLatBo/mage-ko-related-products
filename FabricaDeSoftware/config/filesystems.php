@@ -45,7 +45,7 @@ return [
 
         'local' => [
             'driver' => 'local',
-            'root' => public_path('fotoUsuario'),
+            'root' => public_path('Fotos'),
         ],
 
         'public' => [
