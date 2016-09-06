@@ -11,7 +11,7 @@
 			<tbody>
 				@foreach($areas as $area)
 					<tr>
-						<td>{{Html::linkAction('AdmiController@mostrarArticulos',$area->nombre,array('nombre_area'=>$area->nombre),array())}}</td>
+						<td>{{Html::linkAction('AdmiController@mostrarArticulos',$area->nombre,array('id'=>$area->id),array())}}</td>
 					</tr>
 				@endforeach
 			</tbody>

@@ -148,20 +148,20 @@ class AdmiController extends Controller
     }
     public function mostrarAreas($id){
         $areas=Area::join('desarrollo','area.id','=','desarrollo.area_id')
-            ->select('area.nombre')
+            ->select('area.id','area.nombre')
             ->where('desarrollo.investigacion_id','=',$id)
             ->get();
         $vista=view("Investigacion.listaAreasPorInv",['areas'=>$areas]);
         return $vista;
     }
-    public function mostrarArticulos($area){
+    public function mostrarArticulos($id){
         $articulos=Articulo::All();
         $vista=view("Articulo.lista",["articulos"=>$articulos,
-                                        "area"=>$area]);
+                                        "id"=>$id]);
         return $vista;
     }
-    public function verFormularioArticulo($area){
-        $vista=view("Articulo.crear",["area"=>$area]);
+    public function verFormularioArticulo($id){
+        $vista=view("Articulo.crear",["id_area"=>$id]);
         return $vista;
     }
 }

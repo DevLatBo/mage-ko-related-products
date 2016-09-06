@@ -6,7 +6,7 @@
 		{!! Form::open(['route'=>'articulo.store','method'=>'POST']) !!}
 		@include("Articulo.formulario")
 		<div class="control-group">
-			{!! Form::hidden("area_id",$area,array()) !!}
+			{!! Form::hidden("area_id",$id_area,array()) !!}
 		</div>
 		<div class="control-group">
           	<div class="controls">
