@@ -98,4 +98,9 @@ class ArticuloController extends Controller
     {
         //
     }
+    public function eliminar($id){
+        $articulo=Articulo::find($id);
+        $articulo->delete();
+        
+    }
 }

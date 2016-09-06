@@ -6,16 +6,15 @@
 			<table class="table table-stripped">
 				<thead>
 					<tr>
-						<th>Articulo</th>
-						<th colspan=2>Descripcion</th>
+						<th class="col-xs-3">Articulo</th>
 					</tr>
 				</thead>
 				<tbody>
 					@foreach($articulos as $articulo)
 					<tr>
 						<td>{{$articulo->titulo}}</td>
-						<td>{{$articulo->descripcion}}</td>
 						<td>{!! link_to_route('articulo.edit', $title='', $parameters = $articulo->id, $attributes = ['class'=>'glyphicon glyphicon-pencil']) !!}</td>
+						<td>{!! link_to_route('eliminarArticulo', $title='', $parameters = $articulo->id, $attributes = ['class'=>'glyphicon glyphicon-remove']) !!}</td>
 					</tr>
 					@endforeach
 				</tbody>

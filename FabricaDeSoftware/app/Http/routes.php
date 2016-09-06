@@ -31,6 +31,7 @@ Route::resource("foto","FotoController");
 Route::resource("usuario","UsuarioController");
 Route::resource("investigacion","investigacionController");
 Route::resource("articulo","ArticuloController");
+Route::get('eliminarArticulo/{id}', ['as'=>'eliminarArticulo', 'uses'=>'ArticuloController@eliminar']);
 
 Route::get("/","FrontControl@index");
 Route::get("/{seccion}","FrontControl@abrirSeccion");

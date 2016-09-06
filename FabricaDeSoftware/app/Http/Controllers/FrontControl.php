@@ -28,13 +28,8 @@ class FrontControl extends Controller
 				$seccion=view('seccion.index');
 				break;
 			case 'investigaciones':
-				$investigaciones=Investigacion::join('desarrollo','investigacion.id','=','desarrollo.investigacion_id')
-					->join('area','area.id','=','desarrollo.area_id')
-					->select('investigacion.nombre as Investigacion',
-						DB::raw('GROUP_CONCAT(area.nombre SEPARATOR ",") as "Areas"'))
-					->groupby('investigacion.id')
-					->get();
-				$seccion=view('seccion.Investigacion.investigaciones',
+				$investigaciones=$this->obtenerInvestigaciones();
+				$seccion=view('seccion.Investigacion.inicio',
 							['investigaciones'=>$investigaciones]);
 				break;
 			case 'participantes':
@@ -71,5 +66,14 @@ class FrontControl extends Controller
 		$vista=view('seccion.Personal.participantes',
 						["participantes"=>$participantes, "tipos"=>$tipos]);
 		return $vista;
+	}
+	public function obtenerInvestigaciones(){
+		$investigaciones=Investigacion::join('desarrollo','investigacion.id','=','desarrollo.investigacion_id')
+					->join('area','area.id','=','desarrollo.area_id')
+					->select('investigacion.nombre as Investigacion',
+						DB::raw('GROUP_CONCAT(area.nombre SEPARATOR ",") as "Areas"'))
+					->groupby('investigacion.id')
+					->get();
+		return $investigaciones;
 	}
 }
