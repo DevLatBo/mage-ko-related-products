@@ -34,6 +34,7 @@ Route::resource("articulo","ArticuloController");
 Route::get('eliminarArticulo/{id}', ['as'=>'eliminarArticulo', 'uses'=>'ArticuloController@eliminar']);
 
 Route::get("/","FrontControl@index");
+Route::get("investigaciones/articulos/{area}","FrontControl@mostrarArticulos");
 Route::get("/{seccion}","FrontControl@abrirSeccion");
 Route::get("/{seccion}/{personal}","FrontControl@verPersonal");
 Route::get('eliminar/{id}', ['as'=>'eliminar', 'uses'=>'UsuarioController@eliminar']);

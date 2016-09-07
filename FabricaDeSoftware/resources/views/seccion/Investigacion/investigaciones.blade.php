@@ -27,7 +27,7 @@
                 @foreach($areas as $area)
                 <tr>
                     <td><span class="glyphicon glyphicon-menu-right" >
-                    </span><a href="#"> {{$area}}</a>
+                    </span>{{Html::linkAction('FrontControl@mostrarArticulos',$area,array('area'=>$area),array())}}
                     </td>
                 </tr>
                 @endforeach

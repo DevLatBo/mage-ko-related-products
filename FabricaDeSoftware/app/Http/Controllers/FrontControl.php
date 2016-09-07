@@ -76,4 +76,18 @@ class FrontControl extends Controller
 					->get();
 		return $investigaciones;
 	}
+	public function mostrarArticulos($area){
+		$articulos=Investigacion::join('desarrollo','investigacion.id','=','desarrollo.investigacion_id')
+			->join('area','area.id','=','desarrollo.area_id')
+			->join('articulo','area.id','=','articulo.area_id')
+			->select('articulo.titulo','articulo.descripcion')
+			->where('area.nombre','=',$area)
+			->groupBy('area.id')
+			->get();
+		$investigaciones=$this->obtenerInvestigaciones();
+		$vista=view('seccion.Investigacion.lista_articulos',
+						["investigaciones"=>$investigaciones,
+						"articulos"=>$articulos]);
+		return $vista;
+	}
 }
