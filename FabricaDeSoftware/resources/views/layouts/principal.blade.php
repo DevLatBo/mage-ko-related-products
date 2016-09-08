@@ -25,11 +25,11 @@
       <footer class="row panel">
         <table class="table table-responsive">
           <tr>
-            <td class="col-lg-2"><a href="#"><img src="img/fcyt_logo_lite.png" class="img-responsive" width="70%"></a></td>
-            <td class="col-lg-2"><a href="#"><img src="img/informatica_lite.png " class="img-responsive" width="70%"></i></a></td>
-            <td class="col-lg-2"><a href="#"><img src="img/logoUMSS_lite.png" class="img-responsive" width="50%"></a></td>
-            <td class="col-lg-2"><a href="#"><img src="img/memi_lite.png" class="img-responsive" width="90%"></a></td>
-            <td class="col-lg-2"><a href="#"><img src="img/scesi_logo_lite.png" class="img-responsive" width="90%"></a></td>
+            <td class="col-lg-2"><a href="#"><img src="/img/fcyt_logo_lite.png" class="img-responsive" width="70%"></a></td>
+            <td class="col-lg-2"><a href="#"><img src="/img/informatica_lite.png " class="img-responsive" width="70%"></i></a></td>
+            <td class="col-lg-2"><a href="#"><img src="/img/logoUMSS_lite.png" class="img-responsive" width="50%"></a></td>
+            <td class="col-lg-2"><a href="#"><img src="/img/memi_lite.png" class="img-responsive" width="90%"></a></td>
+            <td class="col-lg-2"><a href="#"><img src="/img/scesi_logo_lite.png" class="img-responsive" width="90%"></a></td>
           </tr>
         </table>
         <br>

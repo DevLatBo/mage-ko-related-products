@@ -55,10 +55,6 @@ body {
  .embed-responsive-100x400px{
        padding-bottom: 400px;
    }
-.cabeceraPersonal{
-  background: #428BCA;
-  color: #FFFFFF;
-}
 .cabeceraPersonal th{
   text-align: center;
 }

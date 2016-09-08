@@ -64,7 +64,9 @@ class FrontControl extends Controller
 			->groupBy('usuario.id')
 			->get();
 		$vista=view('seccion.Personal.participantes',
-						["participantes"=>$participantes, "tipos"=>$tipos]);
+						["participantes"=>$participantes, 
+						"tipos"=>$tipos,
+						"personal"=>$personal]);
 		return $vista;
 	}
 	public function obtenerInvestigaciones(){

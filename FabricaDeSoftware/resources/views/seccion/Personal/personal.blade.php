@@ -23,7 +23,9 @@
         </div>
     </div>
     <div class="col-lg-8">
-        @yield('contenido')
+        <div class="panel panel-primary" >
+            @yield('contenido')
+        </div>
     </div>
 </div><!--fin tab-pane!-->
 @stop
