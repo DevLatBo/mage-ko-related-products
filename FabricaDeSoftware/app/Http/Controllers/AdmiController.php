@@ -132,11 +132,15 @@ class AdmiController extends Controller
         $vista=view('Multimedia.galeria',['galerias'=>$galerias]);
         return $vista;
     }
+    public function verMultimedia($galeria){
+        $vista=view("Multimedia.lista");
+        return $vista;
+    }
     public function verFormularioGaleria(){
         $vista=view('Multimedia.formulario');
         return $vista;
     }
-    public function verFormularioVideo(){
+    /*public function verFormularioVideo(){
         $galerias=Galeria::All();
         $vista=view('Multimedia.Video.formulario',['galerias'=>$galerias]);
         return $vista;
@@ -145,7 +149,7 @@ class AdmiController extends Controller
         $galerias=Galeria::All();
         $vista=view('Multimedia.Foto.formulario',['galerias'=>$galerias]);
         return $vista;
-    }
+    }*/
     public function mostrarAreas($id){
         $areas=Area::join('desarrollo','area.id','=','desarrollo.area_id')
             ->select('area.id','area.nombre')

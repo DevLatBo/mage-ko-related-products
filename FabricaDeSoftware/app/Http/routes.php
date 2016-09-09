@@ -21,9 +21,8 @@ Route::get("listaInvestigacion/investigacion/{area}","AdmiController@mostrarArti
 Route::get("listaInvestigacion/investigacion/articulo/formulario{area}","AdmiController@verFormularioArticulo");
 Route::get("tiposPersonal/{personal}","AdmiController@listar");
 Route::get("galerias","AdmiController@verGalerias");
+Route::get("galerias/{galeria}","AdmiController@verMultimedia");
 Route::get('galerias/{form}',"AdmiController@verFormularioGaleria");
-Route::get('video/formulario',"AdmiController@verFormularioVideo");
-Route::get("foto/formulario","AdmiController@verFormularioFoto");
 
 Route::resource("galeria","GaleriaController");
 Route::resource("video","VideoController");
