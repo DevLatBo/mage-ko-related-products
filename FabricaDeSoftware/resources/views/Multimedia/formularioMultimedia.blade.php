@@ -4,19 +4,29 @@
 	<div class="container well col-lg-12">
 		<div class="row">
 			<div class="form-horizontal">
-				{{Form::open(['route'=>'foto.store','method'=>'POST','files'=>true])}}
+				{{Form::open(['route'=>'multimedia.store','method'=>'POST','files'=>true])}}
 				<div class="control-group">
 				{{Form::label('nombre','Nombre: ')}}
 					<div class="controls">
 						{{Form::text('nombre_foto',null,["class"=>"form-control","placeholder"=>"Nombre...","id"=>'nombre'])}}
 					</div>
-				</div><br>
-				<div class="control-group">
-					{!! Form::label('Foto: ') !!}
-					<div class="controls">
-						{{ Form::file('foto',null,array('class'=>'form-control')) }}
+				</div>
+				<br>
+				@if($form=="foto")
+					<div class="control-group">
+						{!! Form::label('Foto: ') !!}
+						<div class="controls">
+							{{ Form::file('foto',null,array('class'=>'form-control')) }}
+						</div>
 					</div>
-				</div><br>
+				@else
+					<div class="control-group">
+						{{Form::label('url','URL: ')}}
+						<div class="controls">
+							{{Form::text('url',null,['class'=>"form-control","placeholder"=>'URL...',"id"=>'url'])}}
+						</div>
+					</div>
+				@endif
 				{{Form::label('galeria',"Galeria: ")}}
 				<div class="controls">
 					@foreach($galerias as $galeria)
