@@ -5,7 +5,7 @@ namespace Fabrica\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Fabrica\Http\Requests;
-
+use Fabrica\Multimedia;
 class MultimediaController extends Controller
 {
     /**
@@ -36,7 +36,18 @@ class MultimediaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if($request["tipoMultimedia"]=="foto"){
+            $foto=$request["foto"];
+            $multimedia=$foto->getClientOriginalName();
+            \Storage::disk('local')->put($multimedia,\File::get($foto));
+        }else{
+            $multimedia=$request["url"];
+        }
+        Multimedia::create(["nombre"=>$request["nombre"],
+                        "descripcion"=>$request["descripcion"],
+                        "multimedia"=>$multimedia,
+                        "galeria_id"=>$request["galeria"][0]
+                        ]);
     }
 
     /**

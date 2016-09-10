@@ -24,12 +24,18 @@
 						<div class="controls">
 							{{ Form::file('foto',null,array('class'=>'form-control')) }}
 						</div>
+						<div class="controls">
+							{{Form::hidden('tipoMultimedia','foto')}}
+						</div>
 					</div>
 				@else
 					<div class="control-group">
 						{{Form::label('url','URL: ')}}
 						<div class="controls">
 							{{Form::text('url',null,['class'=>"form-control","placeholder"=>'URL...',"id"=>'url'])}}
+						</div>
+						<div class="controls">
+							{{Form::hidden('tipoMultimedia','video')}}
 						</div>
 					</div>
 				@endif
