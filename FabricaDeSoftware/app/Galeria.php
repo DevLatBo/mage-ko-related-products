@@ -12,7 +12,5 @@ class Galeria extends Model
 
     protected $fillable=['nombre_galeria'];
 
-    public function videos(){
-    	return $this->hasMany("Fabrica\Video");
-    }
+   
 }

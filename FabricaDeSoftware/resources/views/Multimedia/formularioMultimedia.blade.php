@@ -11,8 +11,14 @@
 						{{Form::text('nombre_foto',null,["class"=>"form-control","placeholder"=>"Nombre...","id"=>'nombre'])}}
 					</div>
 				</div>
+				<div class="control-group">
+					{{Form::label('descripcion','Descripcion: ')}}
+					<div class="controls">
+						{{ Form::textarea('descripcion',null,["class"=>"form-control","placeholder"=>"Descripcion...","rows"=>5]) }}
+					</div>
+				</div>
 				<br>
-				@if($form=="foto")
+				@if($multimedia=="foto")
 					<div class="control-group">
 						{!! Form::label('Foto: ') !!}
 						<div class="controls">

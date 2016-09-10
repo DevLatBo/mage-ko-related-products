@@ -26,8 +26,7 @@ Route::get('galerias/seccion/{form}',"AdmiController@verFormularioMultimedia");
 Route::get('galerias/{form}',"AdmiController@verFormularioGaleria");
 
 Route::resource("galeria","GaleriaController");
-Route::resource("video","VideoController");
-Route::resource("foto","FotoController");
+Route::resource("multimedia","MultimediaController");
 Route::resource("usuario","UsuarioController");
 Route::resource("investigacion","investigacionController");
 Route::resource("articulo","ArticuloController");

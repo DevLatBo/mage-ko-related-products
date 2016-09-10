@@ -12,21 +12,11 @@ class Multimedia extends Migration
      */
     public function up()
     {
-        
-    }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
         /*Schema::create('multimedia', function($table)
         {
             $table->increments('id');
-            $table->binary('foto');
-            $table->string('video');
+            $table->string('multimedia');
+            $table->string('descripcion');
             $table->integer('galeria_id')->unsigned();
         });
 
@@ -36,6 +26,15 @@ class Multimedia extends Migration
                 ->references('id')->on('galeria')
                 ->onDelete('cascade');
         });*/
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
         //Schema::drop('multimedia');
     }
 }
