@@ -12,20 +12,7 @@ class Multimedia extends Migration
      */
     public function up()
     {
-        /*Schema::create('multimedia', function($table)
-        {
-            $table->increments('id');
-            $table->string('multimedia');
-            $table->string('descripcion');
-            $table->integer('galeria_id')->unsigned();
-        });
-
-        Schema::table('multimedia', function($table)
-        {
-            $table->foreign('galeria_id')
-                ->references('id')->on('galeria')
-                ->onDelete('cascade');
-        });*/
+        
     }
 
     /**
@@ -35,6 +22,20 @@ class Multimedia extends Migration
      */
     public function down()
     {
+        /*Schema::create('multimedia', function($table)
+        {
+            $table->increments('id');
+            $table->binary('foto');
+            $table->string('video');
+            $table->integer('galeria_id')->unsigned();
+        });
+
+        Schema::table('multimedia', function($table)
+        {
+            $table->foreign('galeria_id')
+                ->references('id')->on('galeria')
+                ->onDelete('cascade');
+        });*/
         //Schema::drop('multimedia');
     }
 }

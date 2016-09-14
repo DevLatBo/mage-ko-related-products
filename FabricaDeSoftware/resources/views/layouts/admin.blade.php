@@ -89,6 +89,8 @@
                         <div id="collapseThree" class="panel-collapse collapse">
                             <table class="table">
                                 <tr><td>{{HTML::linkAction('AdmiController@verGalerias','Galerias')}}</td></tr>
+                                <tr><td>{{HTML::linkAction("AdmiController@verFormularioVideo","Agregar Video")}}</td></tr>
+                                <tr><td>{{HTML::linkAction("AdmiController@verFormularioFoto","Agregar Foto")}}</td></tr>
                             </table>
                         </div>
                     </div><!--fin panel-default3!-->
