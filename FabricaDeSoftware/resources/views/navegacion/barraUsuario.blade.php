@@ -10,13 +10,13 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav nav-pills nav-justified">
-         <li>{{HTML::linkAction('FrontControl@abrirSeccion','Inicio',array('seccion'=>'inicio'),array())}}</li>
-         <li>{{HTML::linkAction('FrontControl@abrirSeccion','Investigaciones',array('seccion'=>'investigaciones'),array())}}</li>
-         <li>{{HTML::linkAction('FrontControl@abrirSeccion','Participantes',array('seccion'=>'participantes'),array())}}</li>
-         <li>{{HTML::linkAction('FrontControl@abrirSeccion','Multimedia',array('seccion'=>'multimedia'),array())}}</li>
-         <li>{{HTML::linkAction('FrontControl@abrirSeccion','Blog',array('seccion'=>'blog'))}}</li>
-         <li>{{HTML::linkAction('FrontControl@abrirSeccion','Instalaciones',array('seccion'=>'instalaciones'),array())}}</li>
-         <li>{{HTML::linkAction('FrontControl@abrirSeccion','Contactos',array('seccion'=>'contacto'),array())}}</li>
+         <li>{{HTML::linkAction('FrontControl@abrirSeccion','Inicio',array('seccion'=>'Inicio'),array())}}</li>
+         <li>{{HTML::linkAction('FrontControl@abrirSeccion','Investigaciones',array('seccion'=>'Investigaciones'),array())}}</li>
+         <li>{{HTML::linkAction('FrontControl@abrirSeccion','Participantes',array('seccion'=>'Participantes'),array())}}</li>
+         <li>{{HTML::linkAction('FrontControl@abrirSeccion','Multimedia',array('seccion'=>'Multimedia'),array())}}</li>
+         <li>{{HTML::linkAction('FrontControl@abrirSeccion','Blog',array('seccion'=>'Blog'))}}</li>
+         <li>{{HTML::linkAction('FrontControl@abrirSeccion','Instalaciones',array('seccion'=>'Instalaciones'),array())}}</li>
+         <li>{{HTML::linkAction('FrontControl@abrirSeccion','Contactos',array('seccion'=>'Contacto'),array())}}</li>
       </ul>
     </div>
   </div>
