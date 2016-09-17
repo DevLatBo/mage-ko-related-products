@@ -1,6 +1,14 @@
 @extends('layouts.admin')
 
 @section('content')
+
+<div class="collection">
+    <a href="#!" class="collection-item">Alvin</a>
+    <a href="#!" class="collection-item active">Alvin</a>
+    <a href="#!" class="collection-item">Alvin</a>
+    <a href="#!" class="collection-item">Alvin</a>
+</div>
+
 	<div class="container well col-lg-12">
         @if(Session::has('mensaje'))
             <div class="alert alert-warning alert-dismissible" role="alert">

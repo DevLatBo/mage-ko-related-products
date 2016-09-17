@@ -10,7 +10,7 @@
     	<th>Galerias</th>
     	@foreach($galerias as $galeria)
     		<tr>
-    			<td>{{Html::linkAction('AdmiController@verMultimedia',$galeria->nombre_galeria,array('galeria'=>$galeria->nombre_galeria),array())}}</td>
+    			<td>{{$galeria->nombre_galeria}}</td>
     		</tr>
     	@endforeach
     </table>

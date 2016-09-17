@@ -1,31 +1,19 @@
 @extends('layouts.principal')
-
 @section('content')
-<div class="tab-pane" id="personal" >
-    <div class="col-lg-4" >
-        <div class = "panel panel-primary">
-            <div class = "panel-heading">
-                <h3 class="panel-title">Personal</h3>
+
+<div class="row">
+    <div class="col s12">
+        <div class="col m3">
+            <div class="collection">
+            @foreach($tipos as $tipo)
+            {{ Html::linkAction('FrontControl@verPersonal',$tipo->nombre_tipo,array('seccion'=>'personal','personal'=>$tipo->nombre_tipo),array('class' => "collection-item")) }}
+            @endforeach
             </div>
-            <div class="panel-group">
-                @foreach($tipos as $tipo)
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <span class="glyphicon glyphicon-menu-right" >
-                            </span>
-                            {{ Html::linkAction('FrontControl@verPersonal',$tipo->nombre_tipo,array('seccion'=>'personal','personal'=>$tipo->nombre_tipo),array()) }}
-                        </h4>
-                    </div>
-                </div>
-                @endforeach
-            </div><!--fin de panel-grupo!-->
         </div>
-    </div>
-    <div class="col-lg-8">
-        <div class="panel panel-primary" >
+        <div class="col m9">
             @yield('contenido')
         </div>
     </div>
-</div><!--fin tab-pane!-->
+</div>
+
 @stop

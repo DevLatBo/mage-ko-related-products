@@ -20,6 +20,7 @@ Route::get("listaInvestigacion/investigacion/{area}","AdmiController@mostrarArti
 Route::get("listaInvestigacion/investigacion/articulo/formulario{area}","AdmiController@verFormularioArticulo");
 Route::get("tiposPersonal/{personal}","AdmiController@listar");
 Route::get("galerias","AdmiController@verGalerias");
+<<<<<<< HEAD
 Route::get("galerias/{galeria}","AdmiController@verMultimedia");
 Route::get('galerias/multimediaMultimedia');
 Route::get('galerias/seccion/{form}',"AdmiController@verFormularioGaleria");
@@ -28,9 +29,15 @@ Route::get("/","FrontControl@index");
 Route::get("/{seccion}","FrontControl@abrirSeccion");
 Route::get("/Participantes/{personal}","FrontControl@verPersonal");
 Route::get("/Investigaciones/{area}","FrontControl@mostrarArticulos");
+=======
+Route::get('galerias/{form}',"AdmiController@verFormularioGaleria");
+Route::get('video/formulario',"AdmiController@verFormularioVideo");
+Route::get("foto/formulario","AdmiController@verFormularioFoto");
+>>>>>>> 8efb61ed3850d92e94634bf8e94a7f8c572c9053
 
 Route::resource("galeria","GaleriaController");
-Route::resource("multimedia","MultimediaController");
+Route::resource("video","VideoController");
+Route::resource("foto","FotoController");
 Route::resource("usuario","UsuarioController");
 Route::resource("investigacion","investigacionController");
 Route::resource("articulo","ArticuloController");
