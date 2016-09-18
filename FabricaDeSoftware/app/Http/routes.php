@@ -27,8 +27,8 @@ Route::get('galerias/seccion/{form}',"AdmiController@verFormularioGaleria");
 
 Route::get("/","FrontControl@index");
 Route::get("/{seccion}","FrontControl@abrirSeccion");
-Route::get("/Participantes/{personal}","FrontControl@verPersonal");
 Route::get("/Investigaciones/{area}","FrontControl@mostrarArticulos");
+Route::get("/Participantes/{personal}","FrontControl@verPersonal");
 
 Route::get('galerias/{form}',"AdmiController@verFormularioGaleria");
 Route::get('video/formulario',"AdmiController@verFormularioVideo");

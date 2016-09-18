@@ -59,7 +59,7 @@ class FrontControl extends Controller
 			->join('personal','usuario.id','=','personal.usuario_id')
 			->join('tipo','tipo.id','=','personal.tipo_id')
 			->select('usuario.nombre as NOMBRE','usuario.carrera as CARRERA', 			'usuario.correo as CORREO', 'usuario.foto as FOTO',
-				DB::raw('GROUP_CONCAT(area.nombre SEPARATOR ", ") AS "AREAS" ') )
+				DB::raw('GROUP_CONCAT(area.nombre SEPARATOR "<br>") AS "AREAS" ') )
 			->where('tipo.nombre_tipo','=',$personal)
 			->groupBy('usuario.id')
 			->get();
