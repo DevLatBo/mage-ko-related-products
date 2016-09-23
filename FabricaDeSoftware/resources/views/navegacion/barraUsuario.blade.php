@@ -13,7 +13,7 @@
         <li>{{HTML::linkAction('FrontControl@abrirSeccion','Inicio',array('seccion'=>'inicio'),array())}}</li>
           <li>{{HTML::linkAction('FrontControl@abrirSeccion','Investigaciones',array('seccion'=>'investigaciones'),array())}}</li>
           <li>{{HTML::linkAction('FrontControl@abrirSeccion','Participantes',array('seccion'=>'participantes'),array())}}</li>
-          <li>{{HTML::linkAction('FrontControl@abrirSeccion','Contactos',array('seccion'=>'contacto'),array())}}</li>
+          <li>{{HTML::linkAction('FrontControl@abrirSeccion','Contactos',array('seccion'=>'contacto'),array())}}</li> 
       </ul>
     </div>
   </nav>
@@ -21,3 +21,5 @@
 <!--           <li>{{HTML::linkAction('FrontControl@abrirSeccion','Blog',array('seccion'=>'blog'))}}</li> -->
 <!-- <li>{{HTML::linkAction('FrontControl@abrirSeccion','Multimedia',array('seccion'=>'multimedia'),array())}}</li> -->
 <!-- <li>{{HTML::linkAction('FrontControl@abrirSeccion','Instalaciones',array('seccion'=>'instalaciones'),array())}}</li> -->
+=======
+>>>>>>> 7200b879bec5e82720da744c45245cdd59778bb0

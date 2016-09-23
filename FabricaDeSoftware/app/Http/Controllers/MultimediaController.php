@@ -48,6 +48,8 @@ class MultimediaController extends Controller
                         "multimedia"=>$multimedia,
                         "galeria_id"=>$request["galeria"][0]
                         ]);
+        $vista=view("Multimedia.lista");
+        return $vista;
     }
 
     /**

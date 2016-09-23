@@ -8,7 +8,7 @@
 				<div class="control-group">
 				{{Form::label('nombre','Nombre: ')}}
 					<div class="controls">
-						{{Form::text('nombre_foto',null,["class"=>"form-control","placeholder"=>"Nombre...","id"=>'nombre'])}}
+						{{Form::text('nombre',null,["class"=>"form-control","placeholder"=>"Nombre...","id"=>'nombre'])}}
 					</div>
 				</div>
 				<div class="control-group">

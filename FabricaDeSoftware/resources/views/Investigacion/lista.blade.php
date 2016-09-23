@@ -21,12 +21,12 @@
 				@foreach($investigaciones as $inv)
 					<tr>
 						<td>{!!Html::linkAction('AdmiController@mostrarAreas',$inv->nombre,array('id'=>$inv->id),array())!!}</a></td>
-						<td>{{$inv->descripcion}}</td>
+						<td>{!!$inv->descripcion!!}</td>
 						<td>{!! link_to_route('investigacion.edit', $title='', $parameters = $inv->id, $attributes = ['class'=>'glyphicon glyphicon-pencil']) !!}</td>
 					</tr>
 				@endforeach
 					<tr>
-						<td colspan=2>{{Html::linkAction('AdmiController@verFormulario','Agregar Investigacion',array(),array('class'=>'btn btn-primary'))}}</td>
+						<td colspan=2>{{Html::linkAction('AdmiController@verFormularioInvestigacion','Agregar Investigacion',array(),array('class'=>'btn btn-primary'))}}</td>
 					</tr>
 			</tbody>
 		</table>

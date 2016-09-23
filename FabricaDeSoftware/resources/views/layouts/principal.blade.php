@@ -42,7 +42,8 @@
             </div>
           </div>
         </footer>
-
+    {{HTML::script("assets/js/bootstrap.js")}}
+    {{HTML::script("assets/js/jquery.js")}}
     <script src="{{ URL::asset('assets/js/materialize.min.js') }}"></script>
     <script>
       $(".button-collapse").sideNav();
