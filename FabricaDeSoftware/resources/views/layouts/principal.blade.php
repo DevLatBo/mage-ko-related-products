@@ -13,7 +13,7 @@
     @include('navegacion.barraUsuario')
     @yield('content') 
 
-    <footer class="page-footer green">
+    <footer class="page-footer blue darken-4">
           <div class="container">
             <div class="row">
               <div class="col s12">

@@ -1,45 +1,28 @@
 @extends('layouts.principal')
 
-@section('content')
-  <div class="tab-pane" id="investigacion" >
-    <div class="col-lg-4" >
-      <div class = "panel panel-primary">
-        <div class = "panel-heading">
-          <h3 class="panel-title">Investigación</h3>
-        </div>
-        <div class="panel-group" id="accordion">
-          <div class="panel panel-default">
-          <?php $i=1;?>
-          @foreach($investigaciones as $investigacion)
-            <div class="panel-heading">
-                  <h4 class="panel-title">
-                    <a data-toggle="collapse" data-target="#collapsible-<?php echo $i?>" href="#collapseOne">
-                      <span class="glyphicon">
-                      </span>{{$investigacion->Investigacion}}
-                    </a>
-                  </h4>
-            </div>
-            <div id="collapsible-<?php echo $i ?>" class="collapse">
-              <?php $a=$investigacion->Areas;
-                $areas=explode(",",$a);
-              ?>
-              <table class="table">
-                @foreach($areas as $area)
-                <tr>
-                    <td><span class="glyphicon glyphicon-menu-right" >
-                    </span>{{Html::linkAction('FrontControl@mostrarArticulos',$area,array('area'=>$area),array())}}
-                    </td>
-                </tr>
-                @endforeach
-              </table>
-            </div><!--fin collapseOne!-->
-            <?php $i++ ?>
-            @endforeach
-          </div><!--panel defaul antes grupo!-->
-        </div><!--fin panel-gruop!-->
-      </div><!--fin panel primary-->
-    </div><!--fin col-lg-4!-->
-    @yield('investigacion_contenido')
-  </div><!--fin tabpane!-->
+@section('content') 
 
+<div class="row">
+  <div class="col m3">
+    <div class="collection">
+    <?php $i=1;?>
+    @foreach($investigaciones as $investigacion)
+      {{$investigacion->Investigacion}}
+        <?php $a=$investigacion->Areas;
+          $areas=explode(",",$a);
+        ?>
+          @foreach($areas as $area)
+          {{Html::linkAction('FrontControl@mostrarArticulos',$area,array('area'=>$area),array('class'=>'collection-item'))}}
+          @endforeach
+      <?php $i++ ?>
+    @endforeach
+    </div>
+  </div>
+  <div class="col m9">
+    @yield('investigacion_contenido')
+  </div>   
+</div>
+
+
+          
 @stop
