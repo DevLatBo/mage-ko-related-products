@@ -24,19 +24,19 @@ class FrontControl extends Controller
 	}
 	public function abrirSeccion($seccion){
 		switch($seccion){
-			case 'Inicio':
+			case 'inicio':
 				$seccion=view('seccion.index');
 				break;
-			case 'Investigaciones':
+			case 'investigaciones':
 				$investigaciones=$this->obtenerInvestigaciones();
 				$seccion=view('seccion.Investigacion.inicio',
 							['investigaciones'=>$investigaciones]);
 				break;
-			case 'Participantes':
+			case 'participantes':
 				$tipos=tipo::All();
         		$seccion=view('seccion.Personal.principal',['tipos'=>$tipos]);
         		break;
-        	case 'Multimedia':
+        	/*case 'Multimedia':
         		$seccion=view("seccion.Multimedia.multimedia");
         		break;
         	case 'Blog':
@@ -44,8 +44,8 @@ class FrontControl extends Controller
         		break;
         	case 'Instalaciones':
         		$seccion=view("seccion.Instalacion.instalacion");
-        		break;
-        	case 'Contacto':
+        		break;*/
+        	case 'contacto':
         		$seccion=view("seccion.Contactos.contacto");
         		break;
 		}
