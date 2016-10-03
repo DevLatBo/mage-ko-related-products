@@ -7,11 +7,10 @@
 <div id="overlay" style="color:#fddaec;">
     <div id="title"><h1>Fabrica de software</h1></div>
     <video class="visible-desktop" id="hero-vid" poster="http://www.markhillard.com/sandbox/media/polina.jpg" autoplay loop muted>
-        <source type="video/webm" src="http://www.markhillard.com/sandbox/media/polina.webm"></source>
-        <source type="video/mp4" src="http://www.markhillard.com/sandbox/media/polina.mp4"></source>
+        <source type="video/mp4" src="img/video.mp4"></source>
+        <!-- <source type="video/mp4" src="img/Fabrica.mp4"></source> -->
     </video>
-    <div id="state" class="visible-desktop"><span class="iconicfill-pause"></span></div>
-    <img id="hero-pic" class="hidden-desktop" src="http://www.markhillard.com/sandbox/media/polina.jpg" alt="">
+    <img id="hero-pic" class="hidden-desktop" src="img/banner-presentacion.png" alt="">
 </div>
 
 <div id="content" style="color:#fddaec;">

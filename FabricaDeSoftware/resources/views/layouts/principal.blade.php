@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <title>Fabrica de Software | Universidad Mayor de San Simon</title>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="{{ URL::asset('assets/js/jquery-3.0.0.min.js') }}"></script>
     {!! Html::style('assets/css/bootstrap.min.css') !!}
     {!! Html::style('assets/css/materialize.min.css') !!}    
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <script src="{{ URL::asset('assets/js/jquery-2.0.0.js') }}"></script>
   </head>
   <body>
     @include('navegacion.barraUsuario')
@@ -42,23 +42,28 @@
             </div>
           </div>
         </footer>
-    {{HTML::script("assets/js/bootstrap.js")}}
-    {{HTML::script("assets/js/jquery.js")}}
     <script src="{{ URL::asset('assets/js/materialize.min.js') }}"></script>
+    
     <script>
-      $(".button-collapse").sideNav();
-      $(document).ready(function(){
-        $('.carousel').carousel();
-      });
-    </script>
-    <script>
-      $(document).ready(function(){
-        $('.modal-trigger').leanModal();
-      });
-      var a = function(){
-        $('#modal1').openModal();
-      };
-      $('#modal1').closeModal();
+    $('.button-collapse').sideNav({
+      menuWidth: 600, // Default is 240
+      edge: 'left', // Choose the horizontal origin
+      closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+    }
+    );
+      
+
+      // $(document).ready(function(){
+      //   $('.carousel').carousel();
+      // });
+    
+      // $(document).ready(function(){
+      //   $('.modal-trigger').leanModal();
+      // });
+      // var a = function(){
+      //   $('#modal1').openModal();
+      // };
+      // $('#modal1').closeModal();
     </script>
   </body>
 </html>
