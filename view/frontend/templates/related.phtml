@@ -1,0 +1,14 @@
+<?php /** @var $block Magento\Framework\View\Element\Template */ ?>
+<div id="related-products">
+    <div id="products" data-bind="scope: 'relatedProducts'">
+        <!-- ko template: getTemplate() --><!-- /ko -->
+    </div>
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "#related-products": {
+            "Magento_Ui/js/core/app": <?= $block->getJsLayout() ?>
+        }
+    }
+</script>
