@@ -1,6 +1,9 @@
 <?php /** @var $block Magento\Framework\View\Element\Template */ ?>
 <div id="related-products">
-    <div id="products" data-bind="scope: 'relatedProducts'">
+    <div id="title" data-bind="scope: 'title'">
+        <!-- ko template: getTemplate() --><!-- /ko -->
+    </div>
+    <div id="products" data-bind="scope: 'products'">
         <!-- ko template: getTemplate() --><!-- /ko -->
     </div>
 </div>
