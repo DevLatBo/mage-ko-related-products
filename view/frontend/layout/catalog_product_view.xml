@@ -1,7 +1,9 @@
 <page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <referenceBlock name="catalog.product.related" remove="false"/>
     <referenceContainer name="content.aside">
-        <block name="ko_related_products" template="Devlat_RelatedProducts::related.phtml">
+        <block name="ko_related_products"
+               class="Devlat\RelatedProducts\Block\Related"
+               template="Devlat_RelatedProducts::related.phtml">
             <arguments>
                 <argument name="jsLayout" xsi:type="array">
                     <item name="components" xsi:type="array">

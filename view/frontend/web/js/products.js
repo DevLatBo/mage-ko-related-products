@@ -15,6 +15,7 @@ define([
         },
         initialize() {
             this._super();
+            console.log("sku: " + this.sku);
         },
         getListOfProducts() {
             return this.products;
