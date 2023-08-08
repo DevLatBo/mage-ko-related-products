@@ -31,7 +31,7 @@ class Related extends Template
         $jsLayout = parent::getJsLayout();
         if($current = $this->registry->registry('current_product')) {
             $jsLayout = json_decode($jsLayout, true);
-            $jsLayout['components']['products']['sku'] = $current->getSku();
+            $jsLayout['components']['products']['product_id'] = $current->getId();
         }
         return json_encode($jsLayout);
     }

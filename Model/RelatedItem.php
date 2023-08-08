@@ -1,0 +1,60 @@
+<?php
+
+namespace Devlat\RelatedProducts\Model;
+
+use Devlat\RelatedProducts\Api\Data\RelatedItemInterface;
+use Magento\Framework\DataObject;
+
+class RelatedItem extends DataObject implements RelatedItemInterface
+{
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->_getData(self::ID);
+    }
+
+    /**
+     * @param int $id
+     * @return RelatedItem
+     */
+    public function setId(int $id)
+    {
+        return $this->setData(self::ID, $id);
+    }
+
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->_getData(self::NAME);
+    }
+
+    /**
+     * @param string $name
+     * @return RelatedItem
+     */
+    public function setName(string $name)
+    {
+        return $this->setData(self::NAME, $name);
+    }
+
+    /**
+     * @return float
+     */
+    public function getPrice(): float
+    {
+        return $this->_getData(self::PRICE);
+    }
+
+    /**
+     * @param float $price
+     * @return RelatedItem
+     */
+    public function setPrice(float $price)
+    {
+        return $this->setData(self::PRICE, $price);
+    }
+}
