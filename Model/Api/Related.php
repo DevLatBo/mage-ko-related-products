@@ -20,7 +20,10 @@ class Related implements RelatedInterface
      */
     private ProductRepository $productRepository;
 
-
+    /**
+     * @param RelatedItemFactory $relatedItemFactory
+     * @param ProductRepository $productRepository
+     */
     public function __construct(
         RelatedItemFactory $relatedItemFactory,
         ProductRepository $productRepository
