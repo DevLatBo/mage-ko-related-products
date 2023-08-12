@@ -48,8 +48,14 @@ class Related implements RelatedInterface
             $responseItem->setId($relatedProduct->getId());
             $responseItem->setName($relatedProduct->getName());
             $responseItem->setPrice($relatedProduct->getFinalPrice());
+            $responseItem->setPosition($data['position']);
             $result[] = $responseItem;
         }
+
+        usort($result, function($a, $b) {
+            return $a->getPosition() <=> $b->getPosition();
+        });
+
         return $result;
     }
 }

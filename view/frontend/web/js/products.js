@@ -11,12 +11,19 @@ define([
 
     return Component.extend({
         defaults: {
-            products: ko.observableArray(['product1', 'product2', 'product3']),
+            products: ko.observableArray([]),
         },
         initialize() {
             this._super();
+            this.requestRelateds();
         },
-        getListOfProducts() {
+        requestRelateds() {
+            storage.get(`rest/V1/products/getRelated/${this.productId}`)
+                .done(response => {
+                    this.products(response);
+                });
+        },
+        getRelateds() {
             return this.products;
         }
     })

@@ -7,6 +7,7 @@ interface RelatedItemInterface
     const ID = 'id';
     const NAME = 'name';
     const PRICE = 'price';
+    CONST POSITION = 'position';
 
     /**
      * @return int
@@ -40,4 +41,15 @@ interface RelatedItemInterface
      * @return $this
      */
     public function setPrice(float $price);
+
+    /**
+     * @return int
+     */
+    public function getPosition();
+
+    /**
+     * @param int $position
+     * @return $this
+     */
+    public function setPosition(int $position);
 }
