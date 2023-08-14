@@ -2,6 +2,13 @@
     <ol class="products list items product-items" data-bind="foreach: products">
         <li class="item product product-item">
             <div class="product-item-info">
+                <a class="product photo product-item-photo" href="#">
+                    <span class="product-image-container">
+                        <span class="product-image-wrapper">
+                            <img data-bind="attr:{src: image}" class="product-image-photo"  />
+                        </span>
+                    </span>
+                </a>
                 <div class="product details product-item-details">
                     <strong class="product name product-item-name">
                         <a href="#" class="product-item-link" data-bind="html: name"></a>

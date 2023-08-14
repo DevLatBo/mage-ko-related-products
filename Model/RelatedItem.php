@@ -74,4 +74,21 @@ class RelatedItem extends DataObject implements RelatedItemInterface
     {
         return $this->setData(self::POSITION, $position);
     }
+
+    /**
+     * @return string
+     */
+    public function getImage(): string
+    {
+        return $this->_getData(self::IMAGE);
+    }
+
+    /**
+     * @param string $image
+     * @return RelatedItem
+     */
+    public function setImage(string $image)
+    {
+        return $this->setData(self::IMAGE, $image);
+    }
 }

@@ -7,6 +7,7 @@ interface RelatedItemInterface
     const ID = 'id';
     const NAME = 'name';
     const PRICE = 'price';
+    const IMAGE = 'image';
     CONST POSITION = 'position';
 
     /**
@@ -52,4 +53,15 @@ interface RelatedItemInterface
      * @return $this
      */
     public function setPosition(int $position);
+
+    /**
+     * @return string
+     */
+    public function getImage();
+
+    /**
+     * @param string $image
+     * @return $this
+     */
+    public function setImage(string $image);
 }
