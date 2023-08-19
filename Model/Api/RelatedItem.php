@@ -1,6 +1,6 @@
 <?php
 
-namespace Devlat\RelatedProducts\Model;
+namespace Devlat\RelatedProducts\Model\Api;
 
 use Devlat\RelatedProducts\Api\Data\RelatedItemInterface;
 use Magento\Framework\DataObject;

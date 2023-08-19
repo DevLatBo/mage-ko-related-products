@@ -2,7 +2,7 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <preference for="Devlat\RelatedProducts\Api\Data\RelatedItemInterface"
-                type="\Devlat\RelatedProducts\Model\RelatedItem" />
+                type="Devlat\RelatedProducts\Model\Api\RelatedItem" />
     <preference for="Devlat\RelatedProducts\Api\RelatedInterface"
-                type="Devlat\RelatedProducts\Model\Api\Related" />
+                type="Devlat\RelatedProducts\Model\Related" />
 </config>

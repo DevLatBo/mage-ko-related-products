@@ -1,11 +1,11 @@
 <?php
 
-namespace Devlat\RelatedProducts\Model\Api;
+namespace Devlat\RelatedProducts\Model;
 
 use Devlat\RelatedProducts\Api\Data\RelatedItemInterface;
 use Devlat\RelatedProducts\Api\RelatedInterface;
-use Devlat\RelatedProducts\Model\RelatedItem;
-use Devlat\RelatedProducts\Model\RelatedItemFactory;
+use Devlat\RelatedProducts\Model\Api\RelatedItem;
+use Devlat\RelatedProducts\Model\Api\RelatedItemFactory;
 use Magento\Catalog\Helper\Image;
 use Magento\Catalog\Model\ProductRepository;
 use Magento\Catalog\Model\View\Asset\PlaceholderFactory;
@@ -33,6 +33,7 @@ class Related implements RelatedInterface
      * @param RelatedItemFactory $relatedItemFactory
      * @param ProductRepository $productRepository
      * @param Image $imageHelper
+     * @param PlaceholderFactory $placeholderFactory
      */
     public function __construct(
         RelatedItemFactory $relatedItemFactory,
