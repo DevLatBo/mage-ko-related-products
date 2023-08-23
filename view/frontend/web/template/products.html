@@ -25,8 +25,11 @@
                     </div>
                     <div class="product actions product-item-actions">
                         <div class="secondary-addto-links actions-secondary">
-                            <a href="#" class="action towishlist" title="Add to Wish List"></a>
-                            <a href="#" class="action tocompare" title="Add to Compare"></a>
+                            <a data-bind="attr:{
+                                    title: $parent.actions.wishlist.title,
+                                    href:'#'}, click: $parent.addToWishlist.bind($parent, id)"
+                               class="action towishlist"></a>
+                            <a data-bind="attr:{title: $parent.actions.compare.title, href:'#'}" class="action tocompare"></a>
                         </div>
                     </div>
                 </div>
