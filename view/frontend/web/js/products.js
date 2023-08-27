@@ -31,28 +31,22 @@ define([
                 });
         },
         addToWishlist(productRelatedId) {
-            console.log("product id", productRelatedId);
-            console.log(urlBuilder.build('test_route/index/test'));
-            var url = urlBuilder.build('test_route/index/test');
             const params = {
                 'product': productRelatedId,
-                'form_key': this.formKey,
+                'form_key': $.cookie('form_key'),
             };
-            /*var url = '/test_route/index/test';
-            var param = {eventid: attribute1.value};
-            $.ajax({ async: false, // required
-                showLoader: true,
+            var url = urlBuilder.build('wishlist/index/add');
+            $.ajax({
                 url: url,
-                data: param,
+                data: params,
                 type: "POST",
-                dataType: 'json',
                 success : function (response) {
                     console.log(response);
+
+                    //window.location.href = response.redirectUrl;
                 }
-            });*/
-            storage.get('test_route/index/test').done((response) => {
-                console.log(response);
             });
+            //window.location.href = `wishlist/index/add?product=${this.productId}`;
         }
     })
 
