@@ -42,12 +42,13 @@ define([
                 type: "POST",
                 success : function (response) {
                     console.log(response);
-
-                    //window.location.href = response.redirectUrl;
+                    var redirectUrl = urlBuilder.build('customer/account/login');
+                    if(response.hasOwnProperty('backUrl')) {
+                        redirectUrl = response.backUrl;
+                    }
+                    window.location.href = redirectUrl;
                 }
             });
-            //window.location.href = `wishlist/index/add?product=${this.productId}`;
         }
-    })
-
-})
+    });
+});
