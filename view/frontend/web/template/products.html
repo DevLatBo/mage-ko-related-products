@@ -29,7 +29,9 @@
                                     title: $parent.actions.wishlist.title,
                                     href:'#'}, click: $parent.addToWishlist.bind($parent, id)"
                                class="action towishlist"></a>
-                            <a data-bind="attr:{title: $parent.actions.compare.title, href:'#'}" class="action tocompare"></a>
+                            <a data-bind="attr:{title: $parent.actions.compare.title, href:'#'},
+                                    click: $parent.addToCompare.bind($parent, id)"
+                               class="action tocompare"></a>
                         </div>
                     </div>
                 </div>

@@ -1,13 +1,11 @@
 define([
     'uiComponent',
-    'ko',
     'mage/storage',
     'mage/url',
     'jquery',
     'Devlat_RelatedProducts/js/model/list'
 ], function (
     Component,
-    ko,
     storage,
     urlBuilder,
     $,
@@ -41,12 +39,25 @@ define([
                 data: params,
                 type: "POST",
                 success : function (response) {
-                    console.log(response);
                     var redirectUrl = urlBuilder.build('customer/account/login');
                     if(response.hasOwnProperty('backUrl')) {
                         redirectUrl = response.backUrl;
                     }
                     window.location.href = redirectUrl;
+                }
+            });
+        },
+        addToCompare(productRelatedId) {
+            const params = {
+                'product' : productRelatedId,
+            };
+            const urlRequest = urlBuilder.build('related/product/addtocompare');
+            $.ajax({
+                url: urlRequest,
+                data: params,
+                type: 'POST',
+                success: function (response) {
+                    console.log(response);
                 }
             });
         }
