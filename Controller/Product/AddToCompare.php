@@ -2,7 +2,7 @@
 
 namespace Devlat\RelatedProducts\Controller\Product;
 
-use Magento\Catalog\Model\Product\Compare\Item;
+use Magento\Catalog\Model\Product\Compare\ListCompare;
 use Magento\Catalog\Model\ProductRepository;
 use Magento\Framework\App\Action\HttpPostActionInterface;
 use Magento\Framework\App\Request\Http;
@@ -13,71 +13,74 @@ use Magento\Framework\UrlInterface;
 class AddToCompare implements HttpPostActionInterface
 {
     /**
-     * @var Item
-     */
-    private $compareItem;
-    /**
      * @var Http
      */
-    private $request;
+    private Http $request;
     /**
      * @var JsonFactory
      */
-    private $jsonFactory;
+    private JsonFactory$jsonFactory;
     /**
      * @var ManagerInterface
      */
-    private $messageManager;
+    private ManagerInterface $messageManager;
     /**
      * @var ProductRepository
      */
-    private $productRepository;
+    private ProductRepository $productRepository;
     /**
      * @var UrlInterface
      */
-    private $url;
+    private UrlInterface $url;
+    /**
+     * @var ListCompare
+     */
+    private ListCompare $listCompare;
 
+    /**
+     * @param JsonFactory $jsonFactory
+     * @param Http $request
+     * @param ProductRepository $productRepository
+     * @param ManagerInterface $messageManager
+     * @param UrlInterface $url
+     * @param ListCompare $listCompare
+     */
     public function __construct(
         JsonFactory $jsonFactory,
-        Item $compareItem,
         Http $request,
         ProductRepository $productRepository,
         ManagerInterface $messageManager,
-        UrlInterface $url
+        UrlInterface $url,
+        ListCompare $listCompare
     )
     {
-        $this->compareItem = $compareItem;
         $this->request = $request;
         $this->jsonFactory = $jsonFactory;
         $this->messageManager = $messageManager;
         $this->productRepository = $productRepository;
         $this->url = $url;
+        $this->listCompare = $listCompare;
     }
 
+    /**
+     * @return \Magento\Framework\App\ResponseInterface|\Magento\Framework\Controller\Result\Json|\Magento\Framework\Controller\ResultInterface
+     * @throws \Magento\Framework\Exception\NoSuchEntityException
+     */
     public function execute()
     {
         $productId = $this->request->getParam('product');
         $product = $this->productRepository->getById($productId);
         $productName = $product->getName();
-        /*$message = __(
-            'You added product %1 to the <a href="%2">comparison list</a>',
-            $productName,
-            $this->url->getUrl('catalog/product_compare/index')
-        );*/
-        /*$this->messageManager->addComplexSuccessMessage(
+        $this->listCompare->addProduct($productId);
+
+        $this->messageManager->addComplexSuccessMessage(
             'comparedTo',
-            [
-                'pre_link_text' =>  __('You added product %1 to the ', $productName),
-                'url'           =>  $this->url->getUrl('catalog/product_compare/index'),
-                'link_text'     =>  'comparison list'
-            ]
-        );*/
-        $this->messageManager->addComplexSuccessMessage('comparedTo',
             [
                 'pre_link_text' =>  "You added product $productName to the ",
                 'url'           =>  $this->url->getUrl('catalog/product_compare/index'),
                 'link_text'     =>  'comparison list'
             ]);
+
         $result = ['product' => $productId];
         $resultJson = $this->jsonFactory->create();
         return $resultJson->setData($result);

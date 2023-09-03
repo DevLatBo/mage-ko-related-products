@@ -58,6 +58,7 @@ define([
                 type: 'POST',
                 success: function (response) {
                     console.log(response);
+                    window.scrollTo(0, 0);
                 }
             });
         }
