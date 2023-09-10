@@ -3,29 +3,53 @@ define([
     'mage/storage',
     'mage/url',
     'jquery',
+    'mage/translate',
     'Devlat_RelatedProducts/js/model/list'
 ], function (
     Component,
     storage,
     urlBuilder,
     $,
+    $t,
     listModel
 ) {
     'use strict';
 
     return Component.extend({
         defaults: {
+            title: $t('Related Products'),
             products: listModel.products,
             actions: listModel.links,
+            hasRP: listModel.hasRelatedProducts,
+            error: listModel.errorMessage,
+            hasError: listModel.hasError,
         },
         initialize() {
             this._super();
             this.requestRelateds();
         },
+        getTitle() {
+            return this.title;
+        },
         requestRelateds() {
             storage.get(`rest/V1/products/getRelated/${this.productId}`)
-                .done(response => {
-                    this.products(response);
+                .done((response) => {
+                    if(response.length) {
+                        this.products(response);
+                        this.hasRP(true);
+                    }
+                })
+                .fail((response) => {
+                    var errorResponse = JSON.parse(response.responseText);
+                    var message = "Related Products - ";
+                    if (errorResponse && errorResponse.message) {
+                        message += errorResponse.message;
+                    } else {
+                        message += 'Error in request!';
+                    }
+                    this.error($t(message));
+                    this.hasError(true)
+                    this.hasRP(false);
                 });
         },
         addToWishlist(productRelatedId) {

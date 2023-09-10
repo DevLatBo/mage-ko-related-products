@@ -5,6 +5,7 @@ define([
 ) {
     return {
         products: ko.observableArray([]),
+        hasRelatedProducts: ko.observable(false),
         links: {
             wishlist: {
                 title: 'Add to Wish List',
@@ -12,6 +13,8 @@ define([
             compare: {
                 title: 'Add to Compare'
             }
-        }
+        },
+        hasError: ko.observable(false),
+        errorMessage: ko.observable(''),
     }
 });

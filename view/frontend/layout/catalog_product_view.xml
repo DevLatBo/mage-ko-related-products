@@ -7,16 +7,6 @@
             <arguments>
                 <argument name="jsLayout" xsi:type="array">
                     <item name="components" xsi:type="array">
-                        <item name="title" xsi:type="array">
-                            <item name="component" xsi:type="string">
-                                Devlat_RelatedProducts/js/title
-                            </item>
-                            <item name="config" xsi:type="array">
-                                <item name="template" xsi:type="string">
-                                    Devlat_RelatedProducts/title
-                                </item>
-                            </item>
-                        </item>
                         <item name="products" xsi:type="array">
                             <item name="component" xsi:type="string">
                                 Devlat_RelatedProducts/js/products
