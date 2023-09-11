@@ -1,17 +1,20 @@
 define([
-    'ko'
+    'ko',
+    'mage/translate',
 ], function(
-    ko
+    ko,
+    $t
 ) {
     return {
+        mainTitle: $t('Related Products'),
         products: ko.observableArray([]),
         hasRelatedProducts: ko.observable(false),
         links: {
             wishlist: {
-                title: 'Add to Wish List',
+                title: $t('Add to Wish List'),
             },
             compare: {
-                title: 'Add to Compare'
+                title: $t('Add to Compare'),
             }
         },
         hasError: ko.observable(false),

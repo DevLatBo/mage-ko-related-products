@@ -4,34 +4,34 @@ define([
     'mage/url',
     'jquery',
     'mage/translate',
-    'Devlat_RelatedProducts/js/model/list'
+    'Devlat_RelatedProducts/js/model/related'
 ], function (
     Component,
     storage,
     urlBuilder,
     $,
     $t,
-    listModel
+    relatedModel
 ) {
     'use strict';
 
     return Component.extend({
         defaults: {
-            title: $t('Related Products'),
-            products: listModel.products,
-            actions: listModel.links,
-            hasRP: listModel.hasRelatedProducts,
-            error: listModel.errorMessage,
-            hasError: listModel.hasError,
+            title: relatedModel.mainTitle,
+            products: relatedModel.products,
+            actions: relatedModel.links,
+            hasRP: relatedModel.hasRelatedProducts,
+            error: relatedModel.errorMessage,
+            hasError: relatedModel.hasError,
         },
         initialize() {
             this._super();
-            this.requestRelateds();
+            this.requestProducts();
         },
         getTitle() {
             return this.title;
         },
-        requestRelateds() {
+        requestProducts() {
             storage.get(`rest/V1/products/getRelated/${this.productId}`)
                 .done((response) => {
                     if(response.length) {
@@ -62,12 +62,16 @@ define([
                 url: url,
                 data: params,
                 type: "POST",
-                success : function (response) {
+                success: function (response) {
                     var redirectUrl = urlBuilder.build('customer/account/login');
                     if(response.hasOwnProperty('backUrl')) {
                         redirectUrl = response.backUrl;
                     }
                     window.location.href = redirectUrl;
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.log(jqXHR.status);
+                    console.log(jqXHR.statusText);
                 }
             });
         },
@@ -81,10 +85,13 @@ define([
                 data: params,
                 type: 'POST',
                 success: function (response) {
-                    console.log(response);
                     window.scrollTo(0, 0);
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.log(jqXHR.status);
+                    console.log(jqXHR.statusText);
                 }
             });
-        }
+        },
     });
 });
