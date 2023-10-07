@@ -1,4 +1,7 @@
 <!-- ko if: hasRP -->
+    <div id="modal-alert" style="display: none;">
+        <p data-bind="text: popupMessage"></p>
+    </div>
     <div class="title">
         <strong data-bind="text: getTitle()"></strong>
     </div>
@@ -20,7 +23,7 @@
                         <div class="price-box price-final_price">
                             <span class="normal-price">
                                 <span class="price-container price-final_price tax weee">
-                                    <span class="price-label" data-bind="i18n: 'As low as'"></span>
+                                    <span class="price-label" data-bind="i18n: 'Price'"></span>
                                     <span class="price-wrapper">
                                         <span class="price" data-bind="text: '$' + price"></span>
                                     </span>

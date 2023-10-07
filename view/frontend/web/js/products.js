@@ -4,17 +4,20 @@ define([
     'mage/url',
     'jquery',
     'mage/translate',
-    'Devlat_RelatedProducts/js/model/related'
+    'Magento_Ui/js/modal/modal',
+    'Devlat_RelatedProducts/js/model/related',
+    'Devlat_RelatedProducts/js/model/popup',
 ], function (
     Component,
     storage,
     urlBuilder,
     $,
     $t,
-    relatedModel
+    modal,
+    relatedModel,
+    popupModel
 ) {
     'use strict';
-
     return Component.extend({
         defaults: {
             title: relatedModel.mainTitle,
@@ -23,6 +26,8 @@ define([
             hasRP: relatedModel.hasRelatedProducts,
             error: relatedModel.errorMessage,
             hasError: relatedModel.hasError,
+            popupConfig: popupModel.configurations,
+            popupMessage: popupModel.message,
         },
         initialize() {
             this._super();
@@ -53,10 +58,15 @@ define([
                 });
         },
         addToWishlist(productRelatedId) {
+            this.popupConfig({
+                ...this.popupConfig(),
+                title: "<strong>" + $t('Add Wishlist Error') + "</strong>",
+            });
             const params = {
                 'product': productRelatedId,
                 'form_key': $.cookie('form_key'),
             };
+            var self = this;
             var url = urlBuilder.build('wishlist/index/add');
             $.ajax({
                 url: url,
@@ -70,8 +80,10 @@ define([
                     window.location.href = redirectUrl;
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
-                    console.log(jqXHR.status);
-                    console.log(jqXHR.statusText);
+                    var errorMessage = $t(jqXHR.status + " - " + jqXHR.statusText);
+                    self.popupMessage(errorMessage);
+                    var popup = modal(self.popupConfig(), '#modal-alert');
+                    $('#modal-alert').modal('openModal');
                 }
             });
         },
