@@ -58,10 +58,6 @@ define([
                 });
         },
         addToWishlist(productRelatedId) {
-            this.popupConfig({
-                ...this.popupConfig(),
-                title: "<strong>" + $t('Add Wishlist Error') + "</strong>",
-            });
             const params = {
                 'product': productRelatedId,
                 'form_key': $.cookie('form_key'),
@@ -80,6 +76,10 @@ define([
                     window.location.href = redirectUrl;
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
+                    self.popupConfig({
+                        ...self.popupConfig(),
+                        title: "<strong>" + $t('Add Wishlist Error') + "</strong>",
+                    });
                     var errorMessage = $t(jqXHR.status + " - " + jqXHR.statusText);
                     self.popupMessage(errorMessage);
                     var popup = modal(self.popupConfig(), '#modal-alert');
@@ -92,6 +92,7 @@ define([
                 'product' : productRelatedId,
             };
             const urlRequest = urlBuilder.build('related/product/addtocompare');
+            var self = this;
             $.ajax({
                 url: urlRequest,
                 data: params,
@@ -100,8 +101,14 @@ define([
                     window.scrollTo(0, 0);
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
-                    console.log(jqXHR.status);
-                    console.log(jqXHR.statusText);
+                    self.popupConfig({
+                        ...self.popupConfig(),
+                        title: "<strong>" + $t('Add to Compare Error') + "</strong>",
+                    });
+                    var errorMessage = $t(jqXHR.status + " - " + jqXHR.statusText);
+                    self.popupMessage(errorMessage);
+                    var popup = modal(self.popupConfig(), '#modal-alert');
+                    $('#modal-alert').modal('openModal');
                 }
             });
         },
