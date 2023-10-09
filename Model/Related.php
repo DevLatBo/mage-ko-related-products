@@ -7,6 +7,7 @@ use Devlat\RelatedProducts\Api\RelatedInterface;
 use Devlat\RelatedProducts\Model\Api\RelatedItem;
 use Devlat\RelatedProducts\Model\Api\RelatedItemFactory;
 use Magento\Catalog\Helper\Image;
+use Magento\Catalog\Model\Product;
 use Magento\Catalog\Model\ProductRepository;
 use Magento\Catalog\Model\View\Asset\PlaceholderFactory;
 
@@ -60,6 +61,12 @@ class Related implements RelatedInterface
 
         foreach($relatedProducts as $pos => $data) {
             $relatedProduct = $this->productRepository->getById($data['entity_id']);
+
+            $priceInfo = $relatedProduct->getPriceInfo();
+            $regularPrice = $priceInfo->getPrice('regular_price')->getAmount()->getValue() ?? 0;
+            $specialPrice = $priceInfo->getPrice('special_price')->getAmount()->getValue() ?? 0;
+            $finalPrice = $priceInfo->getPrice('final_price')->getAmount()->getValue() ?? 0;
+
             $imageUrl = $this->placeholderFactory->create(['type' => 'small_image'])->getUrl();
             if($relatedProduct->getImage() && $relatedProduct->getImage() != 'no_selection') {
                 $imageUrl = $this->imageHelper->init($relatedProduct,'product_small_image')
@@ -70,7 +77,9 @@ class Related implements RelatedInterface
             $responseItem = $this->relatedItemFactory->create();
             $responseItem->setId($relatedProduct->getId());
             $responseItem->setName($relatedProduct->getName());
-            $responseItem->setPrice($relatedProduct->getFinalPrice());
+            $responseItem->setRegularPrice($regularPrice);
+            $responseItem->setSpecialPrice($specialPrice);
+            $responseItem->setFinalPrice($finalPrice);
             $responseItem->setImage($imageUrl);
             $responseItem->setPosition($data['position']);
             $result[] = $responseItem;

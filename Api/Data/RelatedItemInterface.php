@@ -6,7 +6,9 @@ interface RelatedItemInterface
 {
     const ID = 'id';
     const NAME = 'name';
-    const PRICE = 'price';
+    const REGULAR_PRICE = 'regular_price';
+    const SPECIAL_PRICE = 'special_price';
+    const FINAL_PRICE = 'final_price';
     const IMAGE = 'image';
     CONST POSITION = 'position';
 
@@ -35,13 +37,35 @@ interface RelatedItemInterface
     /**
      * @return float
      */
-    public function getPrice();
+    public function getRegularPrice();
 
     /**
-     * @param float $price
+     * @param float $regularPrice
      * @return $this
      */
-    public function setPrice(float $price);
+    public function setRegularPrice(float $regularPrice);
+
+    /**
+     * @return float
+     */
+    public function getSpecialPrice();
+
+    /**
+     * @param float $specialPrice
+     * @return $this
+     */
+    public function setSpecialPrice(float $specialPrice);
+
+    /**
+     * @return float
+     */
+    public function getFinalPrice();
+
+    /**
+     * @param float $finalPrice
+     * @return $this
+     */
+    public function setFinalPrice(float $finalPrice);
 
     /**
      * @return int

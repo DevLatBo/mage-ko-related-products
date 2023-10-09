@@ -42,23 +42,6 @@ class RelatedItem extends DataObject implements RelatedItemInterface
     }
 
     /**
-     * @return float
-     */
-    public function getPrice(): float
-    {
-        return $this->_getData(self::PRICE);
-    }
-
-    /**
-     * @param float $price
-     * @return RelatedItem
-     */
-    public function setPrice(float $price)
-    {
-        return $this->setData(self::PRICE, $price);
-    }
-
-    /**
      * @return int
      */
     public function getPosition(): int
@@ -90,5 +73,56 @@ class RelatedItem extends DataObject implements RelatedItemInterface
     public function setImage(string $image)
     {
         return $this->setData(self::IMAGE, $image);
+    }
+
+    /**
+     * @return float;
+     */
+    public function getRegularPrice()
+    {
+        return $this->_getData(self::REGULAR_PRICE);
+    }
+
+    /**
+     * @param float $regularPrice
+     * @return RelatedItem
+     */
+    public function setRegularPrice(float $regularPrice)
+    {
+        return $this->setData(self::REGULAR_PRICE, $regularPrice);
+    }
+
+    /**
+     * @return float
+     */
+    public function getSpecialPrice()
+    {
+        return $this->_getData(self::SPECIAL_PRICE);
+    }
+
+    /**
+     * @param float $specialPrice
+     * @return RelatedItem
+     */
+    public function setSpecialPrice(float $specialPrice)
+    {
+        return $this->setData(self::SPECIAL_PRICE, $specialPrice);
+    }
+
+    /**
+     * @return float
+     */
+    public function getFinalPrice()
+    {
+        return $this->_getData(self::FINAL_PRICE);
+    }
+
+    /**
+     * @param float $finalPrice
+     * @return RelatedItem
+     */
+    public function setFinalPrice(float $finalPrice)
+    {;
+        return $this->setData(self::FINAL_PRICE, $finalPrice);
     }
 }
