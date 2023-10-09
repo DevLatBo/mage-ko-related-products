@@ -122,7 +122,7 @@ class RelatedItem extends DataObject implements RelatedItemInterface
      * @return RelatedItem
      */
     public function setFinalPrice(float $finalPrice)
-    {;
+    {
         return $this->setData(self::FINAL_PRICE, $finalPrice);
     }
 }
