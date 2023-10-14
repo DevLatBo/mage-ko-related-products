@@ -21,6 +21,16 @@
                             <a href="#" class="product-item-link" data-bind="html: name"></a>
                         </strong>
                         <div class="price-box price-final_price">
+                            <!-- ko if: type == 'configurable' && special_price == 0 -->
+                                <span class="normal-price">
+                                    <span class="price-container price-final_price tax wee">
+                                        <span class="price-label">As Low As</span>
+                                        <span class="price-wrapper">
+                                            <span class="price" data-bind="text: '$' + Math.round(final_price).toFixed(2)"></span>
+                                        </span>
+                                    </span>
+                                </span>
+                            <!-- /ko -->
                             <!-- ko if: special_price > 0 -->
                                 <span class="special-price">
                                     <span class="price-container price-final_price tax weee">
@@ -39,7 +49,7 @@
                                     </span>
                                 </span>
                             <!-- /ko -->
-                            <!-- ko if: special_price == 0 -->
+                            <!-- ko if: special_price == 0 && type !== 'configurable' -->
                                 <span class="price-container price-final_price tax weee">
                                         <span  class="price-wrapper ">
                                             <span class="price" data-bind="text: '$' + Math.round(final_price).toFixed(2)"></span>
