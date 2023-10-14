@@ -7,7 +7,6 @@ use Devlat\RelatedProducts\Api\RelatedInterface;
 use Devlat\RelatedProducts\Model\Api\RelatedItem;
 use Devlat\RelatedProducts\Model\Api\RelatedItemFactory;
 use Magento\Catalog\Helper\Image;
-use Magento\Catalog\Model\Product;
 use Magento\Catalog\Model\ProductRepository;
 use Magento\Catalog\Model\View\Asset\PlaceholderFactory;
 

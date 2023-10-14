@@ -4,6 +4,7 @@
     <module name="Devlat_RelatedProducts">
         <sequence>
             <module name="Magento_Catalog" />
+            <module name="Magento_Config"/>
         </sequence>
     </module>
 </config>
