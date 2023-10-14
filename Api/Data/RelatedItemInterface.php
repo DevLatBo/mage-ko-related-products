@@ -6,6 +6,7 @@ interface RelatedItemInterface
 {
     const ID = 'id';
     const NAME = 'name';
+    CONST TYPE = 'type';
     const REGULAR_PRICE = 'regular_price';
     const SPECIAL_PRICE = 'special_price';
     const FINAL_PRICE = 'final_price';
@@ -33,6 +34,17 @@ interface RelatedItemInterface
      * @return $this
      */
     public function setName(string $name);
+
+    /**
+     * @return string
+     */
+    public function getType();
+
+    /**
+     * @param string $type
+     * @return $this
+     */
+    public function setType(string $type);
 
     /**
      * @return float

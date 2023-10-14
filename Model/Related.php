@@ -77,6 +77,7 @@ class Related implements RelatedInterface
             $responseItem = $this->relatedItemFactory->create();
             $responseItem->setId($relatedProduct->getId());
             $responseItem->setName($relatedProduct->getName());
+            $responseItem->setType($relatedProduct->getTypeId());
             $responseItem->setRegularPrice($regularPrice);
             $responseItem->setSpecialPrice($specialPrice);
             $responseItem->setFinalPrice($finalPrice);

@@ -42,6 +42,23 @@ class RelatedItem extends DataObject implements RelatedItemInterface
     }
 
     /**
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->_getData(self::TYPE);
+    }
+
+    /**
+     * @param string $type
+     * @return RelatedItem
+     */
+    public function setType(string $type)
+    {
+        return $this->setData(self::TYPE, $type);
+    }
+
+    /**
      * @return int
      */
     public function getPosition(): int
