@@ -3,8 +3,9 @@
     <referenceBlock name="catalog.product.related" remove="true"/>
     <referenceContainer name="content.aside">
         <block name="ko_related_products"
-               class="Devlat\RelatedProducts\Block\Related"
-               template="Devlat_RelatedProducts::related.phtml">
+            class="Devlat\RelatedProducts\Block\Related"
+            template="Devlat_RelatedProducts::related.phtml"
+            ifconfig="related_products/configuration/is_active">
             <arguments>
                 <argument name="jsLayout" xsi:type="array">
                     <item name="components" xsi:type="array">
