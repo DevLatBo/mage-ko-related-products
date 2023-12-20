@@ -37,6 +37,8 @@ Este proyecto consiste en un módulo para el framework Magento2 para poder mostr
 con el producto que se puede observar principalmente en la PDP actual.
 Este módulo fue desarrollado como una réplica del Related Products del propio framework (Magento2), sólo que la diferencia está en que fue trabajado especialmente con la libreria KnockoutJS.
 
+---
+
 ### Versiones
 * Magento 2.4.4 (Open Source).
 * Composer: 1.9.3.
