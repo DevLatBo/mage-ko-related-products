@@ -4,8 +4,12 @@
     <acl>
         <resources>
             <resource id="Magento_Backend::admin">
-                <resource id="Devlat_RelatedProducts::config" title="Devlat Configs" sortOrder="1">
-                    <resource id="Devlat_RelatedProducts::related" title="Custom Related Products" sortOrder="1"/>
+                <resource id="Devlat_RelatedProducts::config"
+                          title="Devlat Configs"
+                          sortOrder="1">
+                    <resource id="Devlat_RelatedProducts::related"
+                              title="Custom Related Products"
+                              sortOrder="1"/>
                 </resource>
             </resource>
         </resources>

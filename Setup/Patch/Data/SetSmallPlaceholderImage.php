@@ -93,7 +93,7 @@ class SetSmallPlaceholderImage implements DataPatchInterface
             ->getDirectoryWrite('media')
             ->getAbsolutePath('catalog/product/placeholder/devlat/placeholder.png');
 
-        $this->file->cp($moduleImage,$destinationPath);
+        $this->file->cp($moduleImage, $destinationPath);
 
         $this->configResource->saveConfig(
             self::CONFIG_PATH,
