@@ -31,6 +31,16 @@
                     <comment>When you enable this custom section, it'll appear in PDP section.</comment>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
+                <field id="image_available"
+                       translate="label"
+                       type="text"
+                       sortOrder="30"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Enable Placehoder Image</label>
+                    <frontend_model>Devlat\RelatedProducts\Block\System\Config\Form\PlaceholderButton</frontend_model>
+                </field>
             </group>
         </section>
     </system>
