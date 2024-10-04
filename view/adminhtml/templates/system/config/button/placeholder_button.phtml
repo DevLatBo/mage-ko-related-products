@@ -3,3 +3,13 @@
         <span><span><span><?php echo $block->escapeHtml($block->getButtonLabel()); ?></span></span></span>
     </button>
 </div>
+
+<script>
+    require(['jquery', 'showHideImage'], function($, showHideImage) {
+        'use strict';
+
+        $(function() {
+            showHideImage("toggle_placeholder");
+        })
+    });
+</script>

@@ -28,7 +28,7 @@ class PlaceholderButton extends Field
     {
         $this->addData(
             [
-                'id'            =>  'enable_placeholder',
+                'id'            =>  'toggle_placeholder',
                 'button_label'  =>  __('Enable'),
             ]
         );
