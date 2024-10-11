@@ -8,6 +8,7 @@
     require(['jquery', 'showHideImage'], function($, showHideImage) {
         'use strict';
 
+        window.gpImageTagSaveUrl = '<?= /** @noEscape */ $block->getUrl('placeholder/catalog/productimage')?>'
         $(function() {
             showHideImage("toggle_placeholder");
         })
