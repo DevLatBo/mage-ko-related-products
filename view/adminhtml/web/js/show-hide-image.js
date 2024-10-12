@@ -10,15 +10,13 @@ define(
 ) {
     'use strict';
 
-    return function (elementId) {
+    return function (elementId, url) {
         $('#'+elementId).click(function(e) {
             console.log("this is working");
             const params = {
                 'form_key': window.FORM_KEY,
             };
-            var url = gpImageTagSaveUrl + '?isAjax=true';
-            //var url = urlBuilder.build('placeholder/catalog/productimage') + '?isAjax=true';
-            console.log(url);
+            //console.log(url);
             console.log(params);
             $.ajax({
                 url: url,
