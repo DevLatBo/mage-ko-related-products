@@ -8,10 +8,12 @@
     require(['jquery', 'showHideImage'], function($, showHideImage) {
         'use strict';
 
-        //window.gpImageTagSaveUrl = '<?= /** @noEscape */ $block->getUrl('placeholder/catalog/productimage')?>'
-        const url = "<?= /** @noEscape  */ $block->getUrl('placeholder/catalog/productimage')?>" + "?isAjax=true";
+        const requestPlaceholder = {
+            url: "<?= /** @noEscape  */ $block->getUrl('placeholder/catalog/productimage')?>" + "?isAjax=true",
+        };
+
         $(function() {
-            showHideImage("toggle_placeholder",url);
+            showHideImage("toggle_placeholder", requestPlaceholder);
         })
     });
 </script>

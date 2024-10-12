@@ -10,16 +10,15 @@ define(
 ) {
     'use strict';
 
-    return function (elementId, url) {
+    return function (elementId, req) {
         $('#'+elementId).click(function(e) {
             console.log("this is working");
             const params = {
                 'form_key': window.FORM_KEY,
             };
             //console.log(url);
-            console.log(params);
             $.ajax({
-                url: url,
+                url: req.url,
                 data: params,
                 dataType: 'json',
                 type: 'POST',
