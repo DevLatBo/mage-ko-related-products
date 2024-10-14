@@ -16,18 +16,17 @@ define(
             const params = {
                 'form_key': window.FORM_KEY,
             };
-            //console.log(url);
+            const url = req.url + "?isAjax=true";
+            console.log(url);
             $.ajax({
-                url: req.url,
+                url: url,
                 data: params,
                 dataType: 'json',
                 type: 'POST',
                 success: function (response) {
-                    console.log("it is working!");
                     console.log(response);
                 },
                 error: function (xhr, status, error) {
-                    console.log("error!!");
                     console.log(xhr.responseText);
                 }
             });

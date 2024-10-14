@@ -29,7 +29,7 @@ class PlaceholderButton extends Field
         $this->addData(
             [
                 'id'            =>  'toggle_placeholder',
-                'button_label'  =>  __('Enable'),
+                'button_label'  =>  __('Ejecutar'),
             ]
         );
         return $this->_toHtml();

@@ -1,6 +1,6 @@
-<div class="pp-buttons-container">
-    <button id="<?= $block->getId() ?>">
-        <span><span><span><?php echo $block->escapeHtml($block->getButtonLabel()); ?></span></span></span>
+<div class="btn-placeholder-container">
+    <button class="btn-placeholder-toggle" id="<?= $block->getId() ?>">
+        <span><?php echo $block->escapeHtml($block->getButtonLabel()); ?></span>
     </button>
 </div>
 
@@ -9,7 +9,7 @@
         'use strict';
 
         const requestPlaceholder = {
-            url: "<?= /** @noEscape  */ $block->getUrl('placeholder/catalog/productimage')?>" + "?isAjax=true",
+            url: "<?= /** @noEscape  */ $block->getUrl('placeholder/catalog/productimage')?>",
         };
 
         $(function() {
