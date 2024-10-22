@@ -40,6 +40,9 @@
                        showInStore="1">
                     <label>Enable Placehoder Image</label>
                     <frontend_model>Devlat\RelatedProducts\Block\System\Config\Form\PlaceholderButton</frontend_model>
+                    <depends>
+                        <field id="is_active">1</field>
+                    </depends>
                 </field>
             </group>
         </section>

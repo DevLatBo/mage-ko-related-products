@@ -41,12 +41,12 @@ class ProductImage extends Action
         $resultJson = array();
         $request = $this->getRequest();
         $resultJson = $this->jsonFactory->create();
-        $resultJson->setData(['response' => 'No data, it is not a Ajax Request']);
+        $resultJson->setData(['message' => 'No data, it is not a Ajax Request']);
         if ($request->isXmlHttpRequest()) {
             $placeholderConfig = $this->scopeConfig->getValue(self::CONFIG_PATH, ScopeInterface::SCOPE_STORE);
             if (empty($placeholderConfig)) {
                 $this->placeholderImage->setPlaceholder();
-                $resultJson->setData(['response' => 'Placeholder has been already set successfully.']);
+                $resultJson->setData(['message' => 'Placeholder has been already set successfully.']);
             }
             if ($placeholderConfig === self::DEVLAT_PLACEHOLDER) {
                 $this->config->saveConfig(
@@ -54,7 +54,7 @@ class ProductImage extends Action
                     NULL,
                     'default',
                     0);
-                $resultJson->setData(['response' => 'Placeholder image has been removed.']);
+                $resultJson->setData(['message' => 'Placeholder image has been removed.']);
             }
         }
 
