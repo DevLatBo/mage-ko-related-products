@@ -1,21 +1,18 @@
 define(
     [
         'jquery',
-        'mage/storage',
-        'mage/url',
     ], function(
         $,
-        storage,
-        urlBuilder,
 ) {
     'use strict';
 
-    return function (elementId, req) {
-        $('#'+elementId).click(function(e) {
+    //return function (elementId, req) {
+    return function (config, element) {
+        $("#"+element.id).click(function(e) {
             const params = {
                 'form_key': window.FORM_KEY,
             };
-            const url = req.url + "?isAjax=true";
+            const url = config.url + "?isAjax=true";
 
             $.ajax({
                 url: url,

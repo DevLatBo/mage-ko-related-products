@@ -5,16 +5,13 @@
 </div>
 <span class="placeholder-message-alert" id="placeholder_alert"></span>
 
-<script>
-    require(['jquery', 'showHideImage'], function($, showHideImage) {
-        'use strict';
+<script type="text/x-magento-init">
+  {
+      ".btn-placeholder-toggle": {
+          "Devlat_RelatedProducts/js/show-hide-image": {
+            "url": "<?= /** @noEscape  */ $block->getUrl('placeholder/catalog/productimage')?>"
+          }
+      }
+  }
 
-        const requestPlaceholder = {
-            url: "<?= /** @noEscape  */ $block->getUrl('placeholder/catalog/productimage')?>",
-        };
-
-        $(function() {
-            showHideImage("toggle_placeholder", requestPlaceholder);
-        })
-    });
 </script>
