@@ -22,11 +22,13 @@
                    showInWebsite="1">
                 <label>Configuration</label>
                 <field id="is_active"
-                       translate="label comment"
-                       type="select"
-                       sortOrder="25"
-                       showInDefault="1"
-                       showInWebsite="1">
+                        translate="label comment"
+                        type="select"
+                        sortOrder="25"
+                        showInDefault="1"
+                        showInWebsite="1"
+                        showInStore="1"
+                        canRestore="1">
                     <label>Enable</label>
                     <comment>When you enable this custom section, it'll appear in PDP section.</comment>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>

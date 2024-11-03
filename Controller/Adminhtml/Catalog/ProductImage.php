@@ -2,41 +2,63 @@
 
 namespace Devlat\RelatedProducts\Controller\Adminhtml\Catalog;
 
-use Devlat\RelatedProducts\Helper\PlaceholderImage;
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Config\Model\ResourceModel\Config;
-use Magento\Framework\App\Action\HttpPostActionInterface;
 use Magento\Framework\App\Config\ScopeConfigInterface;
+use Magento\Framework\Controller\Result\Json;
 use Magento\Framework\Controller\Result\JsonFactory;
-use Magento\Framework\Controller\ResultFactory;
 use Magento\Store\Model\ScopeInterface;
+use Devlat\RelatedProducts\Model\Config as PlaceholderConfig;
 
 class ProductImage extends Action
 {
     const CONFIG_PATH = 'catalog/placeholder/small_image_placeholder';
     const DEVLAT_PLACEHOLDER = 'devlat/placeholder.png';
-    private PlaceholderImage $placeholderImage;
+    /**
+     * @var JsonFactory
+     */
     private JsonFactory $jsonFactory;
+    /**
+     * @var ScopeConfigInterface
+     */
     private ScopeConfigInterface $scopeConfig;
+    /**
+     * @var Config
+     */
     private Config $config;
+    /**
+     * @var PlaceholderConfig
+     */
+    private PlaceholderConfig $placeholderConfig;
 
+    /**
+     * @param JsonFactory $jsonFactory
+     * @param ScopeConfigInterface $scopeConfig
+     * @param Config $config
+     * @param Context $context
+     * @param PlaceholderConfig $placeholderConfig
+     */
     public function __construct(
-        PlaceholderImage $placeholderImage,
         JsonFactory $jsonFactory,
         ScopeConfigInterface $scopeConfig,
         Config $config,
-        Context $context
+        Context $context,
+        PlaceholderConfig $placeholderConfig
     )
     {
         parent::__construct($context);
-        $this->placeholderImage = $placeholderImage;
         $this->jsonFactory = $jsonFactory;
         $this->scopeConfig = $scopeConfig;
         $this->config = $config;
+        $this->placeholderConfig = $placeholderConfig;
     }
 
-    public function execute()
+    /**
+     * @return Json
+     * @throws \Magento\Framework\Exception\FileSystemException
+     */
+    public function execute(): Json
     {
         $resultJson = array();
         $request = $this->getRequest();
@@ -45,7 +67,7 @@ class ProductImage extends Action
         if ($request->isXmlHttpRequest()) {
             $placeholderConfig = $this->scopeConfig->getValue(self::CONFIG_PATH, ScopeInterface::SCOPE_STORE);
             if (empty($placeholderConfig)) {
-                $this->placeholderImage->setPlaceholder();
+                $this->placeholderConfig->setPlaceholderImage();
                 $resultJson->setData(['message' => 'Placeholder has been already set successfully.']);
             }
             if ($placeholderConfig === self::DEVLAT_PLACEHOLDER) {
@@ -61,7 +83,10 @@ class ProductImage extends Action
         return $resultJson;
     }
 
-    protected function _isAllowed()
+    /**
+     * @return bool
+     */
+    protected function _isAllowed(): bool
     {
         return $this->_authorization->isAllowed('Devlat_RelatedProducts::related');
     }

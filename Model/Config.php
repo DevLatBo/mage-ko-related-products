@@ -1,21 +1,28 @@
 <?php
 
-namespace Devlat\RelatedProducts\Helper;
+namespace Devlat\RelatedProducts\Model;
 
-use Magento\Config\Model\ResourceModel\Config;
+use Magento\Config\Model\ResourceModel\Config as ConfigResource;
+use Magento\Framework\App\Config\ScopeConfigInterface;
+use Magento\Framework\Exception\FileSystemException;
 use Magento\Framework\Filesystem;
 use Magento\Framework\Filesystem\Io\File;
 use Magento\Framework\Module\Dir;
 use Magento\Framework\Module\Dir\Reader;
+use Magento\Store\Model\ScopeInterface;
 
-class PlaceholderImage
+class Config
 {
     const CONFIG_PATH = 'catalog/placeholder/small_image_placeholder';
 
     /**
-     * @var Config
+     * @var ScopeConfigInterface
      */
-    private Config $configResource;
+    private ScopeConfigInterface $scopeConfig;
+    /**
+     * @var ConfigResource
+     */
+    private ConfigResource $configResource;
     /**
      * @var Reader
      */
@@ -34,18 +41,20 @@ class PlaceholderImage
     private Filesystem\DirectoryList $directoryList;
 
     /**
-     * @param Config $configResource
+     * @param ConfigResource $configResource
      * @param Reader $moduleReader
      * @param File $file
      * @param Filesystem $filesystem
      * @param Filesystem\DirectoryList $directoryList
+     * @param ScopeConfigInterface $scopeConfig
      */
     public function __construct(
-        Config $configResource,
+        ConfigResource $configResource,
         Reader $moduleReader,
         File $file,
         Filesystem $filesystem,
-        Filesystem\DirectoryList $directoryList
+        Filesystem\DirectoryList $directoryList,
+        ScopeConfigInterface $scopeConfig
     )
     {
         $this->configResource = $configResource;
@@ -53,9 +62,14 @@ class PlaceholderImage
         $this->file = $file;
         $this->filesystem = $filesystem;
         $this->directoryList = $directoryList;
+        $this->scopeConfig = $scopeConfig;
     }
 
-    public function setPlaceholder() {
+    /**
+     * @return void
+     * @throws FileSystemException
+     */
+    public function setPlaceholderImage(): void {
         $placeholderDir = $this->directoryList->getPath('media').'/catalog/product/placeholder/devlat';
         if(!file_exists($placeholderDir)) {
             $this->file->mkdir($placeholderDir);
@@ -77,5 +91,15 @@ class PlaceholderImage
             'default',
             0
         );
+    }
+
+    /**
+     * @param string $scopeType
+     * @param string|null $stringCode
+     * @return bool
+     */
+    public function isEnabled(string $scopeType = ScopeInterface::SCOPE_STORE, ?string $stringCode = null): bool
+    {
+        return $this->scopeConfig->isSetFlag(self::CONFIG_PATH, $scopeType, $stringCode);
     }
 }

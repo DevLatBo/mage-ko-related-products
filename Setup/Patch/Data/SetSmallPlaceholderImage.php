@@ -7,7 +7,8 @@ declare(strict_types=1);
 
 namespace Devlat\RelatedProducts\Setup\Patch\Data;
 
-use Devlat\RelatedProducts\Helper\PlaceholderImage as PlaceholderHelper;
+
+use Devlat\RelatedProducts\Model\Config as PlaceholderConfig;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Framework\Setup\Patch\DataPatchInterface;
 
@@ -16,19 +17,22 @@ use Magento\Framework\Setup\Patch\DataPatchInterface;
 */
 class SetSmallPlaceholderImage implements DataPatchInterface
 {
-
     /**
-     * @var PlaceholderHelper
+     * @var PlaceholderConfig
      */
-    private PlaceholderHelper $placeholderImage;
+    private PlaceholderConfig $placeholderConfig;
+    /**
+     * @var ModuleDataSetupInterface
+     */
+    private ModuleDataSetupInterface $moduleDataSetup;
 
     public function __construct(
         ModuleDataSetupInterface $moduleDataSetup,
-        PlaceholderHelper $placeholderImage
+        PlaceholderConfig $placeholderConfig
     )
     {
         $this->moduleDataSetup = $moduleDataSetup;
-        $this->placeholderImage = $placeholderImage;
+        $this->placeholderConfig = $placeholderConfig;
     }
 
     /**
@@ -40,7 +44,7 @@ class SetSmallPlaceholderImage implements DataPatchInterface
     {
         $this->moduleDataSetup->startSetup();
 
-        $this->placeholderImage->setPlaceholder();
+        $this->placeholderConfig->setPlaceholderImage();
 
         $this->moduleDataSetup->endSetup();
     }
