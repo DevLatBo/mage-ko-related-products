@@ -10,6 +10,7 @@ use Magento\Framework\Controller\Result\Json;
 use Magento\Framework\Controller\Result\JsonFactory;
 use Magento\Store\Model\ScopeInterface;
 use Devlat\RelatedProducts\Model\Config as PlaceholderConfig;
+use Psr\Log\LoggerInterface as PsrLoggerInterface;
 
 class ProductImage extends Action
 {
@@ -31,6 +32,7 @@ class ProductImage extends Action
      * @var PlaceholderConfig
      */
     private PlaceholderConfig $placeholderConfig;
+    private PsrLoggerInterface $logger;
 
     /**
      * @param JsonFactory $jsonFactory
@@ -44,7 +46,8 @@ class ProductImage extends Action
         ScopeConfigInterface $scopeConfig,
         Config $config,
         Context $context,
-        PlaceholderConfig $placeholderConfig
+        PlaceholderConfig $placeholderConfig,
+        PsrLoggerInterface $logger
     )
     {
         parent::__construct($context);
@@ -52,6 +55,7 @@ class ProductImage extends Action
         $this->scopeConfig = $scopeConfig;
         $this->config = $config;
         $this->placeholderConfig = $placeholderConfig;
+        $this->logger = $logger;
     }
 
     /**
@@ -60,6 +64,7 @@ class ProductImage extends Action
      */
     public function execute(): Json
     {
+        $this->logger->info("Ajax request started for placeholder image.");
         $resultJson = array();
         $request = $this->getRequest();
         $resultJson = $this->jsonFactory->create();
@@ -79,7 +84,7 @@ class ProductImage extends Action
                 $resultJson->setData(['message' => 'Placeholder image has been removed.']);
             }
         }
-
+        $this->logger->info("Ajax Request successful.");
         return $resultJson;
     }
 

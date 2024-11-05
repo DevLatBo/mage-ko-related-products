@@ -10,6 +10,7 @@ use Magento\Framework\Filesystem\Io\File;
 use Magento\Framework\Module\Dir;
 use Magento\Framework\Module\Dir\Reader;
 use Magento\Store\Model\ScopeInterface;
+use Psr\Log\LoggerInterface as PsrLoggerInterface;
 
 class Config
 {
@@ -39,6 +40,7 @@ class Config
      * @var Filesystem\DirectoryList
      */
     private Filesystem\DirectoryList $directoryList;
+    private PsrLoggerInterface $logger;
 
     /**
      * @param ConfigResource $configResource
@@ -47,6 +49,7 @@ class Config
      * @param Filesystem $filesystem
      * @param Filesystem\DirectoryList $directoryList
      * @param ScopeConfigInterface $scopeConfig
+     * @param PsrLoggerInterface $logger
      */
     public function __construct(
         ConfigResource $configResource,
@@ -54,7 +57,8 @@ class Config
         File $file,
         Filesystem $filesystem,
         Filesystem\DirectoryList $directoryList,
-        ScopeConfigInterface $scopeConfig
+        ScopeConfigInterface $scopeConfig,
+        PsrLoggerInterface $logger
     )
     {
         $this->configResource = $configResource;
@@ -63,6 +67,7 @@ class Config
         $this->filesystem = $filesystem;
         $this->directoryList = $directoryList;
         $this->scopeConfig = $scopeConfig;
+        $this->logger = $logger;
     }
 
     /**
@@ -70,8 +75,10 @@ class Config
      * @throws FileSystemException
      */
     public function setPlaceholderImage(): void {
+        $this->logger->info("Set of placeholder image process started.");
         $placeholderDir = $this->directoryList->getPath('media').'/catalog/product/placeholder/devlat';
         if(!file_exists($placeholderDir)) {
+            $this->logger->info("The devlat directory it was created on catalog/product in pub/media");
             $this->file->mkdir($placeholderDir);
         }
         $moduleDir = $this->moduleReader->getModuleDir(
@@ -91,6 +98,8 @@ class Config
             'default',
             0
         );
+
+        $this->logger->info("File placeholder image has been copied in pub/media and config updated.");
     }
 
     /**
