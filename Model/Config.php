@@ -14,8 +14,6 @@ use Psr\Log\LoggerInterface as PsrLoggerInterface;
 
 class Config
 {
-    const CONFIG_PATH = 'catalog/placeholder/small_image_placeholder';
-
     /**
      * @var ScopeConfigInterface
      */
@@ -40,7 +38,14 @@ class Config
      * @var Filesystem\DirectoryList
      */
     private Filesystem\DirectoryList $directoryList;
+    /**
+     * @var PsrLoggerInterface
+     */
     private PsrLoggerInterface $logger;
+    /**
+     * @var string
+     */
+    private string $configPath;
 
     /**
      * @param ConfigResource $configResource
@@ -50,6 +55,7 @@ class Config
      * @param Filesystem\DirectoryList $directoryList
      * @param ScopeConfigInterface $scopeConfig
      * @param PsrLoggerInterface $logger
+     * @param string $configPath
      */
     public function __construct(
         ConfigResource $configResource,
@@ -58,7 +64,8 @@ class Config
         Filesystem $filesystem,
         Filesystem\DirectoryList $directoryList,
         ScopeConfigInterface $scopeConfig,
-        PsrLoggerInterface $logger
+        PsrLoggerInterface $logger,
+        string $configPath = ""
     )
     {
         $this->configResource = $configResource;
@@ -68,6 +75,7 @@ class Config
         $this->directoryList = $directoryList;
         $this->scopeConfig = $scopeConfig;
         $this->logger = $logger;
+        $this->configPath = $configPath;
     }
 
     /**
@@ -103,7 +111,7 @@ class Config
 
         }
         $this->configResource->saveConfig(
-            self::CONFIG_PATH,
+            $this->configPath,
             "devlat/placeholder.png",
             'default',
             0
@@ -117,6 +125,6 @@ class Config
      */
     public function isEnabled(string $scopeType = ScopeInterface::SCOPE_STORE, ?string $stringCode = null): bool
     {
-        return $this->scopeConfig->isSetFlag(self::CONFIG_PATH, $scopeType, $stringCode);
+        return $this->scopeConfig->isSetFlag($this->configPath, $scopeType, $stringCode);
     }
 }

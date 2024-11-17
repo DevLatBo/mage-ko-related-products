@@ -14,8 +14,6 @@ use Psr\Log\LoggerInterface as PsrLoggerInterface;
 
 class ProductImage extends Action
 {
-    const CONFIG_PATH = 'catalog/placeholder/small_image_placeholder';
-    const DEVLAT_PLACEHOLDER = 'devlat/placeholder.png';
     /**
      * @var JsonFactory
      */
@@ -32,7 +30,18 @@ class ProductImage extends Action
      * @var PlaceholderConfig
      */
     private PlaceholderConfig $placeholderConfig;
+    /**
+     * @var PsrLoggerInterface
+     */
     private PsrLoggerInterface $logger;
+    /**
+     * @var string
+     */
+    private string $configPathCatalog;
+    /**
+     * @var string
+     */
+    private string $pathValue;
 
     /**
      * @param JsonFactory $jsonFactory
@@ -40,6 +49,9 @@ class ProductImage extends Action
      * @param Config $config
      * @param Context $context
      * @param PlaceholderConfig $placeholderConfig
+     * @param PsrLoggerInterface $logger
+     * @param string $configPathCatalog
+     * @param string $pathValue
      */
     public function __construct(
         JsonFactory $jsonFactory,
@@ -47,7 +59,9 @@ class ProductImage extends Action
         Config $config,
         Context $context,
         PlaceholderConfig $placeholderConfig,
-        PsrLoggerInterface $logger
+        PsrLoggerInterface $logger,
+        string $configPathCatalog = "",
+        string $pathValue = ""
     )
     {
         parent::__construct($context);
@@ -56,6 +70,8 @@ class ProductImage extends Action
         $this->config = $config;
         $this->placeholderConfig = $placeholderConfig;
         $this->logger = $logger;
+        $this->configPathCatalog = $configPathCatalog;
+        $this->pathValue = $pathValue;
     }
 
     /**
@@ -70,9 +86,13 @@ class ProductImage extends Action
         $resultJson = null;
         $request = $this->getRequest();
         $resultJson = $this->jsonFactory->create();
-        $resultJson->setData(['message' => 'No data, it is not a Ajax Request']);
+        $resultJson->setData(
+            [
+                'message' => 'No data, it is not a Ajax Request'
+            ]
+        );
         if ($request->isXmlHttpRequest()) {
-            $placeholderConfig = $this->scopeConfig->getValue(self::CONFIG_PATH, ScopeInterface::SCOPE_STORE);
+            $placeholderConfig = $this->scopeConfig->getValue($this->configPathCatalog, ScopeInterface::SCOPE_STORE);
             if (empty($placeholderConfig)) {
                 $this->placeholderConfig->setPlaceholderImage();
                 $resultJson->setData(
@@ -81,9 +101,9 @@ class ProductImage extends Action
                     ]
                 );
             }
-            if ($placeholderConfig === self::DEVLAT_PLACEHOLDER) {
+            if ($placeholderConfig === $this->pathValue) {
                 $this->config->saveConfig(
-                    self::CONFIG_PATH,
+                    $this->configPathCatalog,
                     NULL,
                     'default',
                     0);

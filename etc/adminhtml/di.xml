@@ -11,11 +11,14 @@
     <type name="Devlat\RelatedProducts\Controller\Adminhtml\Catalog\ProductImage">
         <arguments>
             <argument name="logger" xsi:type="object">PlaceholderCustomLog</argument>
+            <argument name="configPathCatalog" xsi:type="string">catalog/placeholder/small_image_placeholder</argument>
+            <argument name="pathValue" xsi:type="string">devlat/placeholder.png</argument>
         </arguments>
     </type>
     <type name="Devlat\RelatedProducts\Model\Config">
         <arguments>
             <argument name="logger" xsi:type="object">PlaceholderCustomLog</argument>
+            <argument name="configPath" xsi:type="string">catalog/placeholder/small_image_placeholder</argument>
         </arguments>
     </type>
 </config>
