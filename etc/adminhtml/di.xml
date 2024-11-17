@@ -21,4 +21,9 @@
             <argument name="configPath" xsi:type="string">catalog/placeholder/small_image_placeholder</argument>
         </arguments>
     </type>
+    <type name="Devlat\RelatedProducts\Block\System\Config\Form\PlaceholderButton">
+        <arguments>
+            <argument name="buttonPlaceholderTemplate" xsi:type="string">system/config/button/placeholder_button.phtml</argument>
+        </arguments>
+    </type>
 </config>
