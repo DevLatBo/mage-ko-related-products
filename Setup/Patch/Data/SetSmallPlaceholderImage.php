@@ -11,6 +11,7 @@ namespace Devlat\RelatedProducts\Setup\Patch\Data;
 use Devlat\RelatedProducts\Model\Config as PlaceholderConfig;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Framework\Setup\Patch\DataPatchInterface;
+use Psr\Log\LoggerInterface AS PsrLoggerInterface;
 
 /**
 * Patch is mechanism, that allows to do atomic upgrade data changes
@@ -25,14 +26,17 @@ class SetSmallPlaceholderImage implements DataPatchInterface
      * @var ModuleDataSetupInterface
      */
     private ModuleDataSetupInterface $moduleDataSetup;
+    private PsrLoggerInterface $logger;
 
     public function __construct(
         ModuleDataSetupInterface $moduleDataSetup,
-        PlaceholderConfig $placeholderConfig
+        PlaceholderConfig $placeholderConfig,
+        PsrLoggerInterface $logger
     )
     {
         $this->moduleDataSetup = $moduleDataSetup;
         $this->placeholderConfig = $placeholderConfig;
+        $this->logger = $logger;
     }
 
     /**
@@ -43,6 +47,7 @@ class SetSmallPlaceholderImage implements DataPatchInterface
     public function apply()
     {
         $this->moduleDataSetup->startSetup();
+
 
         $this->placeholderConfig->setPlaceholderImage();
 

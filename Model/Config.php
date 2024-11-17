@@ -75,31 +75,39 @@ class Config
      * @throws FileSystemException
      */
     public function setPlaceholderImage(): void {
-        $this->logger->info("Set of placeholder image process started.");
+        $this->logger->info(
+            __("Starting placeholder image setting...")
+        );
         $placeholderDir = $this->directoryList->getPath('media').'/catalog/product/placeholder/devlat';
-        if(!file_exists($placeholderDir)) {
-            $this->logger->info("The devlat directory it was created on catalog/product in pub/media");
+        if (!file_exists($placeholderDir)) {
+            $this->logger->info(
+                __("The devlat directory was created on catalog/product in pub/media")
+            );
             $this->file->mkdir($placeholderDir);
         }
         $moduleDir = $this->moduleReader->getModuleDir(
             Dir::MODULE_VIEW_DIR,
             'Devlat_RelatedProducts'
         );
+
         $moduleImage = $moduleDir."/adminhtml/web/images/Placeholder.png";
-        $destinationPath = $this->filesystem
+        $placeholderImageMedia = $this->filesystem
             ->getDirectoryWrite('media')
             ->getAbsolutePath('catalog/product/placeholder/devlat/placeholder.png');
 
-        $this->file->cp($moduleImage, $destinationPath);
+        if (!file_exists($placeholderImageMedia)) {
+            $this->file->cp($moduleImage, $placeholderImageMedia);
+            $this->logger->info(
+                __("File placeholder image has been copied in pub/media and config updated.")
+            );
 
+        }
         $this->configResource->saveConfig(
             self::CONFIG_PATH,
             "devlat/placeholder.png",
             'default',
             0
         );
-
-        $this->logger->info("File placeholder image has been copied in pub/media and config updated.");
     }
 
     /**

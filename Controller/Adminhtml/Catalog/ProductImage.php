@@ -64,8 +64,10 @@ class ProductImage extends Action
      */
     public function execute(): Json
     {
-        $this->logger->info("Ajax request started for placeholder image.");
-        $resultJson = array();
+        $this->logger->info(
+            __("Ajax request started for placeholder image.")
+        );
+        $resultJson = null;
         $request = $this->getRequest();
         $resultJson = $this->jsonFactory->create();
         $resultJson->setData(['message' => 'No data, it is not a Ajax Request']);
@@ -73,7 +75,11 @@ class ProductImage extends Action
             $placeholderConfig = $this->scopeConfig->getValue(self::CONFIG_PATH, ScopeInterface::SCOPE_STORE);
             if (empty($placeholderConfig)) {
                 $this->placeholderConfig->setPlaceholderImage();
-                $resultJson->setData(['message' => 'Placeholder has been already set successfully.']);
+                $resultJson->setData(
+                    [
+                        'message' => __('Placeholder Image has been set successfully.')
+                    ]
+                );
             }
             if ($placeholderConfig === self::DEVLAT_PLACEHOLDER) {
                 $this->config->saveConfig(
@@ -81,10 +87,16 @@ class ProductImage extends Action
                     NULL,
                     'default',
                     0);
-                $resultJson->setData(['message' => 'Placeholder image has been removed.']);
+                $resultJson->setData(
+                    [
+                        'message' => __('Placeholder image has been removed.')
+                    ]
+                );
             }
         }
-        $this->logger->info("Ajax Request successful.");
+        $this->logger->info(
+            __("Ajax Request successful.")
+        );
         return $resultJson;
     }
 
