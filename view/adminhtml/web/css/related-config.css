@@ -1,3 +1,12 @@
+div.admin__page-nav.devlat-tab._collapsed ._collapsible strong {
+    display: inline-flex;
+    align-items: center;
+    padding-right: 40px;
+    background: url(../images/Placeholder.png) no-repeat right center;
+    background-size: 35px 30px;
+    height: 30px;
+}
+
 .btn-placeholder-container .btn-placeholder-toggle:active {
     background-color: #0a0a0a;
     color: #FFFFFF;
