@@ -86,10 +86,10 @@ class Config
         $this->logger->info(
             __("Starting placeholder image setting...")
         );
-        $placeholderDir = $this->directoryList->getPath('media').'/catalog/product/placeholder/devlat';
+        $placeholderDir = $this->directoryList->getPath('media').'/catalog/product/placeholder/images';
         if (!file_exists($placeholderDir)) {
             $this->logger->info(
-                __("The devlat directory was created on catalog/product in pub/media")
+                __("The directory images with the logo was created on catalog/product/placeholder in pub/media")
             );
             $this->file->mkdir($placeholderDir);
         }
@@ -98,10 +98,10 @@ class Config
             'Devlat_RelatedProducts'
         );
 
-        $moduleImage = $moduleDir."/adminhtml/web/images/Placeholder.png";
+        $moduleImage = $moduleDir."/adminhtml/web/images/DevlatLogo.png";
         $placeholderImageMedia = $this->filesystem
             ->getDirectoryWrite('media')
-            ->getAbsolutePath('catalog/product/placeholder/devlat/placeholder.png');
+            ->getAbsolutePath('catalog/product/placeholder/images/DevlatLogo.png');
 
         if (!file_exists($placeholderImageMedia)) {
             $this->file->cp($moduleImage, $placeholderImageMedia);
@@ -112,7 +112,7 @@ class Config
         }
         $this->configResource->saveConfig(
             $this->configPath,
-            "devlat/placeholder.png",
+            "images/DevlatLogo.png",
             'default',
             0
         );
