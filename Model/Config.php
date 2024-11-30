@@ -45,7 +45,11 @@ class Config
     /**
      * @var string
      */
-    private string $configPath;
+    private string $configPlaceholderPath;
+    /**
+     * @var string
+     */
+    private string $configRelatedEnable;
 
     /**
      * @param ConfigResource $configResource
@@ -55,7 +59,8 @@ class Config
      * @param Filesystem\DirectoryList $directoryList
      * @param ScopeConfigInterface $scopeConfig
      * @param PsrLoggerInterface $logger
-     * @param string $configPath
+     * @param string $configPlaceholderPath
+     * @param string $configEnableRelated
      */
     public function __construct(
         ConfigResource $configResource,
@@ -65,7 +70,8 @@ class Config
         Filesystem\DirectoryList $directoryList,
         ScopeConfigInterface $scopeConfig,
         PsrLoggerInterface $logger,
-        string $configPath = ""
+        string $configPlaceholderPath = "",
+        string $configRelatedEnable = ""
     )
     {
         $this->configResource = $configResource;
@@ -75,7 +81,8 @@ class Config
         $this->directoryList = $directoryList;
         $this->scopeConfig = $scopeConfig;
         $this->logger = $logger;
-        $this->configPath = $configPath;
+        $this->configPlaceholderPath = $configPlaceholderPath;
+        $this->configRelatedEnable = $configRelatedEnable;
     }
 
     /**
@@ -111,7 +118,7 @@ class Config
 
         }
         $this->configResource->saveConfig(
-            $this->configPath,
+            $this->configPlaceholderPath,
             "images/DevlatLogo.png",
             'default',
             0
@@ -125,6 +132,6 @@ class Config
      */
     public function isEnabled(string $scopeType = ScopeInterface::SCOPE_STORE, ?string $stringCode = null): bool
     {
-        return $this->scopeConfig->isSetFlag($this->configPath, $scopeType, $stringCode);
+        return $this->scopeConfig->isSetFlag($this->configRelatedEnable, $scopeType, $stringCode);
     }
 }
