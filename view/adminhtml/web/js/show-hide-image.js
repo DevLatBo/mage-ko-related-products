@@ -6,7 +6,6 @@ define(
 ) {
     'use strict';
 
-    //return function (elementId, req) {
     return function (config, element) {
         $("#"+element.id).click(function(e) {
             const params = {

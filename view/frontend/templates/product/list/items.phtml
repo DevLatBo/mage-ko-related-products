@@ -329,3 +329,18 @@ $_item = null;
             </script>
         <?php endif;?>
         <?php endif;?>
+<script>
+    require(['slick-slider', 'jquery'],
+        function(
+            slickSlider,
+            $
+        ) {
+       'use strict';
+
+       $('.product-items').slick({
+           infinite: true,
+           slidesToShow: 5,
+           slidesToScroll: 5,
+       });
+    });
+</script>
