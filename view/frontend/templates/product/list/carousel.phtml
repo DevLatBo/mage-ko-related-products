@@ -1,0 +1,43 @@
+<script>
+    require(['slick-slider', 'jquery'],
+        function(
+            slickSlider,
+            $
+        ) {
+            'use strict';
+
+            $('.product-items').slick({
+                infinite: true,
+                arrows: false,
+                dots: true,
+                speed: 300,
+                slidesToShow: 5,
+                slidesToScroll: 5,
+                autoplay: true,
+                autoplaySpeed: 1500,
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1,
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 2,
+                        }
+                    },
+                    {
+                        breakpoint: 400,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                        }
+                    }
+                ]
+            });
+        });
+</script>

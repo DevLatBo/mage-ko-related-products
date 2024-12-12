@@ -11,5 +11,10 @@
                 <argument name="view_model_related" xsi:type="object">Devlat\RelatedProducts\ViewModel\Related</argument>
             </arguments>
         </referenceBlock>
+        <referenceContainer name="content.aside">
+            <block class="Magento\Framework\View\Element\Template"
+                   template="Devlat_RelatedProducts::product/list/carousel.phtml"
+                    after="catalog.product.related" />
+        </referenceContainer>
     </body>
 </page>
