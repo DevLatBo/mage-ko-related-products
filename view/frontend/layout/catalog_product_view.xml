@@ -14,7 +14,8 @@
         <referenceContainer name="content.aside">
             <block class="Magento\Framework\View\Element\Template"
                    template="Devlat_RelatedProducts::product/list/carousel.phtml"
-                    after="catalog.product.related" />
+                    after="catalog.product.related"
+                    ifconfig="related_products/configuration/is_active" />
         </referenceContainer>
     </body>
 </page>
