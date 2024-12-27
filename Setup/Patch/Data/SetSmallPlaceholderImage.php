@@ -9,6 +9,7 @@ namespace Devlat\RelatedProducts\Setup\Patch\Data;
 
 
 use Devlat\RelatedProducts\Model\Config as PlaceholderConfig;
+use Magento\Framework\Exception\FileSystemException;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Framework\Setup\Patch\DataPatchInterface;
 
@@ -41,8 +42,8 @@ class SetSmallPlaceholderImage implements DataPatchInterface
 
     /**
      * Do Upgrade
-     *
      * @return void
+     * @throws FileSystemException
      */
     public function apply()
     {

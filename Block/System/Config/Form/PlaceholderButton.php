@@ -4,6 +4,7 @@ namespace Devlat\RelatedProducts\Block\System\Config\Form;
 
 use Magento\Backend\Block\Template\Context;
 use Magento\Config\Block\System\Config\Form\Field;
+use Magento\Framework\Data\Form\Element\AbstractElement;
 use Magento\Framework\View\Helper\SecureHtmlRenderer;
 
 class PlaceholderButton extends Field
@@ -31,9 +32,10 @@ class PlaceholderButton extends Field
     }
 
     /**
-     * @return $this|PlaceholderButton
+     * Sets template for the button in admin config form.
+     * @return PlaceholderButton
      */
-    protected function _prepareLayout()
+    protected function _prepareLayout(): PlaceholderButton
     {
         parent::_prepareLayout();
         if (!$this->getTemplate()) {
@@ -43,20 +45,22 @@ class PlaceholderButton extends Field
     }
 
     /**
-     * @param \Magento\Framework\Data\Form\Element\AbstractElement $element
+     * Renders without configuration scope.
+     * @param AbstractElement $element
      * @return string
      */
-    public function render(\Magento\Framework\Data\Form\Element\AbstractElement $element)
+    public function render(AbstractElement $element): string
     {
         $element->unsScope()->unsCanUseWebsiteValue()->unsCanUseDefaultValue();
         return parent::render($element);
     }
 
     /**
-     * @param \Magento\Framework\Data\Form\Element\AbstractElement $element
+     * Sets data for the button template.
+     * @param AbstractElement $element
      * @return string
      */
-    protected function _getElementHtml(\Magento\Framework\Data\Form\Element\AbstractElement $element)
+    protected function _getElementHtml(AbstractElement $element): string
     {
         $this->addData(
             [

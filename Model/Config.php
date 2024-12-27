@@ -86,6 +86,7 @@ class Config
     }
 
     /**
+     * Logo image management.
      * @return void
      * @throws FileSystemException
      */
@@ -126,6 +127,7 @@ class Config
     }
 
     /**
+     * Validates if it is enabled the custom related product.
      * @param string $scopeType
      * @param string|null $stringCode
      * @return bool

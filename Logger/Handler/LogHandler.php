@@ -12,7 +12,6 @@ class LogHandler extends BaseHandler
      */
     protected $loggerType = Logger::INFO;
 
-
     /**
      * @var string
      */

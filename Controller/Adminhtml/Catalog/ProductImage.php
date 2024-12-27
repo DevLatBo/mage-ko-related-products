@@ -8,6 +8,7 @@ use Magento\Config\Model\ResourceModel\Config;
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\Controller\Result\Json;
 use Magento\Framework\Controller\Result\JsonFactory;
+use Magento\Framework\Exception\FileSystemException;
 use Magento\Store\Model\ScopeInterface;
 use Devlat\RelatedProducts\Model\Config as PlaceholderConfig;
 use Psr\Log\LoggerInterface as PsrLoggerInterface;
@@ -75,8 +76,9 @@ class ProductImage extends Action
     }
 
     /**
+     * Add/Remove the custom placeholder image.
      * @return Json
-     * @throws \Magento\Framework\Exception\FileSystemException
+     * @throws FileSystemException
      */
     public function execute(): Json
     {
@@ -121,6 +123,7 @@ class ProductImage extends Action
     }
 
     /**
+     * Defines permissions by Checking the access control (ACL).
      * @return bool
      */
     protected function _isAllowed(): bool
