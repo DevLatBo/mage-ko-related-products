@@ -1,4 +1,4 @@
-# Módulo RELATED PRODUCTS en Magento2 con KnockoutJS
+# Módulo Magento2 RELATED PRODUCTS - SLIDER
 
 Este es un proyecto trabajado por el **Ing. Oscar Rolando Gamboa Acho** con el fin de aportar a otros developers en el desarrollo de sus proyectos y facilitar el desarrollo de nuevos módulos y/o sistemas completos.
 
