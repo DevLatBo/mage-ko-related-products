@@ -1,8 +1,8 @@
 # Módulo RELATED PRODUCTS en Magento2 con KnockoutJS
 
-Este es un proyecto trabajado por el **Ing. Oscar Rolando Gamboa Acho** con el fin de aportar a otros developers en el desarrollo de sus proyectos por medio de la orientacion en base a lo trabajado y facilitar el desarrollo de nuevos módulos y/o sistemas completos.
+Este es un proyecto trabajado por el **Ing. Oscar Rolando Gamboa Acho** con el fin de aportar a otros developers en el desarrollo de sus proyectos y facilitar el desarrollo de nuevos módulos y/o sistemas completos.
 
-Si existen dudas, observaciones, errores encontrados, ir a Issues y hacer el reporte de algun detalle para trabajarlo y poder mejorar el modulo que se encuentra trabajado en este repositorio. :nerd_face:
+Si existen dudas, observaciones, errores encontrados, reportar en Issues para mejorar el modulo que se encuentra trabajado en este repositorio. :nerd_face:
 
 ---
 
@@ -33,10 +33,10 @@ cambiar el estado del modelo de datos lo cual hace que se actualice la interfaz 
 ---
 
 ## Proyecto
-Este proyecto consiste en un módulo para el framework Magento2 para poder mostrar en la sección del PDP (Product Detail Page)  los Productos Relacionados (Related Products), que consiste en mostrar productos que se encuentran relacionados 
-con el producto que se puede observar principalmente en la PDP actual.
-Este módulo fue desarrollado como una réplica del Related Products del propio framework (Magento2), sólo que la diferencia está en que fue trabajado especialmente con la libreria KnockoutJS.
-
+Este proyecto consiste en un módulo para el framework Magento2 para customizar en la sección del PDP (Product Detail Page) los Productos Relacionados (Related Products) 
+implementando un carousel y el agregado de una imagen placeholder para productos que no tienen imagen. 
+En este modulo se busca tener una muestra de productos relacionados de un producto en la PDP de una manera diferente e interactiva para el usuario siempre 
+y cuando la configuracion desde el admin lo permita.
 ---
 
 ### Versiones
@@ -44,7 +44,7 @@ Este módulo fue desarrollado como una réplica del Related Products del propio 
 * Composer: 1.9.3.
 * PHP 8.1.
 * Librería de KnockoutJS 3.4.2
-
+* Slick Carousel 1.9.0
 ---
 
 ### Instalar
@@ -57,11 +57,15 @@ Luego para instalar el proyecto dentro del framework realiza los siguientes paso
 ---
 
 ### Funcionamiento
-El funcionamiento del este módulo se basa en mostrar los productos relacionados de un producto dentro del PDP (Product Detail Page) en la parte inferior, esta seccion tiene un par de funcionalidades como ser el de 
-agregar un producto relacionado al Wishlist o una lista de comparacion con otro producto.
-Para el caso de agregar un producto al wishlist como usuario invitado (no logueado) te redirige al loggin antes para que inicies sesión y consecutivamente  el producto es recien agregado al Wishlist.
-Para poder ver los productos relacionados (Related Products) simplemente configure desde el admin en Admin > Catalog > Products, seleccione un producto cualquiera, y busque sección Related Products, Up-Sells, and Cross-Sells 
-donde ahi mismo podra agregar otros productos como Relacionados del producto donde usted este configurando.
+El funcionamiento de este modulo no presenta ninguna alteracion en ningun aspecto como ser el 
+de agregar un producto al wishlist o agregar al carrito. La customizacion se basa en hacer que la seccion de 
+productos relacionados sea mas interactivo implementando un carousel con la libreria Slick Carousel 
+y agregando una imagen placeholder para productos que no tienen una propia imagen subida, pero tanto el carousel 
+como el placeholder image funcionaran si es que esta habilitado en su configuracion, en el cual se lo puede 
+encontrar en Admin > Store > Settings > Configuration > DEVLAT > Related Products.
+
+Para tomar en cuenta la libreria Slick Carousel minificado puede descargarlo desde este link: [Slick Carousel](https://cdnjs.com/libraries/slick-carousel/1.9.0) y 
+la guia de uso: [Slick Page](https://kenwheeler.github.io/slick/).
 
 ---
 
@@ -69,11 +73,11 @@ donde ahi mismo podra agregar otros productos como Relacionados del producto don
 Si tienes alguna duda o pregunta para poder ayudarte con el modulo, favor contactame por mis redes sociales, que te puedo responder a la brevedad posible :sunglasses::
 
   <a href="https://www.linkedin.com/in/oscarrolandogamboa/">
-      <img align="left" alt="Oscar Rolando Gamboa Acho | Linkedin" width="30px" src="https://github.com/SatYu26/SatYu26/blob/master/Assets/Linkedin.svg" />
-  </a> &nbsp;&nbsp;
+      <img align="left" alt="Oscar Rolando Gamboa Acho | Linkedin" width="30px" src="https://raw.githubusercontent.com/CLorant/readme-social-icons/main/large/filled/linkedin.svg" />
+  </a>
   <a href="https://x.com/DevLatBo">
-    <img align="left" alt="Oscar Rolando Gamboa Acho | Twitter" width="32px" src="https://user-images.githubusercontent.com/8138585/256154469-3d935a39-9abc-4ba6-94d4-b8e163756c27.svg" />
+    <img align="left" alt="Oscar Rolando Gamboa Acho | X-Twitter" width="32px" src="https://raw.githubusercontent.com/CLorant/readme-social-icons/main/large/filled/twitter-x.svg" />
   </a> &nbsp;&nbsp;
   <a href="https://youtube.com/DevLatBo">
-    <img align="left" alt="Oscar Rolando Gamboa Acho | Youtube" width="30px" src="https://user-images.githubusercontent.com/47686437/168548113-b3cd4206-3281-445b-b7c6-bc0a3251293d.png" />
+    <img align="left" alt="Oscar Rolando Gamboa Acho | Youtube" width="30px" src="https://raw.githubusercontent.com/CLorant/readme-social-icons/main/large/filled/youtube.svg" />
   </a> &nbsp;&nbsp;
